@@ -45,6 +45,7 @@
 
 // Required Application Header
 #include <App.h>
+#include <DayPlaying.h>
 
 namespace ChilliJam
 {
@@ -147,6 +148,12 @@ namespace ChilliJam
 			{
 				State_SpecialBegin* state = (State_SpecialBegin*) CSCore::Application::Get()->GetStateManager()->GetActiveState().get();
 				state->PlaySound( "UI_Click" );
+			}
+		);
+		ButtonConnection[button++] = UI->GetWidget( "Panel" )->GetWidget( "Button_Continue" )->GetReleasedInsideEvent().OpenConnection(
+			[]( CSUI::Widget* in_widget, const CSInput::Pointer& in_pointer, CSInput::Pointer::InputType in_inputType )
+			{
+				CSCore::Application::Get()->GetStateManager()->Change( (CSCore::StateSPtr) new DayPlayingState );
 			}
 		);
 	}

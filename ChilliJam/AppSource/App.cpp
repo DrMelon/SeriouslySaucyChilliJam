@@ -65,7 +65,7 @@ namespace ChilliJam
 				ingredientinfo->ID = INGREDIENT_CHILLI;
 				ingredientinfo->Name = "Chilli Pepper";
 				ingredientinfo->ImagePath = "";
-				ingredientinfo->Unlocked = false;
+				ingredientinfo->Unlocked = true;
 			}
 			Ingredient[INGREDIENT_CHILLI] = *ingredientinfo;
 
@@ -74,7 +74,7 @@ namespace ChilliJam
 				ingredientinfo->ID = INGREDIENT_BEEF;
 				ingredientinfo->Name = "Beef Meat";
 				ingredientinfo->ImagePath = "";
-				ingredientinfo->Unlocked = false;
+				ingredientinfo->Unlocked = true;
 			}
 			Ingredient[INGREDIENT_BEEF] = *ingredientinfo;
 
@@ -83,9 +83,36 @@ namespace ChilliJam
 				ingredientinfo->ID = INGREDIENT_TACO;
 				ingredientinfo->Name = "Taco Bread";
 				ingredientinfo->ImagePath = "";
-				ingredientinfo->Unlocked = false;
+				ingredientinfo->Unlocked = true;
 			}
 			Ingredient[INGREDIENT_TACO] = *ingredientinfo;
+
+			ingredientinfo = new IngredientStruct;
+			{
+				ingredientinfo->ID = INGREDIENT_JALAPENO;
+				ingredientinfo->Name = "Jalapenos";
+				ingredientinfo->ImagePath = "";
+				ingredientinfo->Unlocked = true;
+			}
+			Ingredient[INGREDIENT_JALAPENO] = *ingredientinfo;
+
+			ingredientinfo = new IngredientStruct;
+			{
+				ingredientinfo->ID = INGREDIENT_SEASONING;
+				ingredientinfo->Name = "Seasoning";
+				ingredientinfo->ImagePath = "";
+				ingredientinfo->Unlocked = true;
+			}
+			Ingredient[INGREDIENT_SEASONING] = *ingredientinfo;
+
+			ingredientinfo = new IngredientStruct;
+			{
+				ingredientinfo->ID = INGREDIENT_LOCKED;
+				ingredientinfo->Name = "Locked";
+				ingredientinfo->ImagePath = "";
+				ingredientinfo->Unlocked = false;
+			}
+			Ingredient[INGREDIENT_LOCKED] = *ingredientinfo;
 		}
 
 		// Create the chilli recipes
@@ -144,6 +171,59 @@ namespace ChilliJam
 				{
 					ingredient = 0; // Reset incremental ingredient index
 					recipeinfo->Ingredient[ingredient++] = INGREDIENT_BEEF;
+					recipeinfo->Ingredients = ingredient;
+				}
+			}
+			Recipe[recipe++] = *recipeinfo;
+
+			recipeinfo = new RecipeStruct;
+			{
+				recipeinfo->Name = "Saviour";
+				unsigned int ingredient = 2; // Max ingredients for this recipe
+				recipeinfo->Ingredient = new unsigned int[ingredient];
+				{
+					ingredient = 0; // Reset incremental ingredient index
+					recipeinfo->Ingredient[ingredient++] = INGREDIENT_JALAPENO;
+					recipeinfo->Ingredient[ingredient++] = INGREDIENT_JALAPENO;
+					recipeinfo->Ingredients = ingredient;
+				}
+			}
+			Recipe[recipe++] = *recipeinfo;
+
+			recipeinfo = new RecipeStruct;
+			{
+				recipeinfo->Name = "Ref1";
+				unsigned int ingredient = 1; // Max ingredients for this recipe
+				recipeinfo->Ingredient = new unsigned int[ingredient];
+				{
+					ingredient = 0; // Reset incremental ingredient index
+					recipeinfo->Ingredient[ingredient++] = INGREDIENT_LOCKED;
+					recipeinfo->Ingredients = ingredient;
+				}
+			}
+			Recipe[recipe++] = *recipeinfo;
+
+			recipeinfo = new RecipeStruct;
+			{
+				recipeinfo->Name = "Ref2";
+				unsigned int ingredient = 1; // Max ingredients for this recipe
+				recipeinfo->Ingredient = new unsigned int[ingredient];
+				{
+					ingredient = 0; // Reset incremental ingredient index
+					recipeinfo->Ingredient[ingredient++] = INGREDIENT_LOCKED;
+					recipeinfo->Ingredients = ingredient;
+				}
+			}
+			Recipe[recipe++] = *recipeinfo;
+
+			recipeinfo = new RecipeStruct;
+			{
+				recipeinfo->Name = "Ref2";
+				unsigned int ingredient = 1; // Max ingredients for this recipe
+				recipeinfo->Ingredient = new unsigned int[ingredient];
+				{
+					ingredient = 0; // Reset incremental ingredient index
+					recipeinfo->Ingredient[ingredient++] = INGREDIENT_LOCKED;
 					recipeinfo->Ingredients = ingredient;
 				}
 			}

@@ -8,7 +8,7 @@
 			"Type": "Image",
 			"Name": "Panel",
 			"RelPosition": "0.0 0.0",
-			"RelSize": "0.8 0.1",
+			"RelSize": "0.8 0.08",
 			"Drawable": {
 				"Type": "NinePatch",
 				"Insets": "0.25 0.25 0.25 0.25",
@@ -46,7 +46,7 @@
 					"Type": "ToggleButton",
 					"Name": "Checkbox",
 					"RelPosition": "0.47 0.0",
-					"RelSize": "0.038 0.5",
+					"RelSize": "0.032 0.5",
 					"NormalOffDrawable": {
 						"Type": "NinePatch",
 						"Insets": "0.25 0.25 0.25 0.25",
