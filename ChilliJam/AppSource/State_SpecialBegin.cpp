@@ -42,9 +42,12 @@
 #include <ChilliSource/UI/Base.h>
 #include <ChilliSource/UI/Text.h>
 #include <ChilliSource/UI/Button.h>
+#include <ChilliSource/UI/ProgressBar.h>
 
 // Required Application Header
 #include <App.h>
+#include <State_DayBegin.h>
+#include <DayPlaying.h>
 
 namespace ChilliJam
 {
@@ -56,6 +59,11 @@ namespace ChilliJam
 	void State_SpecialBegin::OnInit()
 	{
 		ButtonConnection = 0;
+
+		Affect = 50;
+
+		Resource_Juice = 1000;
+		Resource_Money = 1000;
 
 		Initialize_Camera();
 		Initialize_GUI();
@@ -102,6 +110,8 @@ namespace ChilliJam
 	// OUT: N/A
 	void State_SpecialBegin::Initialize_GUI()
 	{
+		App* application = (App*) CSCore::Application::Get();
+
 		// Get a reference to the resource pool for this application
 		auto resourcepool = CSCore::Application::Get()->GetResourcePool();
 		auto widgetfactory = CSCore::Application::Get()->GetWidgetFactory();
@@ -111,6 +121,20 @@ namespace ChilliJam
 
 		UI = widgetfactory->Create( templatewidget );
 		GetUICanvas()->AddWidget( UI );
+
+		// Load the HUD ui widget (THIS APPEARS IN EVERY STATE BECAUSE I'M A BAD PERSON -M)
+		auto templatehudwidget = resourcepool->LoadResource<CSUI::WidgetTemplate>( CSCore::StorageLocation::k_package, "UI/HUD.csui" );
+
+		UI_HUD = widgetfactory->Create( templatehudwidget );
+		GetUICanvas()->AddWidget( UI_HUD );
+
+		// Convert day number to string and display on HUD
+		char buffer[10];
+		{
+			itoa( application->GetDay(), buffer, 10 );
+		}
+		string day( buffer );
+		UI_HUD->GetWidget( "Day" )->GetComponent<CSUI::TextComponent>()->SetText( day );
 	}
 
 	// Initialize the GUI buttons & add events to them
@@ -126,6 +150,7 @@ namespace ChilliJam
 			{
 				State_SpecialBegin* state = (State_SpecialBegin*) CSCore::Application::Get()->GetStateManager()->GetActiveState().get();
 				state->PlaySound( "UI_Click" );
+				state->AddMoney( 5 );
 			}
 		);
 		ButtonConnection[button++] = UI->GetWidget( "Panel" )->GetWidget( "Panel_Adjust_Money" )->GetWidget( "Button_Minus" )->GetReleasedInsideEvent().OpenConnection(
@@ -133,6 +158,7 @@ namespace ChilliJam
 			{
 				State_SpecialBegin* state = (State_SpecialBegin*) CSCore::Application::Get()->GetStateManager()->GetActiveState().get();
 				state->PlaySound( "UI_Click" );
+				state->AddMoney( -5 );
 			}
 		);
 		ButtonConnection[button++] = UI->GetWidget( "Panel" )->GetWidget( "Panel_Adjust_Juice" )->GetWidget( "Button_Plus" )->GetReleasedInsideEvent().OpenConnection(
@@ -140,6 +166,7 @@ namespace ChilliJam
 			{
 				State_SpecialBegin* state = (State_SpecialBegin*) CSCore::Application::Get()->GetStateManager()->GetActiveState().get();
 				state->PlaySound( "UI_Click" );
+				state->AddJuice( 5 );
 			}
 		);
 		ButtonConnection[button++] = UI->GetWidget( "Panel" )->GetWidget( "Panel_Adjust_Juice" )->GetWidget( "Button_Minus" )->GetReleasedInsideEvent().OpenConnection(
@@ -147,6 +174,15 @@ namespace ChilliJam
 			{
 				State_SpecialBegin* state = (State_SpecialBegin*) CSCore::Application::Get()->GetStateManager()->GetActiveState().get();
 				state->PlaySound( "UI_Click" );
+				state->AddJuice( -5 );
+			}
+		);
+		ButtonConnection[button++] = UI->GetWidget( "Panel" )->GetWidget( "Button_Continue" )->GetReleasedInsideEvent().OpenConnection(
+			[]( CSUI::Widget* in_widget, const CSInput::Pointer& in_pointer, CSInput::Pointer::InputType in_inputType )
+			{
+				// Temp return to daybegin
+				//CSCore::Application::Get()->GetStateManager()->Change( ( CSCore::StateSPtr ) new State_DayBegin );
+				CSCore::Application::Get()->GetStateManager()->Change( (CSCore::StateSPtr) new DayPlayingState );
 			}
 		);
 	}
@@ -156,9 +192,38 @@ namespace ChilliJam
 	// OUT: N/A
 	void State_SpecialBegin::AddMoney( int amount )
 	{
-		Resource_Money -= amount;
-		Affect_Taste += amount * AFFECT_MONEY_TASTE;
-		Affect_Juice += amount * AFFECT_MONEY_JUICE;
+		bool tasteaffect = (
+			( ( Affect + ( amount * AFFECT_MONEY_TASTE ) ) >= 0 ) &&
+			( ( Affect + ( amount * AFFECT_MONEY_TASTE ) ) <= 100 )
+			);
+		bool juiceaffect = (
+			( ( Affect - ( amount * AFFECT_MONEY_JUICE ) ) >= 0 ) &&
+			( ( Affect - ( amount * AFFECT_MONEY_JUICE ) ) <= 100 )
+		);
+		if (
+			( ( Resource_Money - amount ) >= 0 ) && // Has money
+			(
+				// Is either in range of taste or of juice, otherwise if there will be no affect,
+				// don't change
+				tasteaffect
+				||
+				juiceaffect
+			)
+		)
+		{
+			// Affect flavour & range
+			Resource_Money -= amount;
+			if ( tasteaffect )
+			{
+				Affect += amount * AFFECT_MONEY_TASTE;
+			}
+			if ( juiceaffect )
+			{
+				Affect -= amount * AFFECT_MONEY_JUICE;
+			}
+
+			UpdateBars();
+		}
 	}
 
 	// Add or remove juice to/from the mix
@@ -166,9 +231,47 @@ namespace ChilliJam
 	// OUT: N/A
 	void State_SpecialBegin::AddJuice( int amount )
 	{
-		Resource_Juice -= amount;
-		Affect_Taste += amount * AFFECT_JUICE_TASTE;
-		Affect_Juice += amount * AFFECT_JUICE_JUICE;
+		bool tasteaffect = (
+			( ( Affect + ( amount * AFFECT_JUICE_TASTE ) ) >= 0 ) &&
+			( ( Affect + ( amount * AFFECT_JUICE_TASTE ) ) <= 100 )
+		);
+		bool juiceaffect = (
+			( ( Affect - ( amount * AFFECT_JUICE_JUICE ) ) >= 0 ) &&
+			( ( Affect - ( amount * AFFECT_JUICE_JUICE ) ) <= 100 )
+		);
+		if (
+			( ( Resource_Juice - amount ) >= 0 ) && // Has juice
+			(
+				// Is either in range of taste or of juice, otherwise if there will be no affect,
+				// don't change
+				tasteaffect
+				||
+				juiceaffect
+			)
+		)
+		{
+			// Affect flavour & range
+			Resource_Juice -= amount;
+			if ( tasteaffect )
+			{
+				Affect += amount * AFFECT_JUICE_TASTE;
+			}
+			if ( juiceaffect )
+			{
+				Affect -= amount * AFFECT_JUICE_JUICE;
+			}
+
+			UpdateBars();
+		}
+	}
+
+	// Update the TASTE & JUICE progress bars
+	// IN: N/A
+	// OUT: N/A
+	void State_SpecialBegin::UpdateBars()
+	{
+		UI->GetWidget( "Panel" )->GetWidget( "Progress_Taste" )->GetComponent<CSUI::ProgressBarComponent>()->SetProgress( (float) Affect / 100 );
+		UI->GetWidget( "Panel" )->GetWidget( "Progress_Juice" )->GetComponent<CSUI::ProgressBarComponent>()->SetProgress( (float) Affect / 100 );
 	}
 
 	// Move on to the next state in the game, if the requirements of this one have been met

@@ -28,6 +28,80 @@
 					"TextColour": "0.9 0.9 0.9 1.0"
 				},
 				{
+					"Type": "HorizontalFillProgressBar",
+					"Name": "Progress_Taste",
+					"Progress": "0.5",
+					"RelPosition": "0.0 0.25",
+					"RelSize": "0.5 0.1",
+					"RelBarSize": "1.0 1.0",
+					"Drawable": {
+						"Type": "NinePatch",
+						"Insets": "0.25 0.25 0.25 0.25",
+						"TexturePath": "grey_panel.png"
+					},
+					"BarDrawable": {
+						"Type": "NinePatch",
+						"Insets": "0.25 0.25 0.25 0.25",
+						"TexturePath": "darkred_panel.png"
+					},
+					"Children": [
+						{
+							"Type": "Image",
+							"Name": "Border",
+							"RelSize": "0.2 0.5",
+							"Drawable": {
+								"Type": "NinePatch",
+								"Insets": "0.25 0.25 0.25 0.25",
+								"TexturePath": "grey_panel.png"
+							}
+						},
+						{
+							"Type": "Label",
+							"Name": "Title",
+							"Text": "TASTE",
+							"TextColour": "1.0 0.5 0.1 1.0",
+							"TextScale": "0.5 0.5"
+						}
+					]
+				},
+				{
+					"Type": "HorizontalFillProgressBar",
+					"Name": "Progress_Juice",
+					"Progress": "0.5",
+					"RelPosition": "0.0 0.1",
+					"RelSize": "0.5 0.1",
+					"RelBarSize": "1.0 1.0",
+					"Drawable": {
+						"Type": "NinePatch",
+						"Insets": "0.25 0.25 0.25 0.25",
+						"TexturePath": "blue_panel.png"
+					},
+					"BarDrawable": {
+						"Type": "NinePatch",
+						"Insets": "0.25 0.25 0.25 0.25",
+						"TexturePath": "grey_panel.png"
+					},
+					"Children": [
+						{
+							"Type": "Image",
+							"Name": "Border",
+							"RelSize": "0.2 0.5",
+							"Drawable": {
+								"Type": "NinePatch",
+								"Insets": "0.25 0.25 0.25 0.25",
+								"TexturePath": "grey_panel.png"
+							}
+						},
+						{
+							"Type": "Label",
+							"Name": "Title",
+							"Text": "JUICE",
+							"TextColour": "1.0 0.5 0.1 1.0",
+							"TextScale": "0.5 0.5"
+						}
+					]
+				},
+				{
 					"Type": "Widget",
 					"Name": "Panel_Adjust_Money",
 					"RelPosition": "-0.2 -0.3",

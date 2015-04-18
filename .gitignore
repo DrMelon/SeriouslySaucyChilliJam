@@ -78,3 +78,5 @@ ChilliJam/Projects/Android/chillisource/src/main/libs/armeabi-v7a
 ChilliJam/Projects/Android/chillisource/src/main/libs/armeabi
 ChilliJam/Projects/Android/chillisource/src/main/libs/x86
 *.vcxproj
+*.log
+*.idb

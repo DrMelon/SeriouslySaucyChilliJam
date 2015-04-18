@@ -8,6 +8,7 @@
 #include <ChilliSource/Rendering/Camera.h>
 #include <ChilliSource/Rendering/Material/MaterialFactory.h>
 #include <ChilliSource/Rendering/Texture.h>
+#include "State_DayBegin.h"
 
 namespace ChilliJam
 {
@@ -18,6 +19,11 @@ namespace ChilliJam
 
 	void DayPlayingState::OnInit()
 	{
+
+		// Set number of customers etc
+		customersToday = 10;
+
+
 		// Create the camera component
 		CSRendering::RenderComponentFactory* renderComponentFactory = CSCore::Application::Get()->GetSystem<CSRendering::RenderComponentFactory>();
 		CSRendering::CameraComponentSPtr cameraComponent = renderComponentFactory->CreatePerspectiveCameraComponent(CSCore::MathUtils::k_pi / 2.0f, 1.0f, 1000.0f);
@@ -44,13 +50,47 @@ namespace ChilliJam
 		auto littleAliensTexture = theResourcePool->LoadResource<CSRendering::Texture>(CSCore::StorageLocation::k_package, "TextureAtlases/LittleAliens/LittleAliens.csimage");
 		auto littleAliensAtlas = theResourcePool->LoadResource<CSRendering::TextureAtlas>(CSCore::StorageLocation::k_package, "TextureAtlases/LittleAliens/LittleAliens.csatlas");
 		auto cartTexture = theResourcePool->LoadResource<CSRendering::Texture>(CSCore::StorageLocation::k_package, "TextureAtlases/cart/cart.csimage");
-		auto cartAtlas = theResourcePool->LoadResource<CSRendering::Texture>(CSCore::StorageLocation::k_package, "TextureAtlases/cart/cart.csatlas");
+		auto cartAtlas = theResourcePool->LoadResource<CSRendering::TextureAtlas>(CSCore::StorageLocation::k_package, "TextureAtlases/cart/cart.csatlas");
+		auto vendorTexture = theResourcePool->LoadResource<CSRendering::Texture>(CSCore::StorageLocation::k_package, "TextureAtlases/vendor/vendor.csimage");
+		auto vendorAtlas = theResourcePool->LoadResource<CSRendering::TextureAtlas>(CSCore::StorageLocation::k_package, "TextureAtlases/vendor/vendor.csatlas");
+		auto foodTexture = theResourcePool->LoadResource<CSRendering::Texture>(CSCore::StorageLocation::k_package, "TextureAtlases/food/food.csimage");
+		auto foodAtlas = theResourcePool->LoadResource<CSRendering::TextureAtlas>(CSCore::StorageLocation::k_package, "TextureAtlases/food/food.csatlas");
+		auto bubbleTexture = theResourcePool->LoadResource<CSRendering::Texture>(CSCore::StorageLocation::k_package, "TextureAtlases/thoughtbubbles/thoughtbubbles.csimage");
+		
 
 		// Create materials
-		auto littleAliensMaterial = theMaterialFactory->CreateSprite("littleAliensMat", littleAliensTexture);
-		littleAliensMaterial->SetTransparencyEnabled(true);
-		auto cartMaterial = theMaterialFactory->CreateSprite("cartMat", cartTexture);
-		cartMaterial->SetTransparencyEnabled(true);
+		CSRendering::MaterialCSPtr littleAliensMaterial;
+		CSRendering::MaterialCSPtr cartMaterial;
+		CSRendering::MaterialCSPtr vendorMaterial;
+		CSRendering::MaterialCSPtr foodMaterial;
+		CSRendering::MaterialCSPtr bubbleMaterial;
+
+		if (theResourcePool->GetResource<CSRendering::Material>("littleAliensMat") == nullptr)
+		{
+			auto littleAliensMaterial_s = theMaterialFactory->CreateSprite("littleAliensMat", littleAliensTexture);
+			littleAliensMaterial_s->SetTransparencyEnabled(true);
+			auto cartMaterial_s = theMaterialFactory->CreateSprite("cartMat", cartTexture);
+			cartMaterial_s->SetTransparencyEnabled(true);
+			auto vendorMaterial_s = theMaterialFactory->CreateSprite("vendorMat", vendorTexture);
+			vendorMaterial_s->SetTransparencyEnabled(true);
+			auto foodMaterial_s = theMaterialFactory->CreateSprite("foodMat", foodTexture);
+			foodMaterial_s->SetTransparencyEnabled(true);
+			auto bubbleMaterial_s = theMaterialFactory->CreateSprite("bubbleMat", bubbleTexture);
+			bubbleMaterial_s->SetTransparencyEnabled(true);
+		}
+
+		littleAliensMaterial = theResourcePool->GetResource<CSRendering::Material>("littleAliensMat");
+		cartMaterial = theResourcePool->GetResource<CSRendering::Material>("cartMat");
+		vendorMaterial = theResourcePool->GetResource<CSRendering::Material>("vendorMat");
+		foodMaterial = theResourcePool->GetResource<CSRendering::Material>("foodMat");
+		bubbleMaterial = theResourcePool->GetResource<CSRendering::Material>("bubbleMat");
+		
+	// Initialize food types
+		foodOne.foodAtlas = foodAtlas;
+		foodOne.foodMaterial = foodMaterial;
+		foodOne.foodType = "0";
+		foodTwo = foodOne;
+
 
 		// Load 3D model resources (planes)
 		auto simplePlaneModel = theResourcePool->LoadResource<CSRendering::Mesh>(CSCore::StorageLocation::k_package, "Models/plane.csmodel");
@@ -112,14 +152,14 @@ namespace ChilliJam
 		cartEntity->GetTransform().ScaleBy(15);
 
 		// Vendor Sprite
+		CSRendering::SpriteComponentSPtr vendorSprite = renderComponentFactory->CreateSpriteComponent(CSCore::Vector2::k_one, vendorAtlas, "person", vendorMaterial, CSRendering::SpriteComponent::SizePolicy::k_fitMaintainingAspect);
+		CSCore::EntitySPtr vendorEntity = CSCore::Entity::Create();
+		vendorEntity->AddComponent(vendorSprite);
+		vendorEntity->GetTransform().SetPosition(-23, 2.5, -14.0);
+		vendorEntity->GetTransform().ScaleBy(15);
 
-		// Crowd sprites
-		// make std vector of these little ones
-		CSRendering::SpriteComponentSPtr testCrowdSprite = renderComponentFactory->CreateSpriteComponent(CSCore::Vector2::k_one, littleAliensAtlas, "p1_front", littleAliensMaterial, CSRendering::SpriteComponent::SizePolicy::k_fitMaintainingAspect);
-		CSCore::EntitySPtr testCrowdSpriteEntity = CSCore::Entity::Create();
-		testCrowdSpriteEntity->AddComponent(testCrowdSprite);
-		testCrowdSpriteEntity->GetTransform().SetPosition(0, 5, -15);
-		testCrowdSpriteEntity->GetTransform().ScaleBy(10);
+
+		
 		
 		// Create camera tween
 		cameraTween = CSCore::MakeEaseOutBackTween<f32>(-4.0, 5.0, 1.8, 1.0, 0.0);
@@ -134,8 +174,50 @@ namespace ChilliJam
 		GetScene()->Add(rightWallPlaneEntity);
 		GetScene()->Add(ceilingPlaneEntity);
 		GetScene()->Add(backWallEntity);
-		GetScene()->Add(testCrowdSpriteEntity);
 		GetScene()->Add(cartEntity);
+		GetScene()->Add(vendorEntity);
+
+		// Crowd sprites
+		for (int i = 0; i < customersToday; i++)
+		{
+			ShopCustomer* newCustomer = new ShopCustomer(renderComponentFactory, littleAliensAtlas);
+			newCustomer->posInQueue = i;
+
+			// Assign food type to buy & wanted food type (if wanted food type is available today, buy that one)
+			newCustomer->wantedFoodType = rand() % 5;
+			std::string wanttype = std::to_string(newCustomer->wantedFoodType);
+			//random choice first
+			if (rand() % 2 == 0)
+			{
+				newCustomer->targetFood = foodOne;
+			}
+			else
+			{
+				newCustomer->targetFood = foodTwo;
+			}
+			newCustomer->gotwantedfood = false;
+
+			// then picked choice second
+			if (foodOne.foodType == wanttype)
+			{
+				newCustomer->targetFood = foodOne;
+				newCustomer->gotwantedfood = true;
+			}
+			if (foodTwo.foodType == wanttype)
+			{
+				newCustomer->targetFood = foodTwo;
+				newCustomer->gotwantedfood = true;
+			}
+			
+
+			GetScene()->Add(newCustomer->myEntity);
+			if (i > 0)
+			{
+				customersList.at(i - 1)->nextInLine = newCustomer;
+			}
+
+			customersList.push_back(newCustomer);
+		}
 	}
 
 	void DayPlayingState::OnUpdate(f32 in_deltaTime)
@@ -147,11 +229,215 @@ namespace ChilliJam
 		
 		cameraEntity->GetTransform().SetLookAt(CSCore::Vector3(0.0f, cameraYValue, -50.0f - cameraYValue), CSCore::Vector3::k_zero, CSCore::Vector3::k_unitPositiveY);
 
+		for (int i = 0; i < customersList.size(); i++)
+		{
+			customersList.at(i)->Update(in_deltaTime);
+		}
 
 	}
 
 	void DayPlayingState::OnDestroy()
 	{
 		// Destruction stuff here.
+		for (int i = 0; i < customersList.size(); i++)
+		{
+			if (customersList.at(i)->thoughtBubble != nullptr)
+			{
+				delete customersList.at(i)->thoughtBubble;
+			}
+			delete (customersList.at(i));
+			(customersList.at(i)) = 0;
+		}
 	}
+
+
+
+
+	// Customer Stuff
+
+	ShopCustomer::ShopCustomer(CSRendering::RenderComponentFactory* n_renderComponentFactory, std::shared_ptr<const CSRendering::TextureAtlas> alienAtlas)
+	{
+		renderComponentFactory = n_renderComponentFactory;
+		thoughtBubble = nullptr;
+		// Alien Type Stuff
+		alienType = rand()%5;
+		queueing = true;
+		hasChilli = false;
+		shopPosition = CSCore::Vector3(25 + rand()%5, 0.5, -54); //Want them to come in from the right front
+		targetPosition = shopPosition;
+		posInQueue = 0;
+		// ChilliSource Stuff (Note: for different aliens change p1_**** to be p2_ etc)
+		// Construct px_front and px_back string
+		std::string firstbit = "p";
+		std::string backlastbit = "_back";
+		std::string frontlastbit = "_front";
+		std::string numberstring = std::to_string(alienType);
+		std::string frontstring = firstbit + numberstring + frontlastbit;
+		std::string backstring = firstbit + numberstring + backlastbit;
+		auto theResourcePool = CSCore::Application::Get()->GetResourcePool();
+		CSRendering::MaterialCSPtr alienMaterial = theResourcePool->GetResource<CSRendering::Material>("littleAliensMat");
+
+		frontSprite = renderComponentFactory->CreateSpriteComponent(CSCore::Vector2::k_one, alienAtlas, frontstring, alienMaterial, CSRendering::SpriteComponent::SizePolicy::k_fitMaintainingAspect);
+		backSprite = renderComponentFactory->CreateSpriteComponent(CSCore::Vector2::k_one, alienAtlas, backstring, alienMaterial, CSRendering::SpriteComponent::SizePolicy::k_fitMaintainingAspect);
+		frontSprite->SetVisible(!queueing);
+		backSprite->SetVisible(queueing);
+		myEntity = CSCore::Entity::Create();
+		myEntity->AddComponent(frontSprite);
+		myEntity->AddComponent(backSprite);
+		myEntity->GetTransform().SetPosition(shopPosition);
+		myEntity->GetTransform().ScaleBy(10);
+		hopAmt = rand() % 4;
+		nextInLine = nullptr;
+
+		//Init sean citizen class
+		internalCustomerStuff = new Customer();
+		internalCustomerStuff->setCustomerValues();
+	}
+
+	void ShopCustomer::Update(float dt)
+	{
+		if (thoughtBubble != nullptr)
+		{
+			thoughtBubble->Update(dt);
+		}
+		// Make sure the visibility of the sprites is right; when a person stops queueing (and starts getting chilli) they face the camera.
+		frontSprite->SetVisible(!queueing);
+		backSprite->SetVisible(queueing);
+
+		if (rand() % 1000 == 0 && thoughtBubble == nullptr)
+		{
+			thoughtBubble = new ThoughtBubble(renderComponentFactory, targetFood, shopPosition, myEntity->GetScene());
+		}
+		
+		// Always move towards the target position
+		CSCore::Vector3 moveAmt = ((targetPosition - shopPosition) * dt);
+		moveAmt.Clamp(CSCore::Vector3(-1.0, -1.0, -1.0), CSCore::Vector3(1.0f, 1.0f, 1.0f));
+		//hop
+		shopPosition.y = sin((shopPosition.x + shopPosition.z + hopAmt) * (5)) * 0.5f;
+		shopPosition += moveAmt;
+
+		// Target position z = their position in the queue
+		if (queueing)
+		{
+			targetPosition.z = (-16.0f) - posInQueue * 2;
+		}
+		if (queueing && !hasChilli && posInQueue == 0)
+		{
+			// head towards cart
+			targetPosition = CSCore::Vector3(-20, 0, -16);
+
+			// Are we close to it?
+			if (shopPosition.x < -19.5f && shopPosition.x > -20.5f && shopPosition.z < -15.5f && shopPosition.z > -16.5f)
+			{
+				// get some chilli
+				queueing = false;
+				hasChilli = true;
+				AddFood(targetFood);
+				GoNext();
+			}
+		}
+		if (!queueing && hasChilli)
+		{
+			// you need to leave, sir
+			targetPosition = CSCore::Vector3(-25, 0, -60);
+
+			if (shopPosition.z < -55 && nextInLine == nullptr)
+			{
+				// last one has left the shop... O:
+				
+				// set up external state application stuff (like moneys, how many people today etc)
+
+				// go next state
+				CSCore::Application::Get()->GetStateManager()->Change((CSCore::StateSPtr) new State_DayBegin());
+
+			}
+		}
+
+		
+
+		// Update position in scene
+		myEntity->GetTransform().SetPosition(shopPosition);
+	}
+
+	void ShopCustomer::AddFood(FoodStruct food)
+	{
+		//Create a sprite for a food item
+		CSRendering::SpriteComponentSPtr foodSprite = renderComponentFactory->CreateSpriteComponent(CSCore::Vector2::k_one, food.foodAtlas, food.foodType, food.foodMaterial, CSRendering::SpriteComponent::SizePolicy::k_fitMaintainingAspect);
+		myEntity->AddComponent(foodSprite);
+
+		// If they got their wanted food, add a smiley face above them or something & pay double moneys
+		if (gotwantedfood)
+		{
+			//chaching!!
+		}
+	}
+
+	void ShopCustomer::GoNext()
+	{
+		// move people in the queue up
+		if (nextInLine != nullptr)
+		{
+			nextInLine->posInQueue--;
+			nextInLine->GoNext();
+		}
+	}
+
+	ThoughtBubble::ThoughtBubble(CSRendering::RenderComponentFactory* n_renderComponentFactory, FoodStruct foodToThinkOf, CSCore::Vector3 startPos, CSCore::Scene* scenePointer)
+	{
+		renderComponentFactory = n_renderComponentFactory;
+		bubblePos = CSCore::Vector3(startPos);
+		auto theResourcePool = CSCore::Application::Get()->GetResourcePool();
+		auto theMaterialFactory = CSCore::Application::Get()->GetSystem<CSRendering::MaterialFactory>();
+		xOffset = bubblePos.x;
+		// Get materials from resource pool
+		auto bubbleAtlas = theResourcePool->LoadResource<CSRendering::TextureAtlas>(CSCore::StorageLocation::k_package, "TextureAtlases/thoughtbubbles/thoughtbubbles.csatlas");
+
+		auto bubbleMaterial = theResourcePool->GetResource<CSRendering::Material>("bubbleMat");
+
+
+		// Create thought bubble elements
+		bubbleSpriteSmallest = renderComponentFactory->CreateSpriteComponent(CSCore::Vector2(0.12, 0.12), bubbleAtlas, "bubble", bubbleMaterial, CSRendering::SpriteComponent::SizePolicy::k_fitMaintainingAspect);
+		bubbleSpriteSmaller = renderComponentFactory->CreateSpriteComponent(CSCore::Vector2(0.25, 0.25), bubbleAtlas, "bubble", bubbleMaterial, CSRendering::SpriteComponent::SizePolicy::k_fitMaintainingAspect);
+		bubbleSpriteSmall = renderComponentFactory->CreateSpriteComponent(CSCore::Vector2(0.5, 0.5), bubbleAtlas, "bubble", bubbleMaterial, CSRendering::SpriteComponent::SizePolicy::k_fitMaintainingAspect);
+		bubbleSpriteMain = renderComponentFactory->CreateSpriteComponent(CSCore::Vector2(1.0, 1.0), bubbleAtlas, "bubble", bubbleMaterial, CSRendering::SpriteComponent::SizePolicy::k_fitMaintainingAspect);
+		foodInsideBubble = renderComponentFactory->CreateSpriteComponent(CSCore::Vector2::k_one, foodToThinkOf.foodAtlas, foodToThinkOf.foodType, foodToThinkOf.foodMaterial, CSRendering::SpriteComponent::SizePolicy::k_fitMaintainingAspect);
+
+		bubbleMainEntity = CSCore::Entity::Create();
+		bubbleSmall = CSCore::Entity::Create();
+		bubbleSmaller = CSCore::Entity::Create();
+		bubbleSmallest = CSCore::Entity::Create();
+
+		bubbleMainEntity->AddComponent(bubbleSpriteMain);
+		bubbleMainEntity->AddComponent(foodInsideBubble);
+		bubbleSmall->AddComponent(bubbleSpriteSmall);
+		bubbleSmall->AddComponent(bubbleSpriteSmaller);
+		bubbleSmall->AddComponent(bubbleSpriteSmallest);
+
+		bubbleMainEntity->GetTransform().SetPosition(bubblePos);
+		bubbleSmall->GetTransform().SetPosition(bubblePos - CSCore::Vector3(0, 2, 0));
+		bubbleSmaller->GetTransform().SetPosition(bubblePos - CSCore::Vector3(0, 2.5, 0));
+		bubbleSmallest->GetTransform().SetPosition(bubblePos - CSCore::Vector3(0, 2.25, 0));
+		bubbleMainEntity->GetTransform().ScaleBy(5);
+		bubbleSmall->GetTransform().ScaleBy(5);
+		bubbleSmaller->GetTransform().ScaleBy(5);
+		bubbleSmallest->GetTransform().ScaleBy(5);
+	
+		scenePointer->Add(bubbleMainEntity);
+		scenePointer->Add(bubbleSmall);
+		scenePointer->Add(bubbleSmaller);
+		scenePointer->Add(bubbleSmallest);
+
+	}
+
+	void ThoughtBubble::Update(float deltaTime)
+	{
+		bubblePos.y += 0.1f;
+		bubblePos.x = xOffset + sin(bubblePos.y / 5.0f) * 1.0f;
+		bubbleMainEntity->GetTransform().SetPosition(bubblePos);
+		bubbleSmall->GetTransform().SetPosition(bubblePos - CSCore::Vector3(0, 5, 0));
+		bubbleSmaller->GetTransform().SetPosition(bubblePos - CSCore::Vector3(0, 7.5, 0));
+		bubbleSmallest->GetTransform().SetPosition(bubblePos - CSCore::Vector3(0, 10.25, 0));
+
+	}
+
 }

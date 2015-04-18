@@ -37,7 +37,7 @@
 #include <Recipe.h>
 
 // Defines
-#define RECIPES 4
+#define RECIPES 8
 // INGREDIENTS is defined as the last index of the INGREDIENT enum
 
 // Enumerations
@@ -46,6 +46,9 @@ enum INGREDIENT
 	INGREDIENT_CHILLI = 0,
 	INGREDIENT_BEEF,
 	INGREDIENT_TACO,
+	INGREDIENT_JALAPENO,
+	INGREDIENT_SEASONING,
+	INGREDIENT_LOCKED,
 	INGREDIENTS // Last in the enum
 };
 
@@ -67,9 +70,19 @@ namespace ChilliJam
 			inline RecipeStruct* GetRecipes() { return Recipe; };
 			inline IngredientStruct* GetIngredients() { return Ingredient; };
 
+			inline void SetDayRecipe( unsigned int recipe, unsigned int index ) { DayRecipe[recipe] = index; };
+			inline unsigned int GetDayRecipe( unsigned int recipe ) { return DayRecipe[recipe]; };
+
+			inline void AddDay() { Day++; };
+			inline unsigned int GetDay() { return Day; };
+
 		private:
 			RecipeStruct* Recipe;
 			IngredientStruct* Ingredient;
+
+			unsigned int DayRecipe[2];
+
+			unsigned int Day;
 	};
 }
 
