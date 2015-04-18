@@ -4,6 +4,7 @@
 #include <ChilliSource/Core/Resource.h>
 #include <ChilliSource/Rendering/Model.h>
 #include <ChilliSource/Core/Tween.h>
+#include <Customer.h>
 ////////
 // @Author: J. Brown / DrMelon
 // @Date: 17/04/2015
@@ -22,7 +23,7 @@
 
 namespace ChilliJam
 {
-	class Customer
+	class ShopCustomer
 	{
 		public:
 			// Members
@@ -32,19 +33,25 @@ namespace ChilliJam
 			bool moving; // if the person is moving, wobble them up and down in the update etc
 			bool facingCam;
 			int posInQueue;
+			int hopAmt;
+			ShopCustomer* nextInLine;
 			CSCore::Vector3 shopPosition;
 			CSCore::Vector3 targetPosition;
 			CSRendering::SpriteComponentSPtr frontSprite;
 			CSRendering::SpriteComponentSPtr backSprite;
 			CSCore::EntitySPtr myEntity;
-			// SeanCitizenClass 
+			// Sean Citizen Class 
+			Customer* internalCustomerStuff;
+
 			// Held Food Item Class -- just add sprite to entity? ye
 
 
 			// Functions
-			Customer(CSRendering::RenderComponentFactory* renderComponentFactory, std::shared_ptr<CSRendering::Material> alienMaterial, std::shared_ptr<const CSRendering::TextureAtlas> alienAtlas);
+			ShopCustomer(CSRendering::RenderComponentFactory* renderComponentFactory, std::shared_ptr<CSRendering::Material> alienMaterial, std::shared_ptr<const CSRendering::TextureAtlas> alienAtlas);
 			//void MoveInQueue(); // This function sets where in the room they should move to in order to be part of the queue.
 			void Update(float dt); // Called in update ofc, moving towards target pos
+			void GoNext(); // tells the next customer in line to go
+
 	};
 
 	class DayPlayingState : public CSCore::State
@@ -62,7 +69,7 @@ namespace ChilliJam
 
 		// Crowd Stuff
 		int customersToday;
-		std::vector<Customer*> customersList;
+		std::vector<ShopCustomer*> customersList;
 
 		// Public Methods
 		void CreateSystems() override;

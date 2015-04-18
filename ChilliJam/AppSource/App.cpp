@@ -28,6 +28,7 @@
 
 // Associated Header
 #include <App.h>
+#include <time.h>
 
 // Required Engine Header
 #include <ChilliSource\Rendering\Model\CSModelProvider.h>
@@ -40,6 +41,7 @@
 
 CSCore::Application* CreateApplication()
 {
+	srand(time(NULL));
 	return new ChilliJam::App();
 }
 
@@ -233,7 +235,7 @@ namespace ChilliJam
 
 	void App::PushInitialState()
 	{
-		GetStateManager()->Push( CSCore::StateSPtr( new DayPlayingState() ) );
+		GetStateManager()->Push( CSCore::StateSPtr( new State_DayBegin() ) );
 	}
 
 	void App::OnDestroy()

@@ -149,10 +149,14 @@ namespace ChilliJam
 		// Crowd sprites
 		for (int i = 0; i < customersToday; i++)
 		{
-			Customer* newCustomer = new Customer(renderComponentFactory, littleAliensMaterial, littleAliensAtlas);
+			ShopCustomer* newCustomer = new ShopCustomer(renderComponentFactory, littleAliensMaterial, littleAliensAtlas);
 			newCustomer->posInQueue = i;
 
 			GetScene()->Add(newCustomer->myEntity);
+			if (i > 0)
+			{
+				customersList.at(i - 1)->nextInLine = newCustomer;
+			}
 
 			customersList.push_back(newCustomer);
 		}
@@ -189,18 +193,26 @@ namespace ChilliJam
 
 	// Customer Stuff
 
-	Customer::Customer(CSRendering::RenderComponentFactory* renderComponentFactory, std::shared_ptr<CSRendering::Material> alienMaterial, std::shared_ptr<const CSRendering::TextureAtlas> alienAtlas)
+	ShopCustomer::ShopCustomer(CSRendering::RenderComponentFactory* renderComponentFactory, std::shared_ptr<CSRendering::Material> alienMaterial, std::shared_ptr<const CSRendering::TextureAtlas> alienAtlas)
 	{
 		// Alien Type Stuff
-		alienType = 0;
+		alienType = rand()%5;
 		queueing = true;
 		hasChilli = false;
 		shopPosition = CSCore::Vector3(25 + rand()%5, 0.5, -54); //Want them to come in from the right front
 		targetPosition = shopPosition;
 		posInQueue = 0;
 		// ChilliSource Stuff (Note: for different aliens change p1_**** to be p2_ etc)
-		frontSprite = renderComponentFactory->CreateSpriteComponent(CSCore::Vector2::k_one, alienAtlas, "p1_front", alienMaterial, CSRendering::SpriteComponent::SizePolicy::k_fitMaintainingAspect);
-		backSprite = renderComponentFactory->CreateSpriteComponent(CSCore::Vector2::k_one, alienAtlas, "p1_back", alienMaterial, CSRendering::SpriteComponent::SizePolicy::k_fitMaintainingAspect);
+		// Construct px_front and px_back string
+		std::string firstbit = "p";
+		std::string backlastbit = "_back";
+		std::string frontlastbit = "_front";
+		std::string numberstring = std::to_string(alienType);
+		std::string frontstring = firstbit + numberstring + frontlastbit;
+		std::string backstring = firstbit + numberstring + backlastbit;
+
+		frontSprite = renderComponentFactory->CreateSpriteComponent(CSCore::Vector2::k_one, alienAtlas, frontstring, alienMaterial, CSRendering::SpriteComponent::SizePolicy::k_fitMaintainingAspect);
+		backSprite = renderComponentFactory->CreateSpriteComponent(CSCore::Vector2::k_one, alienAtlas, backstring, alienMaterial, CSRendering::SpriteComponent::SizePolicy::k_fitMaintainingAspect);
 		frontSprite->SetVisible(!queueing);
 		backSprite->SetVisible(queueing);
 		myEntity = CSCore::Entity::Create();
@@ -208,9 +220,15 @@ namespace ChilliJam
 		myEntity->AddComponent(backSprite);
 		myEntity->GetTransform().SetPosition(shopPosition);
 		myEntity->GetTransform().ScaleBy(10);
+		hopAmt = rand() % 4;
+		nextInLine = nullptr;
+
+		//Init sean citizen class
+		internalCustomerStuff = new Customer();
+		internalCustomerStuff->setCustomerValues();
 	}
 
-	void Customer::Update(float dt)
+	void ShopCustomer::Update(float dt)
 	{
 		// Make sure the visibility of the sprites is right; when a person stops queueing (and starts getting chilli) they face the camera.
 		frontSprite->SetVisible(!queueing);
@@ -218,19 +236,50 @@ namespace ChilliJam
 
 		// Always move towards the target position
 		CSCore::Vector3 moveAmt = ((targetPosition - shopPosition) * dt);
-		moveAmt.Clamp(CSCore::Vector3(0, 0, 0), CSCore::Vector3(1.0f, 1.0f, 1.0f));
+		moveAmt.Clamp(CSCore::Vector3(-1.0, -1.0, -1.0), CSCore::Vector3(1.0f, 1.0f, 1.0f));
 		//hop
-		shopPosition.y = sin(shopPosition.z * 10) * 0.5f;
-		
+		shopPosition.y = sin((shopPosition.x + shopPosition.z + hopAmt) * (5)) * 0.5f;
 		shopPosition += moveAmt;
 
 		// Target position z = their position in the queue
-		targetPosition.z = (-16.0f) - posInQueue * 2;
+		if (queueing)
+		{
+			targetPosition.z = (-16.0f) - posInQueue * 2;
+		}
+		if (queueing && !hasChilli && posInQueue == 0)
+		{
+			// head towards cart
+			targetPosition = CSCore::Vector3(-20, 0, -16);
 
-		// 
+			// Are we close to it?
+			if (shopPosition.x < -19.5f && shopPosition.x > -20.5f && shopPosition.z < -15.5f && shopPosition.z > -16.5f)
+			{
+				// get some chilli
+				queueing = false;
+				hasChilli = true;
+				GoNext();
+			}
+		}
+		if (!queueing && hasChilli)
+		{
+			// you need to leave, sir
+			targetPosition = CSCore::Vector3(-25, 0, -60);
+		}
+
+		
 
 		// Update position in scene
 		myEntity->GetTransform().SetPosition(shopPosition);
+	}
+
+	void ShopCustomer::GoNext()
+	{
+		// move people in the queue up
+		if (nextInLine != nullptr)
+		{
+			nextInLine->posInQueue--;
+			nextInLine->GoNext();
+		}
 	}
 
 }
