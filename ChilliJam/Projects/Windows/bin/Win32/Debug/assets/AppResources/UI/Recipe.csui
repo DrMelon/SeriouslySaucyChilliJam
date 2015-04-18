@@ -60,12 +60,12 @@
 					"HighlightOffDrawable": {
 						"Type": "NinePatch",
 						"Insets": "0.25 0.25 0.25 0.25",
-						"TexturePath": "grey_box.png"
+						"TexturePath": "grey_box_press.png"
 					},
 					"HighlightOnDrawable": {
 						"Type": "NinePatch",
 						"Insets": "0.25 0.25 0.25 0.25",
-						"TexturePath": "red_box.png"
+						"TexturePath": "red_box_press.png"
 					}
 				}
 			]
