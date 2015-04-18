@@ -1,0 +1,5 @@
+<Material type="Static">
+  <Textures>
+    <Texture location="Package" image-name="Textures/backwall.csimage" />
+  </Textures>
+</Material>

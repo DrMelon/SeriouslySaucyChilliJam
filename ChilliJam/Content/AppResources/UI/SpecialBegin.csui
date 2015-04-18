@@ -1,0 +1,54 @@
+{
+	"Type": "Widget",
+	"Name": "Menu_SpecialBegin",
+	"RelSize": "1 1",
+
+	"Children": [
+		{
+			"Type": "Image",
+			"Name": "Panel",
+			"RelPosition": "0.0 0",
+			"RelSize": "0.8 0.8",
+			"Drawable": {
+				"Type": "NinePatch",
+				"Insets": "0.25 0.25 0.25 0.25",
+				"TexturePath": "red_panel.png"
+			},
+			"Children": [
+				{
+					"Type": "Label",
+					"Name": "Label_Title",
+					"Text": "Choose Today's Special Ingredients!",
+					"RelPosition": "0.0 0.4",
+					"TextColour": "0.9 0.9 0.9 1.0"
+				},
+				{
+					"Type": "HighlightButton",
+					"Name": "Button_Continue",
+					"RelPosition": "0.0 -0.4",
+					"RelSize": "0.3 0.1",
+					"NormalDrawable": {
+						"Type": "NinePatch",
+						"Insets": "0.25 0.25 0.25 0.25",
+						"TexturePath": "grey_panel.png"
+					},
+					"HighlightDrawable": {
+						"Type": "NinePatch",
+						"Insets": "0.25 0.25 0.25 0.25",
+						"TexturePath": "grey_panel.png"
+					},
+					"Children": [
+						{
+							"Type": "Label",
+							"Name": "Label_Button_Continue",
+							"Text": "Continue",
+							"RelPosition": "0.0 0.0",
+							"TextColour": "1.0 0.5 0.1 1.0",
+							"TextScale": "0.5 0.5"
+						}
+					]
+				}
+			]
+		}
+	]
+}

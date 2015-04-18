@@ -1,0 +1,47 @@
+{
+  "Type": "VerticalSlider",
+
+  "Components": [
+    {
+      "Type": "Drawable",
+      "Name": "Drawable"
+    },
+    {
+      "Type": "Slider",
+      "Name": "Slider",
+      "SliderWidgetName": "Slider",
+      "SliderDirection": "Vertical"
+    }
+  ],
+
+  "Children": [
+    {
+      "Type": "Image",
+      "Name": "Slider",
+      "RelPosition": "0.0 0.5",
+      "RelSize": "1.0 0.0",
+      "SizePolicy": "UseWidthMaintainingAspect",
+      "ParentalAnchor": "BottomCentre",
+      "OriginAnchor": "BottomCentre"
+    }
+  ],
+
+  "ComponentPropertyLinks": {
+    "Drawable": "all",
+    "Slider": {
+      "SliderSize": "SliderSize",
+      "SliderPosition": "SliderPosition"
+    }
+  },
+
+  "ChildPropertyLinks": {
+    "Slider": {
+      "SliderDrawable": "Drawable"
+    }
+  },
+  
+  "DefaultPropertyValues": {
+    "Name": "VerticalSlider",
+    "InputConsumeEnabled": "true"
+  }
+}
