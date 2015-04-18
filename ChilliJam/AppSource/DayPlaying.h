@@ -23,6 +23,13 @@
 
 namespace ChilliJam
 {
+	struct FoodStruct
+	{
+		std::shared_ptr<CSRendering::Material> foodMaterial;
+		std::shared_ptr<const CSRendering::TextureAtlas> foodAtlas;
+		std::string foodType;
+	};
+
 	class ShopCustomer
 	{
 		public:
@@ -43,13 +50,18 @@ namespace ChilliJam
 			// Sean Citizen Class 
 			Customer* internalCustomerStuff;
 
-			// Held Food Item Class -- just add sprite to entity? ye
+			// Target Food
+			FoodStruct targetFood;
+
+			// Current State
+			CSRendering::RenderComponentFactory* renderComponentFactory;
 
 
 			// Functions
-			ShopCustomer(CSRendering::RenderComponentFactory* renderComponentFactory, std::shared_ptr<CSRendering::Material> alienMaterial, std::shared_ptr<const CSRendering::TextureAtlas> alienAtlas);
+			ShopCustomer(CSRendering::RenderComponentFactory* n_renderComponentFactory, std::shared_ptr<CSRendering::Material> alienMaterial, std::shared_ptr<const CSRendering::TextureAtlas> alienAtlas);
 			//void MoveInQueue(); // This function sets where in the room they should move to in order to be part of the queue.
 			void Update(float dt); // Called in update ofc, moving towards target pos
+			void AddFood(FoodStruct food);
 			void GoNext(); // tells the next customer in line to go
 
 	};
@@ -66,6 +78,8 @@ namespace ChilliJam
 
 		// State stuff
 		int currentDay;
+		FoodStruct foodOne;
+		FoodStruct foodTwo;
 
 		// Crowd Stuff
 		int customersToday;

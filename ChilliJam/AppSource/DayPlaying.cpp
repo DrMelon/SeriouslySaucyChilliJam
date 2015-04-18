@@ -52,6 +52,8 @@ namespace ChilliJam
 		auto cartAtlas = theResourcePool->LoadResource<CSRendering::TextureAtlas>(CSCore::StorageLocation::k_package, "TextureAtlases/cart/cart.csatlas");
 		auto vendorTexture = theResourcePool->LoadResource<CSRendering::Texture>(CSCore::StorageLocation::k_package, "TextureAtlases/vendor/vendor.csimage");
 		auto vendorAtlas = theResourcePool->LoadResource<CSRendering::TextureAtlas>(CSCore::StorageLocation::k_package, "TextureAtlases/vendor/vendor.csatlas");
+		auto foodTexture = theResourcePool->LoadResource<CSRendering::Texture>(CSCore::StorageLocation::k_package, "TextureAtlases/food/food.csimage");
+		auto foodAtlas = theResourcePool->LoadResource<CSRendering::TextureAtlas>(CSCore::StorageLocation::k_package, "TextureAtlases/food/food.csatlas");
 
 		// Create materials
 		auto littleAliensMaterial = theMaterialFactory->CreateSprite("littleAliensMat", littleAliensTexture);
@@ -60,6 +62,15 @@ namespace ChilliJam
 		cartMaterial->SetTransparencyEnabled(true);
 		auto vendorMaterial = theMaterialFactory->CreateSprite("vendorMat", vendorTexture);
 		vendorMaterial->SetTransparencyEnabled(true);
+		auto foodMaterial = theMaterialFactory->CreateSprite("foodMat", foodTexture);
+		foodMaterial->SetTransparencyEnabled(true);
+
+		// Initialize food types
+		foodOne.foodAtlas = foodAtlas;
+		foodOne.foodMaterial = foodMaterial;
+		foodOne.foodType = "chillibowl";
+		foodTwo = foodOne;
+
 
 		// Load 3D model resources (planes)
 		auto simplePlaneModel = theResourcePool->LoadResource<CSRendering::Mesh>(CSCore::StorageLocation::k_package, "Models/plane.csmodel");
@@ -152,6 +163,9 @@ namespace ChilliJam
 			ShopCustomer* newCustomer = new ShopCustomer(renderComponentFactory, littleAliensMaterial, littleAliensAtlas);
 			newCustomer->posInQueue = i;
 
+			// Assign food type to buy & wanted food type (if wanted food type is available today, buy that one)
+			newCustomer->targetFood = foodOne;
+
 			GetScene()->Add(newCustomer->myEntity);
 			if (i > 0)
 			{
@@ -193,8 +207,10 @@ namespace ChilliJam
 
 	// Customer Stuff
 
-	ShopCustomer::ShopCustomer(CSRendering::RenderComponentFactory* renderComponentFactory, std::shared_ptr<CSRendering::Material> alienMaterial, std::shared_ptr<const CSRendering::TextureAtlas> alienAtlas)
+	ShopCustomer::ShopCustomer(CSRendering::RenderComponentFactory* n_renderComponentFactory, std::shared_ptr<CSRendering::Material> alienMaterial, std::shared_ptr<const CSRendering::TextureAtlas> alienAtlas)
 	{
+		renderComponentFactory = n_renderComponentFactory;
+
 		// Alien Type Stuff
 		alienType = rand()%5;
 		queueing = true;
@@ -257,6 +273,7 @@ namespace ChilliJam
 				// get some chilli
 				queueing = false;
 				hasChilli = true;
+				AddFood(targetFood);
 				GoNext();
 			}
 		}
@@ -270,6 +287,13 @@ namespace ChilliJam
 
 		// Update position in scene
 		myEntity->GetTransform().SetPosition(shopPosition);
+	}
+
+	void ShopCustomer::AddFood(FoodStruct food)
+	{
+		//Create a sprite for a food item
+		CSRendering::SpriteComponentSPtr foodSprite = renderComponentFactory->CreateSpriteComponent(CSCore::Vector2::k_one, food.foodAtlas, food.foodType, food.foodMaterial, CSRendering::SpriteComponent::SizePolicy::k_fitMaintainingAspect);
+		myEntity->AddComponent(foodSprite);
 	}
 
 	void ShopCustomer::GoNext()
