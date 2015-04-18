@@ -39,6 +39,13 @@
 #include <ChilliSource/Rendering/Texture.h>
 #include <ChilliSource/Rendering/Material.h>
 
+#include <ChilliSource/UI/Base.h>
+#include <ChilliSource/UI/Text.h>
+
+#include <App.h>
+
+using std::string;
+
 namespace ChilliJam
 {
 	void State::CreateSystems()
@@ -66,20 +73,35 @@ namespace ChilliJam
 		// Get a reference to the resource pool for this application
 		auto resourcepool = CSCore::Application::Get()->GetResourcePool();
 
-		// Load the texture and texture atlas
-		CSRendering::TextureCSPtr texture = resourcepool->LoadResource<CSRendering::Texture>( CSCore::StorageLocation::k_package, "TextureAtlases/city/city.csimage" );
-
 		CSRendering::TextureAtlasCSPtr textureatlas = resourcepool->LoadResource<CSRendering::TextureAtlas>( CSCore::StorageLocation::k_package, "TextureAtlases/city/city.csatlas" );
 
 		// Get the material if it already exists
-		/*if ( resourcepool->GetResource<CSRendering::Material>() == 0 )
+		if ( resourcepool->GetResource<CSRendering::Material>( "SpriteMaterial_City" ) == 0 )
 		{
-			
-		}*/
-		// Create the material
-		CSRendering::MaterialSPtr material = materialfactory->CreateSprite( "SpriteMaterial_Building", texture );
-		material->SetBlendModes( CSRendering::BlendMode::k_one, CSRendering::BlendMode::k_oneMinusSourceAlpha );
-		material->SetTransparencyEnabled( true );
+			// Load the texture and texture atlas
+			CSRendering::TextureCSPtr texture = resourcepool->LoadResource<CSRendering::Texture>( CSCore::StorageLocation::k_package, "TextureAtlases/city/city.csimage" );
+
+			// Create the material
+			CSRendering::MaterialSPtr material = materialfactory->CreateSprite( "SpriteMaterial_City", texture );
+			material->SetBlendModes( CSRendering::BlendMode::k_one, CSRendering::BlendMode::k_oneMinusSourceAlpha );
+			material->SetTransparencyEnabled( true );
+		}
+		CSRendering::MaterialCSPtr material = resourcepool->GetResource<CSRendering::Material>( "SpriteMaterial_City" );
+
+		CSRendering::TextureAtlasCSPtr textureatlas_face = resourcepool->LoadResource<CSRendering::TextureAtlas>( CSCore::StorageLocation::k_package, "TextureAtlases/alienfaces/alienfaces.csatlas" );
+
+		// Get the material if it already exists
+		if ( resourcepool->GetResource<CSRendering::Material>( "SpriteMaterial_Faces" ) == 0 )
+		{
+			// Load the texture and texture atlas
+			CSRendering::TextureCSPtr texture = resourcepool->LoadResource<CSRendering::Texture>( CSCore::StorageLocation::k_package, "TextureAtlases/alienfaces/alienfaces.csimage" );
+
+			// Create the material
+			CSRendering::MaterialSPtr material = materialfactory->CreateSprite( "SpriteMaterial_Faces", texture );
+			material->SetBlendModes( CSRendering::BlendMode::k_one, CSRendering::BlendMode::k_oneMinusSourceAlpha );
+			material->SetTransparencyEnabled( true );
+		}
+		CSRendering::MaterialCSPtr material_face = resourcepool->GetResource<CSRendering::Material>( "SpriteMaterial_Faces" );
 
 		{
 			// City base
@@ -109,6 +131,41 @@ namespace ChilliJam
 
 			GetScene()->Add( spriteentity2 );
 		}
+
+		{
+			// City base
+			CSRendering::SpriteComponentSPtr spritecomponent = rendercomponentfactory->CreateSpriteComponent(
+				CSCore::Vector2( 32, 32 ),
+				textureatlas_face,
+				"1",
+				material_face,
+				CSRendering::SpriteComponent::SizePolicy::k_fitMaintainingAspect
+			);
+			CSCore::EntitySPtr spriteentity = CSCore::Entity::Create();
+			spriteentity->AddComponent( spritecomponent );
+			spriteentity->GetTransform().SetPosition( CSCore::Vector3( 64, -118, 0 ) );
+
+			GetScene()->Add( spriteentity );
+		}
+
+		// Load the HUD ui widget (THIS APPEARS IN EVERY STATE BECAUSE I'M A BAD PERSON -M)
+		App* application = (App*) CSCore::Application::Get();
+
+		// Get a reference to the resource pool for this application
+		auto widgetfactory = CSCore::Application::Get()->GetWidgetFactory();
+
+		auto templatehudwidget = resourcepool->LoadResource<CSUI::WidgetTemplate>( CSCore::StorageLocation::k_package, "UI/HUD.csui" );
+
+		UI_HUD = widgetfactory->Create( templatehudwidget );
+		GetUICanvas()->AddWidget( UI_HUD );
+
+		// Convert day number to string and display on HUD
+		char buffer[10];
+		{
+			itoa( application->GetDay(), buffer, 10 );
+		}
+		string day( buffer );
+		UI_HUD->GetWidget( "Day" )->GetComponent<CSUI::TextComponent>()->SetText( day );
 	}
 
 	void State::OnUpdate( f32 in_deltaTime )

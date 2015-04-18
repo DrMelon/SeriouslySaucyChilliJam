@@ -41,6 +41,10 @@ namespace ChilliJam
 		void OnInit() override;
 		void OnUpdate( f32 in_deltaTime ) override;
 		void OnDestroy() override;
+
+		private:
+		// The menu UI widget
+		CSUI::WidgetSPtr UI_HUD;
 	};
 }
 

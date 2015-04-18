@@ -105,6 +105,8 @@ namespace ChilliJam
 		int customersToday;
 		std::vector<ShopCustomer*> customersList;
 
+		CSUI::WidgetSPtr UI_HUD;
+
 		// Public Methods
 		void CreateSystems() override;
 		void OnInit() override;

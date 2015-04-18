@@ -3,12 +3,19 @@
 #include <ChilliSource/Core/Base.h>
 #include <ChilliSource/Core/Entity.h>
 #include <ChilliSource/Core/Math.h>
+#include <ChilliSource/Core/Resource.h>
 #include <ChilliSource/Core/Scene.h>
 #include <ChilliSource/Rendering/Base.h>
 #include <ChilliSource/Rendering/Camera.h>
 #include <ChilliSource/Rendering/Material/MaterialFactory.h>
 #include <ChilliSource/Rendering/Texture.h>
+#include <ChilliSource/UI/Base.h>
+#include <ChilliSource/UI/Text.h>
 #include "State_DayBegin.h"
+
+#include <App.h>
+
+using std::string;
 
 namespace ChilliJam
 {
@@ -218,6 +225,26 @@ namespace ChilliJam
 
 			customersList.push_back(newCustomer);
 		}
+
+		// Load the HUD ui widget (THIS APPEARS IN EVERY STATE BECAUSE I'M A BAD PERSON -M)
+		App* application = (App*) CSCore::Application::Get();
+
+		// Get a reference to the resource pool for this application
+		auto resourcepool = CSCore::Application::Get()->GetResourcePool();
+		auto widgetfactory = CSCore::Application::Get()->GetWidgetFactory();
+
+		auto templatehudwidget = resourcepool->LoadResource<CSUI::WidgetTemplate>( CSCore::StorageLocation::k_package, "UI/HUD.csui" );
+
+		UI_HUD = widgetfactory->Create( templatehudwidget );
+		GetUICanvas()->AddWidget( UI_HUD );
+
+		// Convert day number to string and display on HUD
+		char buffer[10];
+		{
+			itoa( application->GetDay(), buffer, 10 );
+		}
+		string day( buffer );
+		UI_HUD->GetWidget( "Day" )->GetComponent<CSUI::TextComponent>()->SetText( day );
 	}
 
 	void DayPlayingState::OnUpdate(f32 in_deltaTime)
