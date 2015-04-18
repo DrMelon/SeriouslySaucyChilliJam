@@ -104,7 +104,7 @@ namespace ChilliJam
 		CSCore::EntitySPtr testCrowdSpriteEntity = CSCore::Entity::Create();
 		testCrowdSpriteEntity->AddComponent(testCrowdSprite);
 		testCrowdSpriteEntity->GetTransform().SetPosition(0, 5, -15);
-		testCrowdSpriteEntity->GetTransform().ScaleBy(15);
+		testCrowdSpriteEntity->GetTransform().ScaleBy(10);
 		
 		// Create camera tween
 		cameraTween = CSCore::MakeEaseOutBackTween<f32>(0.0, 5.0, 1.8, 1.0, 0.0);
