@@ -46,6 +46,7 @@
 
 // Required Application Header
 #include <App.h>
+#include <DayPlaying.h>
 #include <State_SpecialBegin.h>
 
 namespace ChilliJam
@@ -63,6 +64,12 @@ namespace ChilliJam
 
 		StartRecipe[0] = "";
 		StartRecipe[1] = "";
+
+		// Proceed to next day
+		App* application = (App*) CSCore::Application::Get();
+		{
+			application->AddDay();
+		}
 
 		Initialize_Camera();
 		Initialize_GUI();
@@ -114,6 +121,8 @@ namespace ChilliJam
 	{
 		ButtonConnection = new CSCore::EventConnectionUPtr[RECIPES + 1];
 
+		App* application = (App*) CSCore::Application::Get();
+
 		// Get a reference to the resource pool for this application
 		auto resourcepool = CSCore::Application::Get()->GetResourcePool();
 		auto widgetfactory = CSCore::Application::Get()->GetWidgetFactory();
@@ -131,6 +140,20 @@ namespace ChilliJam
 				state->Continue();
 			}
 		);
+
+		// Load the HUD ui widget (THIS APPEARS IN EVERY STATE BECAUSE I'M A BAD PERSON -M)
+		auto templatehudwidget = resourcepool->LoadResource<CSUI::WidgetTemplate>( CSCore::StorageLocation::k_package, "UI/HUD.csui" );
+
+		UI_HUD = widgetfactory->Create( templatehudwidget );
+		GetUICanvas()->AddWidget( UI_HUD );
+
+		// Convert day number to string and display on HUD
+		char buffer[10];
+		{
+			itoa( application->GetDay(), buffer, 10 );
+		}
+		string day( buffer );
+		UI_HUD->GetWidget( "Day" )->GetComponent<CSUI::TextComponent>()->SetText( day );
 	}
 
 	// Populate the GUI with recipes loaded from the main application
@@ -321,7 +344,24 @@ namespace ChilliJam
 		// User has chosen two recipes
 		if ( ( StartRecipe[0] != "" ) && ( StartRecipe[1] != "" ) )
 		{
-			CSCore::Application::Get()->GetStateManager()->Change( (CSCore::StateSPtr) new State_SpecialBegin() );
+			App* application = (App*) CSCore::Application::Get();
+
+			// Add selected recipes to application for passing to the day state
+			for ( unsigned int recipe = 0; recipe < 2; recipe++ )
+			{
+				application->SetDayRecipe( recipe, application->GetRecipeIndex( StartRecipe[recipe] ) );
+			}
+
+			// Later days can add special ingredients
+			if ( application->GetDay() > 1 )
+			{
+				CSCore::Application::Get()->GetStateManager()->Change( (CSCore::StateSPtr) new State_SpecialBegin() );
+			}
+			// First day skip from recipes to playing
+			else
+			{
+				CSCore::Application::Get()->GetStateManager()->Change( ( CSCore::StateSPtr ) new DayPlayingState() );
+			}
 		}
 	}
 

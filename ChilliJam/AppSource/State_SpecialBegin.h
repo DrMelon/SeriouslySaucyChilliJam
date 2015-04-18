@@ -96,18 +96,23 @@ namespace ChilliJam
 			// OUT: N/A
 			void Initialize_Button();
 
+			// Update the TASTE & JUICE progress bars
+			// IN: N/A
+			// OUT: N/A
+			void UpdateBars();
+
 			// The menu orthographic camera
 			CSCore::EntitySPtr Camera;
 
 			// The menu UI widget
 			CSUI::WidgetSPtr UI;
+			CSUI::WidgetSPtr UI_HUD;
 
 			// Array of button events
 			CSCore::EventConnectionUPtr* ButtonConnection;
 
-			// GUI altered values of taste & juice for the chilli
-			int Affect_Taste;
-			int Affect_Juice;
+			// GUI altered values of taste & juice for the chilli 0->100
+			int Affect;
 
 			// Temporary resource changes during this state before finalizing
 			int Resource_Money;
