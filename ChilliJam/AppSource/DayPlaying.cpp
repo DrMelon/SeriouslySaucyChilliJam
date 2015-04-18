@@ -54,6 +54,8 @@ namespace ChilliJam
 		auto vendorAtlas = theResourcePool->LoadResource<CSRendering::TextureAtlas>(CSCore::StorageLocation::k_package, "TextureAtlases/vendor/vendor.csatlas");
 		auto foodTexture = theResourcePool->LoadResource<CSRendering::Texture>(CSCore::StorageLocation::k_package, "TextureAtlases/food/food.csimage");
 		auto foodAtlas = theResourcePool->LoadResource<CSRendering::TextureAtlas>(CSCore::StorageLocation::k_package, "TextureAtlases/food/food.csatlas");
+		auto bubbleTexture = theResourcePool->LoadResource<CSRendering::Texture>(CSCore::StorageLocation::k_package, "TextureAtlases/thoughtbubbles/thoughtbubbles.csimage");
+		
 
 		// Create materials
 		auto littleAliensMaterial = theMaterialFactory->CreateSprite("littleAliensMat", littleAliensTexture);
@@ -64,11 +66,13 @@ namespace ChilliJam
 		vendorMaterial->SetTransparencyEnabled(true);
 		auto foodMaterial = theMaterialFactory->CreateSprite("foodMat", foodTexture);
 		foodMaterial->SetTransparencyEnabled(true);
+		auto bubbleMaterial = theMaterialFactory->CreateSprite("bubbleMat", bubbleTexture);
+		bubbleMaterial->SetTransparencyEnabled(true);
 
 		// Initialize food types
 		foodOne.foodAtlas = foodAtlas;
 		foodOne.foodMaterial = foodMaterial;
-		foodOne.foodType = "chillibowl";
+		foodOne.foodType = "0";
 		foodTwo = foodOne;
 
 
@@ -164,7 +168,31 @@ namespace ChilliJam
 			newCustomer->posInQueue = i;
 
 			// Assign food type to buy & wanted food type (if wanted food type is available today, buy that one)
-			newCustomer->targetFood = foodOne;
+			newCustomer->wantedFoodType = rand() % 5;
+			std::string wanttype = std::to_string(newCustomer->wantedFoodType);
+			//random choice first
+			if (rand() % 2 == 0)
+			{
+				newCustomer->targetFood = foodOne;
+			}
+			else
+			{
+				newCustomer->targetFood = foodTwo;
+			}
+			newCustomer->gotwantedfood = false;
+
+			// then picked choice second
+			if (foodOne.foodType == wanttype)
+			{
+				newCustomer->targetFood = foodOne;
+				newCustomer->gotwantedfood = true;
+			}
+			if (foodTwo.foodType == wanttype)
+			{
+				newCustomer->targetFood = foodTwo;
+				newCustomer->gotwantedfood = true;
+			}
+			
 
 			GetScene()->Add(newCustomer->myEntity);
 			if (i > 0)
@@ -197,6 +225,10 @@ namespace ChilliJam
 		// Destruction stuff here.
 		for (int i = 0; i < customersList.size(); i++)
 		{
+			if (customersList.at(i)->thoughtBubble != nullptr)
+			{
+				delete customersList.at(i)->thoughtBubble;
+			}
 			delete (customersList.at(i));
 			(customersList.at(i)) = 0;
 		}
@@ -210,7 +242,7 @@ namespace ChilliJam
 	ShopCustomer::ShopCustomer(CSRendering::RenderComponentFactory* n_renderComponentFactory, std::shared_ptr<CSRendering::Material> alienMaterial, std::shared_ptr<const CSRendering::TextureAtlas> alienAtlas)
 	{
 		renderComponentFactory = n_renderComponentFactory;
-
+		thoughtBubble = nullptr;
 		// Alien Type Stuff
 		alienType = rand()%5;
 		queueing = true;
@@ -246,10 +278,19 @@ namespace ChilliJam
 
 	void ShopCustomer::Update(float dt)
 	{
+		if (thoughtBubble != nullptr)
+		{
+			thoughtBubble->Update(dt);
+		}
 		// Make sure the visibility of the sprites is right; when a person stops queueing (and starts getting chilli) they face the camera.
 		frontSprite->SetVisible(!queueing);
 		backSprite->SetVisible(queueing);
 
+		if (rand() % 1000 == 0 && thoughtBubble == nullptr)
+		{
+			thoughtBubble = new ThoughtBubble(renderComponentFactory, targetFood, shopPosition, myEntity->GetScene());
+		}
+		
 		// Always move towards the target position
 		CSCore::Vector3 moveAmt = ((targetPosition - shopPosition) * dt);
 		moveAmt.Clamp(CSCore::Vector3(-1.0, -1.0, -1.0), CSCore::Vector3(1.0f, 1.0f, 1.0f));
@@ -281,6 +322,17 @@ namespace ChilliJam
 		{
 			// you need to leave, sir
 			targetPosition = CSCore::Vector3(-25, 0, -60);
+
+			if (shopPosition.z < -55 && nextInLine == nullptr)
+			{
+				// last one has left the shop... O:
+				
+				// set up external state application stuff (like moneys, how many people today etc)
+
+				// go next state
+				//CSCore::Application::Get()->GetStateManager()->Change((CSCore::StateSPtr) new NightState());
+
+			}
 		}
 
 		
@@ -294,6 +346,12 @@ namespace ChilliJam
 		//Create a sprite for a food item
 		CSRendering::SpriteComponentSPtr foodSprite = renderComponentFactory->CreateSpriteComponent(CSCore::Vector2::k_one, food.foodAtlas, food.foodType, food.foodMaterial, CSRendering::SpriteComponent::SizePolicy::k_fitMaintainingAspect);
 		myEntity->AddComponent(foodSprite);
+
+		// If they got their wanted food, add a smiley face above them or something & pay double moneys
+		if (gotwantedfood)
+		{
+			//chaching!!
+		}
 	}
 
 	void ShopCustomer::GoNext()
@@ -304,6 +362,64 @@ namespace ChilliJam
 			nextInLine->posInQueue--;
 			nextInLine->GoNext();
 		}
+	}
+
+	ThoughtBubble::ThoughtBubble(CSRendering::RenderComponentFactory* n_renderComponentFactory, FoodStruct foodToThinkOf, CSCore::Vector3 startPos, CSCore::Scene* scenePointer)
+	{
+		renderComponentFactory = n_renderComponentFactory;
+		bubblePos = CSCore::Vector3(startPos);
+		auto theResourcePool = CSCore::Application::Get()->GetResourcePool();
+		auto theMaterialFactory = CSCore::Application::Get()->GetSystem<CSRendering::MaterialFactory>();
+		xOffset = bubblePos.x;
+		// Get materials from resource pool
+		auto bubbleAtlas = theResourcePool->LoadResource<CSRendering::TextureAtlas>(CSCore::StorageLocation::k_package, "TextureAtlases/thoughtbubbles/thoughtbubbles.csatlas");
+
+		auto bubbleMaterial = theResourcePool->GetResource<CSRendering::Material>("bubbleMat");
+
+
+		// Create thought bubble elements
+		bubbleSpriteSmallest = renderComponentFactory->CreateSpriteComponent(CSCore::Vector2(0.12, 0.12), bubbleAtlas, "bubble", bubbleMaterial, CSRendering::SpriteComponent::SizePolicy::k_fitMaintainingAspect);
+		bubbleSpriteSmaller = renderComponentFactory->CreateSpriteComponent(CSCore::Vector2(0.25, 0.25), bubbleAtlas, "bubble", bubbleMaterial, CSRendering::SpriteComponent::SizePolicy::k_fitMaintainingAspect);
+		bubbleSpriteSmall = renderComponentFactory->CreateSpriteComponent(CSCore::Vector2(0.5, 0.5), bubbleAtlas, "bubble", bubbleMaterial, CSRendering::SpriteComponent::SizePolicy::k_fitMaintainingAspect);
+		bubbleSpriteMain = renderComponentFactory->CreateSpriteComponent(CSCore::Vector2(1.0, 1.0), bubbleAtlas, "bubble", bubbleMaterial, CSRendering::SpriteComponent::SizePolicy::k_fitMaintainingAspect);
+		foodInsideBubble = renderComponentFactory->CreateSpriteComponent(CSCore::Vector2::k_one, foodToThinkOf.foodAtlas, foodToThinkOf.foodType, foodToThinkOf.foodMaterial, CSRendering::SpriteComponent::SizePolicy::k_fitMaintainingAspect);
+
+		bubbleMainEntity = CSCore::Entity::Create();
+		bubbleSmall = CSCore::Entity::Create();
+		bubbleSmaller = CSCore::Entity::Create();
+		bubbleSmallest = CSCore::Entity::Create();
+
+		bubbleMainEntity->AddComponent(bubbleSpriteMain);
+		bubbleMainEntity->AddComponent(foodInsideBubble);
+		bubbleSmall->AddComponent(bubbleSpriteSmall);
+		bubbleSmall->AddComponent(bubbleSpriteSmaller);
+		bubbleSmall->AddComponent(bubbleSpriteSmallest);
+
+		bubbleMainEntity->GetTransform().SetPosition(bubblePos);
+		bubbleSmall->GetTransform().SetPosition(bubblePos - CSCore::Vector3(0, 2, 0));
+		bubbleSmaller->GetTransform().SetPosition(bubblePos - CSCore::Vector3(0, 2.5, 0));
+		bubbleSmallest->GetTransform().SetPosition(bubblePos - CSCore::Vector3(0, 2.25, 0));
+		bubbleMainEntity->GetTransform().ScaleBy(5);
+		bubbleSmall->GetTransform().ScaleBy(5);
+		bubbleSmaller->GetTransform().ScaleBy(5);
+		bubbleSmallest->GetTransform().ScaleBy(5);
+	
+		scenePointer->Add(bubbleMainEntity);
+		scenePointer->Add(bubbleSmall);
+		scenePointer->Add(bubbleSmaller);
+		scenePointer->Add(bubbleSmallest);
+
+	}
+
+	void ThoughtBubble::Update(float deltaTime)
+	{
+		bubblePos.y += 0.1f;
+		bubblePos.x = xOffset + sin(bubblePos.y / 5.0f) * 1.0f;
+		bubbleMainEntity->GetTransform().SetPosition(bubblePos);
+		bubbleSmall->GetTransform().SetPosition(bubblePos - CSCore::Vector3(0, 5, 0));
+		bubbleSmaller->GetTransform().SetPosition(bubblePos - CSCore::Vector3(0, 7.5, 0));
+		bubbleSmallest->GetTransform().SetPosition(bubblePos - CSCore::Vector3(0, 10.25, 0));
+
 	}
 
 }
