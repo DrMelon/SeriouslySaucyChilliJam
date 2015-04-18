@@ -1,0 +1,34 @@
+{
+	"Type": "Widget",
+	"Name": "Recipe",
+	"RelSize": "0.8 0.2",
+
+	"Children": [
+		{
+			"Type": "Image",
+			"Name": "Image_Icon",
+			"RelPosition": "-0.35 0.0",
+			"RelSize": "0.25 0.8",
+			"Drawable": {
+				"Type": "NinePatch",
+				"Insets": "0.25 0.25 0.25 0.25",
+				"TexturePath": "red_panel.png"
+			}
+		},
+		{
+			"Type": "Label",
+			"Name": "Label_Title",
+			"Text": "Ingredient",
+			"RelPosition": "0.0 0.0",
+			"TextColour": "1.0 0.5 0.1 1.0",
+			"TextScale": "0.5 0.5"
+		},
+		{
+			"Type": "Label",
+			"Name": "Label_Equal",
+			"Text": "-",
+			"RelPosition": "0.2 0.0",
+			"TextColour": "0.7 0.7 0.7 1.0"
+		}
+	]
+}

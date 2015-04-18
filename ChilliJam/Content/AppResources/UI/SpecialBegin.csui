@@ -23,6 +23,98 @@
 					"TextColour": "0.9 0.9 0.9 1.0"
 				},
 				{
+					"Type": "Widget",
+					"Name": "Panel_Adjust_Money",
+					"RelPosition": "-0.2 -0.3",
+					"Children": [
+						{
+							"Type": "Label",
+							"Name": "Title",
+							"Text": "Money",
+							"TextColour": "0.9 0.9 0.9 1.0",
+							"TextScale": "0.5 0.5"
+						},
+						{
+							"Type": "HighlightButton",
+							"Name": "Button_Plus",
+							"RelPosition": "0.07 0.0",
+							"RelSize": "0.03 0.05",
+							"NormalDrawable": {
+								"Type": "NinePatch",
+								"Insets": "0.25 0.25 0.25 0.25",
+								"TexturePath": "red_plus.png"
+							},
+							"HighlightDrawable": {
+								"Type": "NinePatch",
+								"Insets": "0.25 0.25 0.25 0.25",
+								"TexturePath": "red_plus_press.png"
+							}
+						},
+						{
+							"Type": "HighlightButton",
+							"Name": "Button_Minus",
+							"RelPosition": "-0.07 0.0",
+							"RelSize": "0.03 0.05",
+							"NormalDrawable": {
+								"Type": "NinePatch",
+								"Insets": "0.25 0.25 0.25 0.25",
+								"TexturePath": "red_minus.png"
+							},
+							"HighlightDrawable": {
+								"Type": "NinePatch",
+								"Insets": "0.25 0.25 0.25 0.25",
+								"TexturePath": "red_minus_press.png"
+							}
+						}
+					]
+				},
+				{
+					"Type": "Widget",
+					"Name": "Panel_Adjust_Juice",
+					"RelPosition": "0.2 -0.3",
+					"Children": [
+						{
+							"Type": "Label",
+							"Name": "Juice",
+							"Text": "Juice",
+							"TextColour": "0.9 0.9 0.9 1.0",
+							"TextScale": "0.5 0.5"
+						},
+						{
+							"Type": "HighlightButton",
+							"Name": "Button_Plus",
+							"RelPosition": "0.07 0.0",
+							"RelSize": "0.03 0.05",
+							"NormalDrawable": {
+								"Type": "NinePatch",
+								"Insets": "0.25 0.25 0.25 0.25",
+								"TexturePath": "red_plus.png"
+							},
+							"HighlightDrawable": {
+								"Type": "NinePatch",
+								"Insets": "0.25 0.25 0.25 0.25",
+								"TexturePath": "red_plus_press.png"
+							}
+						},
+						{
+							"Type": "HighlightButton",
+							"Name": "Button_Minus",
+							"RelPosition": "-0.07 0.0",
+							"RelSize": "0.03 0.05",
+							"NormalDrawable": {
+								"Type": "NinePatch",
+								"Insets": "0.25 0.25 0.25 0.25",
+								"TexturePath": "red_minus.png"
+							},
+							"HighlightDrawable": {
+								"Type": "NinePatch",
+								"Insets": "0.25 0.25 0.25 0.25",
+								"TexturePath": "red_minus_press.png"
+							}
+						}
+					]
+				},
+				{
 					"Type": "HighlightButton",
 					"Name": "Button_Continue",
 					"RelPosition": "0.0 -0.4",

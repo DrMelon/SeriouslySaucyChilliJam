@@ -51,7 +51,7 @@ namespace ChilliJam
 {
 	void State_DayBegin::CreateSystems()
 	{
-		
+		AudioPlayer = CreateSystem<CSAudio::CkAudioPlayer>();
 	}
 
 	void State_DayBegin::OnInit()
@@ -66,6 +66,9 @@ namespace ChilliJam
 		Initialize_Camera();
 		Initialize_GUI();
 		Initialize_Recipe();
+
+		auto resourcePool = CSCore::Application::Get()->GetResourcePool();
+		AudioBank = resourcePool->LoadResource<CSAudio::CkBank>( CSCore::StorageLocation::k_package, "Audio/bank.ckb" );
 	}
 
 	void State_DayBegin::OnUpdate( f32 in_deltaTime )
@@ -173,6 +176,7 @@ namespace ChilliJam
 							// Remove the name of the recipe to the currently selected
 							state->RemoveRecipe( name );
 						}
+						state->PlaySound( "UI_Click" );
 					}
 				);
 
@@ -257,5 +261,13 @@ namespace ChilliJam
 		{
 			CSCore::Application::Get()->GetStateManager()->Change( (CSCore::StateSPtr) new State_SpecialBegin() );
 		}
+	}
+
+	// Play a sound effect using the audioplayer of this state
+	// IN: (string) The event bank sound to play
+	// OUT: N/A
+	void State_DayBegin::PlaySound( string name )
+	{
+		AudioPlayer->PlayEffect( AudioBank, "UI_Click" );
 	}
 }

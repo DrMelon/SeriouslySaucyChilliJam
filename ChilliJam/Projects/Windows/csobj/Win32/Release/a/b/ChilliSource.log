@@ -1,0 +1,645 @@
+﻿Build started 18/04/2015 01:58:15.
+     1>Project "C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\ChilliSource\Projects\Windows\ChilliSource.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Audio\CricketAudio\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\Audio\CricketAudio\CkAudioPlayer.cpp ..\..\Source\ChilliSource\Audio\CricketAudio\CkBank.cpp ..\..\Source\ChilliSource\Audio\CricketAudio\CkBankProvider.cpp ..\..\Source\ChilliSource\Audio\CricketAudio\CkSound.cpp ..\..\Source\ChilliSource\Audio\CricketAudio\CricketAudioSystem.cpp
+         CkAudioPlayer.cpp
+         CkBank.cpp
+         CkBankProvider.cpp
+         CkSound.cpp
+         CricketAudioSystem.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Base\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\Core\Base\AppConfig.cpp ..\..\Source\ChilliSource\Core\Base\Application.cpp ..\..\Source\ChilliSource\Core\Base\ByteColour.cpp ..\..\Source\ChilliSource\Core\Base\Colour.cpp ..\..\Source\ChilliSource\Core\Base\ColourUtils.cpp ..\..\Source\ChilliSource\Core\Base\Device.cpp ..\..\Source\ChilliSource\Core\Base\Logging.cpp ..\..\Source\ChilliSource\Core\Base\PlatformSystem.cpp ..\..\Source\ChilliSource\Core\Base\Screen.cpp ..\..\Source\ChilliSource\Core\Base\Utils.cpp
+         AppConfig.cpp
+         Application.cpp
+         ByteColour.cpp
+         Colour.cpp
+         ColourUtils.cpp
+         Device.cpp
+         Logging.cpp
+         PlatformSystem.cpp
+         Screen.cpp
+         Utils.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Container\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\Core\Container\ParamDictionary.cpp ..\..\Source\ChilliSource\Core\Container\ParamDictionarySerialiser.cpp
+         ParamDictionary.cpp
+         ParamDictionarySerialiser.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Container\Property\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\Core\Container\Property\PropertyMap.cpp ..\..\Source\ChilliSource\Core\Container\Property\PropertyTypes.cpp
+         PropertyMap.cpp
+         PropertyTypes.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Cryptographic\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\Core\Cryptographic\AESEncrypt.cpp ..\..\Source\ChilliSource\Core\Cryptographic\BaseEncoding.cpp ..\..\Source\ChilliSource\Core\Cryptographic\HashCRC32.cpp ..\..\Source\ChilliSource\Core\Cryptographic\HashMD5.cpp ..\..\Source\ChilliSource\Core\Cryptographic\HashSHA1.cpp ..\..\Source\ChilliSource\Core\Cryptographic\OAuth.cpp
+         AESEncrypt.cpp
+         BaseEncoding.cpp
+         HashCRC32.cpp
+         HashMD5.cpp
+         HashSHA1.cpp
+         OAuth.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\DialogueBox\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\Core\DialogueBox\DialogueBoxSystem.cpp
+         DialogueBoxSystem.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Entity\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\Core\Entity\Component.cpp ..\..\Source\ChilliSource\Core\Entity\Entity.cpp ..\..\Source\ChilliSource\Core\Entity\Transform.cpp
+         Component.cpp
+         Entity.cpp
+         Transform.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Event\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\Core\Event\EventConnection.cpp
+         EventConnection.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\File\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\Core\File\AppDataStore.cpp ..\..\Source\ChilliSource\Core\File\CSBinaryChunk.cpp ..\..\Source\ChilliSource\Core\File\CSBinaryInputStream.cpp ..\..\Source\ChilliSource\Core\File\FileStream.cpp ..\..\Source\ChilliSource\Core\File\FileSystem.cpp ..\..\Source\ChilliSource\Core\File\TaggedFilePathResolver.cpp
+         AppDataStore.cpp
+         CSBinaryChunk.cpp
+         CSBinaryInputStream.cpp
+         FileStream.cpp
+         FileSystem.cpp
+         TaggedFilePathResolver.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Image\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\Core\Image\CSImageProvider.cpp ..\..\Source\ChilliSource\Core\Image\ETC1ImageProvider.cpp ..\..\Source\ChilliSource\Core\Image\Image.cpp ..\..\Source\ChilliSource\Core\Image\ImageFormatConverter.cpp ..\..\Source\ChilliSource\Core\Image\PNGImageProvider.cpp ..\..\Source\ChilliSource\Core\Image\PVRImageProvider.cpp
+         CSImageProvider.cpp
+         ETC1ImageProvider.cpp
+         Image.cpp
+         ImageFormatConverter.cpp
+         PNGImageProvider.cpp
+         PVRImageProvider.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Json\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\Core\Json\JsonUtils.cpp
+         JsonUtils.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Localisation\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\Core\Localisation\LocalisedText.cpp ..\..\Source\ChilliSource\Core\Localisation\LocalisedTextProvider.cpp
+         LocalisedText.cpp
+         LocalisedTextProvider.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Math\Geometry\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\Core\Math\Geometry\ShapeIntersection.cpp ..\..\Source\ChilliSource\Core\Math\Geometry\Shapes.cpp
+         ShapeIntersection.cpp
+         Shapes.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Math\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\Core\Math\MathUtils.cpp ..\..\Source\ChilliSource\Core\Math\Random.cpp ..\..\Source\ChilliSource\Core\Math\UnifiedCoordinates.cpp
+         MathUtils.cpp
+         Random.cpp
+         UnifiedCoordinates.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Notification\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\Core\Notification\AppNotificationSystem.cpp ..\..\Source\ChilliSource\Core\Notification\LocalNotificationSystem.cpp ..\..\Source\ChilliSource\Core\Notification\NotificationManager.cpp ..\..\Source\ChilliSource\Core\Notification\RemoteNotificationSystem.cpp
+         AppNotificationSystem.cpp
+         LocalNotificationSystem.cpp
+         NotificationManager.cpp
+         RemoteNotificationSystem.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Resource\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\Core\Resource\Resource.cpp ..\..\Source\ChilliSource\Core\Resource\ResourcePool.cpp ..\..\Source\ChilliSource\Core\Resource\ResourceProvider.cpp
+         Resource.cpp
+         ResourcePool.cpp
+         ResourceProvider.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Scene\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\Core\Scene\Scene.cpp
+         Scene.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\State\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\Core\State\State.cpp ..\..\Source\ChilliSource\Core\State\StateManager.cpp
+         State.cpp
+         StateManager.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\String\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\Core\String\StringParser.cpp ..\..\Source\ChilliSource\Core\String\StringUtils.cpp ..\..\Source\ChilliSource\Core\String\ToString.cpp ..\..\Source\ChilliSource\Core\String\UTF8StringUtils.cpp
+         StringParser.cpp
+         StringUtils.cpp
+         ToString.cpp
+         UTF8StringUtils.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\System\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\Core\System\StateSystem.cpp
+         StateSystem.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Threading\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\Core\Threading\TaskScheduler.cpp ..\..\Source\ChilliSource\Core\Threading\ThreadPool.cpp
+         TaskScheduler.cpp
+         ThreadPool.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Time\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\Core\Time\CoreTimer.cpp ..\..\Source\ChilliSource\Core\Time\PerformanceTimer.cpp ..\..\Source\ChilliSource\Core\Time\Timer.cpp
+         CoreTimer.cpp
+         PerformanceTimer.cpp
+         Timer.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Volume\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\Core\Volume\VolumeComponent.cpp
+         VolumeComponent.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\XML\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\Core\XML\XML.cpp ..\..\Source\ChilliSource\Core\XML\XMLUtils.cpp
+         XML.cpp
+         XMLUtils.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Input\Accelerometer\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\Input\Accelerometer\Accelerometer.cpp
+         Accelerometer.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Input\Base\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\Input\Base\Filter.cpp
+         Filter.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Input\DeviceButtons\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\Input\DeviceButtons\DeviceButtonSystem.cpp
+         DeviceButtonSystem.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Input\Gesture\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\Input\Gesture\DragGesture.cpp ..\..\Source\ChilliSource\Input\Gesture\Gesture.cpp ..\..\Source\ChilliSource\Input\Gesture\GestureSystem.cpp ..\..\Source\ChilliSource\Input\Gesture\HoldGesture.cpp ..\..\Source\ChilliSource\Input\Gesture\PinchGesture.cpp ..\..\Source\ChilliSource\Input\Gesture\RotationGesture.cpp ..\..\Source\ChilliSource\Input\Gesture\TapGesture.cpp
+         DragGesture.cpp
+         Gesture.cpp
+         GestureSystem.cpp
+         HoldGesture.cpp
+         PinchGesture.cpp
+         RotationGesture.cpp
+         TapGesture.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Input\Keyboard\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\Input\Keyboard\Keyboard.cpp
+         Keyboard.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Input\Pointer\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\Input\Pointer\Pointer.cpp ..\..\Source\ChilliSource\Input\Pointer\PointerSystem.cpp
+         Pointer.cpp
+         PointerSystem.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Input\TextEntry\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\Input\TextEntry\TextEntry.cpp
+         TextEntry.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Networking\ContentDownload\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\Networking\ContentDownload\ContentManagementSystem.cpp ..\..\Source\ChilliSource\Networking\ContentDownload\MoContentDownloader.cpp
+         ContentManagementSystem.cpp
+         MoContentDownloader.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Networking\Http\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\Networking\Http\HttpRequestSystem.cpp ..\..\Source\ChilliSource\Networking\Http\HttpResponse.cpp
+         HttpRequestSystem.cpp
+         HttpResponse.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Networking\IAP\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\Networking\IAP\IAPSystem.cpp
+         IAPSystem.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Base\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\Rendering\Base\AlignmentAnchors.cpp ..\..\Source\ChilliSource\Rendering\Base\AspectRatioUtils.cpp ..\..\Source\ChilliSource\Rendering\Base\CanvasRenderer.cpp ..\..\Source\ChilliSource\Rendering\Base\CullingPredicates.cpp ..\..\Source\ChilliSource\Rendering\Base\HorizontalTextJustification.cpp ..\..\Source\ChilliSource\Rendering\Base\MeshBatch.cpp ..\..\Source\ChilliSource\Rendering\Base\MeshBuffer.cpp ..\..\Source\ChilliSource\Rendering\Base\RenderCapabilities.cpp ..\..\Source\ChilliSource\Rendering\Base\RenderComponent.cpp ..\..\Source\ChilliSource\Rendering\Base\RenderComponentFactory.cpp ..\..\Source\ChilliSource\Rendering\Base\Renderer.cpp ..\..\Source\ChilliSource\Rendering\Base\RendererSortPredicates.cpp ..\..\Source\ChilliSource\Rendering\Base\RenderSystem.cpp ..\..\Source\ChilliSource\Rendering\Base\VertexDeclaration.cpp ..\..\Source\ChilliSource\Rendering\Base\VerticalTextJustification.cpp
+         AlignmentAnchors.cpp
+         AspectRatioUtils.cpp
+         CanvasRenderer.cpp
+         CullingPredicates.cpp
+         HorizontalTextJustification.cpp
+         MeshBatch.cpp
+         MeshBuffer.cpp
+         RenderCapabilities.cpp
+         RenderComponent.cpp
+         RenderComponentFactory.cpp
+         Renderer.cpp
+         RendererSortPredicates.cpp
+         RenderSystem.cpp
+         VertexDeclaration.cpp
+         VerticalTextJustification.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Camera\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\Rendering\Camera\CameraComponent.cpp ..\..\Source\ChilliSource\Rendering\Camera\OrthographicCameraComponent.cpp ..\..\Source\ChilliSource\Rendering\Camera\PerspectiveCameraComponent.cpp
+         CameraComponent.cpp
+         OrthographicCameraComponent.cpp
+         PerspectiveCameraComponent.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Font\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\Rendering\Font\Font.cpp ..\..\Source\ChilliSource\Rendering\Font\FontProvider.cpp
+         Font.cpp
+         FontProvider.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Lighting\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\Rendering\Lighting\AmbientLightComponent.cpp ..\..\Source\ChilliSource\Rendering\Lighting\DirectionalLightComponent.cpp ..\..\Source\ChilliSource\Rendering\Lighting\LightComponent.cpp ..\..\Source\ChilliSource\Rendering\Lighting\PointLightComponent.cpp
+         AmbientLightComponent.cpp
+         DirectionalLightComponent.cpp
+         LightComponent.cpp
+         PointLightComponent.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Material\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\Rendering\Material\Material.cpp ..\..\Source\ChilliSource\Rendering\Material\MaterialFactory.cpp ..\..\Source\ChilliSource\Rendering\Material\MaterialProvider.cpp
+         Material.cpp
+         MaterialFactory.cpp
+         MaterialProvider.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Model\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\Rendering\Model\AnimatedMeshComponent.cpp ..\..\Source\ChilliSource\Rendering\Model\CSAnimProvider.cpp ..\..\Source\ChilliSource\Rendering\Model\CSModelProvider.cpp ..\..\Source\ChilliSource\Rendering\Model\Mesh.cpp ..\..\Source\ChilliSource\Rendering\Model\MeshDescriptor.cpp ..\..\Source\ChilliSource\Rendering\Model\Skeleton.cpp ..\..\Source\ChilliSource\Rendering\Model\SkinnedAnimation.cpp ..\..\Source\ChilliSource\Rendering\Model\SkinnedAnimationGroup.cpp ..\..\Source\ChilliSource\Rendering\Model\StaticMeshComponent.cpp ..\..\Source\ChilliSource\Rendering\Model\SubMesh.cpp
+         AnimatedMeshComponent.cpp
+         CSAnimProvider.cpp
+         CSModelProvider.cpp
+         Mesh.cpp
+         MeshDescriptor.cpp
+         Skeleton.cpp
+         SkinnedAnimation.cpp
+         SkinnedAnimationGroup.cpp
+         StaticMeshComponent.cpp
+         SubMesh.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Particle\Affector\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\Rendering\Particle\Affector\AccelerationParticleAffector.cpp ..\..\Source\ChilliSource\Rendering\Particle\Affector\AccelerationParticleAffectorDef.cpp ..\..\Source\ChilliSource\Rendering\Particle\Affector\AngularAccelerationParticleAffector.cpp ..\..\Source\ChilliSource\Rendering\Particle\Affector\AngularAccelerationParticleAffectorDef.cpp ..\..\Source\ChilliSource\Rendering\Particle\Affector\ColourOverLifetimeParticleAffector.cpp ..\..\Source\ChilliSource\Rendering\Particle\Affector\ColourOverLifetimeParticleAffectorDef.cpp ..\..\Source\ChilliSource\Rendering\Particle\Affector\ParticleAffector.cpp ..\..\Source\ChilliSource\Rendering\Particle\Affector\ParticleAffectorDef.cpp ..\..\Source\ChilliSource\Rendering\Particle\Affector\ParticleAffectorDefFactory.cpp ..\..\Source\ChilliSource\Rendering\Particle\Affector\ScaleOverLifetimeParticleAffector.cpp ..\..\Source\ChilliSource\Rendering\Particle\Affector\ScaleOverLifetimeParticleAffectorDef.cpp
+         AccelerationParticleAffector.cpp
+         AccelerationParticleAffectorDef.cpp
+         AngularAccelerationParticleAffector.cpp
+         AngularAccelerationParticleAffectorDef.cpp
+         ColourOverLifetimeParticleAffector.cpp
+         ColourOverLifetimeParticleAffectorDef.cpp
+         ParticleAffector.cpp
+         ParticleAffectorDef.cpp
+         ParticleAffectorDefFactory.cpp
+         ScaleOverLifetimeParticleAffector.cpp
+         ScaleOverLifetimeParticleAffectorDef.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Particle\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\Rendering\Particle\ConcurrentParticleData.cpp ..\..\Source\ChilliSource\Rendering\Particle\CSParticleProvider.cpp ..\..\Source\ChilliSource\Rendering\Particle\ParticleEffect.cpp ..\..\Source\ChilliSource\Rendering\Particle\ParticleEffectComponent.cpp
+         ConcurrentParticleData.cpp
+         CSParticleProvider.cpp
+         ParticleEffect.cpp
+         ParticleEffectComponent.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Particle\Drawable\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\Rendering\Particle\Drawable\ParticleDrawable.cpp ..\..\Source\ChilliSource\Rendering\Particle\Drawable\ParticleDrawableDef.cpp ..\..\Source\ChilliSource\Rendering\Particle\Drawable\ParticleDrawableDefFactory.cpp ..\..\Source\ChilliSource\Rendering\Particle\Drawable\StaticBillboardParticleDrawable.cpp ..\..\Source\ChilliSource\Rendering\Particle\Drawable\StaticBillboardParticleDrawableDef.cpp
+         ParticleDrawable.cpp
+         ParticleDrawableDef.cpp
+         ParticleDrawableDefFactory.cpp
+         StaticBillboardParticleDrawable.cpp
+         StaticBillboardParticleDrawableDef.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Particle\Emitter\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\Rendering\Particle\Emitter\CircleParticleEmitter.cpp ..\..\Source\ChilliSource\Rendering\Particle\Emitter\CircleParticleEmitterDef.cpp ..\..\Source\ChilliSource\Rendering\Particle\Emitter\Cone2DParticleEmitter.cpp ..\..\Source\ChilliSource\Rendering\Particle\Emitter\Cone2DParticleEmitterDef.cpp ..\..\Source\ChilliSource\Rendering\Particle\Emitter\ConeParticleEmitter.cpp ..\..\Source\ChilliSource\Rendering\Particle\Emitter\ConeParticleEmitterDef.cpp ..\..\Source\ChilliSource\Rendering\Particle\Emitter\ParticleEmitter.cpp ..\..\Source\ChilliSource\Rendering\Particle\Emitter\ParticleEmitterDef.cpp ..\..\Source\ChilliSource\Rendering\Particle\Emitter\ParticleEmitterDefFactory.cpp ..\..\Source\ChilliSource\Rendering\Particle\Emitter\PointParticleEmitter.cpp ..\..\Source\ChilliSource\Rendering\Particle\Emitter\PointParticleEmitterDef.cpp ..\..\Source\ChilliSource\Rendering\Particle\Emitter\SphereParticleEmitter.cpp ..\..\Source\ChilliSource\Rendering\Particle\Emitter\SphereParticleEmitterDef.cpp
+         CircleParticleEmitter.cpp
+         CircleParticleEmitterDef.cpp
+         Cone2DParticleEmitter.cpp
+         Cone2DParticleEmitterDef.cpp
+         ConeParticleEmitter.cpp
+         ConeParticleEmitterDef.cpp
+         ParticleEmitter.cpp
+         ParticleEmitterDef.cpp
+         ParticleEmitterDefFactory.cpp
+         PointParticleEmitter.cpp
+         PointParticleEmitterDef.cpp
+         SphereParticleEmitter.cpp
+         SphereParticleEmitterDef.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Particle\Property\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\Rendering\Particle\Property\ParticlePropertyCurveFunctions.cpp ..\..\Source\ChilliSource\Rendering\Particle\Property\ParticlePropertyFactoryImpl.cpp
+         ParticlePropertyCurveFunctions.cpp
+         ParticlePropertyFactoryImpl.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Shader\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\Rendering\Shader\Shader.cpp
+         Shader.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Sprite\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\Rendering\Sprite\DynamicSpriteBatcher.cpp ..\..\Source\ChilliSource\Rendering\Sprite\SpriteBatch.cpp ..\..\Source\ChilliSource\Rendering\Sprite\SpriteComponent.cpp
+         DynamicSpriteBatcher.cpp
+         SpriteBatch.cpp
+         SpriteComponent.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Texture\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\Rendering\Texture\Cubemap.cpp ..\..\Source\ChilliSource\Rendering\Texture\CubemapProvider.cpp ..\..\Source\ChilliSource\Rendering\Texture\CubemapResourceOptions.cpp ..\..\Source\ChilliSource\Rendering\Texture\Texture.cpp ..\..\Source\ChilliSource\Rendering\Texture\TextureAtlas.cpp ..\..\Source\ChilliSource\Rendering\Texture\TextureAtlasProvider.cpp ..\..\Source\ChilliSource\Rendering\Texture\TextureProvider.cpp ..\..\Source\ChilliSource\Rendering\Texture\TextureResourceOptions.cpp ..\..\Source\ChilliSource\Rendering\Texture\UVs.cpp
+         Cubemap.cpp
+         CubemapProvider.cpp
+         CubemapResourceOptions.cpp
+         Texture.cpp
+         TextureAtlas.cpp
+         TextureAtlasProvider.cpp
+         TextureProvider.cpp
+         TextureResourceOptions.cpp
+         UVs.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Social\Communications\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\Social\Communications\EmailComposer.cpp
+         EmailComposer.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Social\Facebook\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\Social\Facebook\FacebookAuthenticationSystem.cpp ..\..\Source\ChilliSource\Social\Facebook\FacebookPostSystem.cpp
+         FacebookAuthenticationSystem.cpp
+         FacebookPostSystem.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\UI\Base\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\UI\Base\Canvas.cpp ..\..\Source\ChilliSource\UI\Base\Component.cpp ..\..\Source\ChilliSource\UI\Base\ComponentDesc.cpp ..\..\Source\ChilliSource\UI\Base\ComponentFactory.cpp ..\..\Source\ChilliSource\UI\Base\PropertyLink.cpp ..\..\Source\ChilliSource\UI\Base\PropertyTypes.cpp ..\..\Source\ChilliSource\UI\Base\SizePolicy.cpp ..\..\Source\ChilliSource\UI\Base\Widget.cpp ..\..\Source\ChilliSource\UI\Base\WidgetDef.cpp ..\..\Source\ChilliSource\UI\Base\WidgetDefProvider.cpp ..\..\Source\ChilliSource\UI\Base\WidgetDesc.cpp ..\..\Source\ChilliSource\UI\Base\WidgetFactory.cpp ..\..\Source\ChilliSource\UI\Base\WidgetParserUtils.cpp ..\..\Source\ChilliSource\UI\Base\WidgetTemplate.cpp ..\..\Source\ChilliSource\UI\Base\WidgetTemplateProvider.cpp
+         Canvas.cpp
+         Component.cpp
+         ComponentDesc.cpp
+         ComponentFactory.cpp
+         PropertyLink.cpp
+         PropertyTypes.cpp
+         SizePolicy.cpp
+         Widget.cpp
+         WidgetDef.cpp
+         WidgetDefProvider.cpp
+         WidgetDesc.cpp
+         WidgetFactory.cpp
+         WidgetParserUtils.cpp
+         WidgetTemplate.cpp
+         WidgetTemplateProvider.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\UI\Button\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\UI\Button\HighlightComponent.cpp ..\..\Source\ChilliSource\UI\Button\ToggleHighlightComponent.cpp
+         HighlightComponent.cpp
+         ToggleHighlightComponent.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\UI\Drawable\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\UI\Drawable\Drawable.cpp ..\..\Source\ChilliSource\UI\Drawable\DrawableComponent.cpp ..\..\Source\ChilliSource\UI\Drawable\DrawableDef.cpp ..\..\Source\ChilliSource\UI\Drawable\DrawableUtils.cpp ..\..\Source\ChilliSource\UI\Drawable\NinePatchDrawable.cpp ..\..\Source\ChilliSource\UI\Drawable\NinePatchDrawableDef.cpp ..\..\Source\ChilliSource\UI\Drawable\StandardDrawable.cpp ..\..\Source\ChilliSource\UI\Drawable\StandardDrawableDef.cpp ..\..\Source\ChilliSource\UI\Drawable\ThreePatchDrawable.cpp ..\..\Source\ChilliSource\UI\Drawable\ThreePatchDrawableDef.cpp
+         Drawable.cpp
+         DrawableComponent.cpp
+         DrawableDef.cpp
+         DrawableUtils.cpp
+         NinePatchDrawable.cpp
+         NinePatchDrawableDef.cpp
+         StandardDrawable.cpp
+         StandardDrawableDef.cpp
+         ThreePatchDrawable.cpp
+         ThreePatchDrawableDef.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\UI\Layout\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\UI\Layout\GridLayout.cpp ..\..\Source\ChilliSource\UI\Layout\GridLayoutDef.cpp ..\..\Source\ChilliSource\UI\Layout\HListLayout.cpp ..\..\Source\ChilliSource\UI\Layout\HListLayoutDef.cpp ..\..\Source\ChilliSource\UI\Layout\Layout.cpp ..\..\Source\ChilliSource\UI\Layout\LayoutComponent.cpp ..\..\Source\ChilliSource\UI\Layout\LayoutDef.cpp ..\..\Source\ChilliSource\UI\Layout\VListLayout.cpp ..\..\Source\ChilliSource\UI\Layout\VListLayoutDef.cpp
+         GridLayout.cpp
+         GridLayoutDef.cpp
+         HListLayout.cpp
+         HListLayoutDef.cpp
+         Layout.cpp
+         LayoutComponent.cpp
+         LayoutDef.cpp
+         VListLayout.cpp
+         VListLayoutDef.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\UI\ProgressBar\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\UI\ProgressBar\ProgressBarComponent.cpp ..\..\Source\ChilliSource\UI\ProgressBar\ProgressBarDirection.cpp ..\..\Source\ChilliSource\UI\ProgressBar\ProgressBarType.cpp
+         ProgressBarComponent.cpp
+         ProgressBarDirection.cpp
+         ProgressBarType.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\UI\Slider\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\UI\Slider\SliderComponent.cpp ..\..\Source\ChilliSource\UI\Slider\SliderDirection.cpp
+         SliderComponent.cpp
+         SliderDirection.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\UI\Text\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\UI\Text\TextComponent.cpp ..\..\Source\ChilliSource\UI\Text\TextIcon.cpp
+         TextComponent.cpp
+         TextIcon.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Video\Base\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\Video\Base\CSSubtitlesProvider.cpp ..\..\Source\ChilliSource\Video\Base\Subtitles.cpp ..\..\Source\ChilliSource\Video\Base\VideoPlayer.cpp
+         CSSubtitlesProvider.cpp
+         Subtitles.cpp
+         VideoPlayer.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Web\Base\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\ChilliSource\Web\Base\WebView.cpp
+         WebView.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\CSBackend\Platform\Windows\Core\Base\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\CSBackend\Platform\Windows\Core\Base\Device.cpp ..\..\Source\CSBackend\Platform\Windows\Core\Base\PlatformSystem.cpp ..\..\Source\CSBackend\Platform\Windows\Core\Base\Screen.cpp
+         Device.cpp
+         PlatformSystem.cpp
+         Screen.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\CSBackend\Platform\Windows\Core\DialogueBox\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\CSBackend\Platform\Windows\Core\DialogueBox\DialogueBoxSystem.cpp
+         DialogueBoxSystem.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\CSBackend\Platform\Windows\Core\File\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\CSBackend\Platform\Windows\Core\File\FileSystem.cpp ..\..\Source\CSBackend\Platform\Windows\Core\File\WindowsFileUtils.cpp
+         FileSystem.cpp
+         WindowsFileUtils.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\CSBackend\Platform\Windows\Core\Image\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\CSBackend\Platform\Windows\Core\Image\PngImage.cpp ..\..\Source\CSBackend\Platform\Windows\Core\Image\PNGImageProvider.cpp
+         PngImage.cpp
+         PNGImageProvider.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\CSBackend\Platform\Windows\Core\String\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\CSBackend\Platform\Windows\Core\String\WindowsStringUtils.cpp
+         WindowsStringUtils.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\CSBackend\Platform\Windows\Input\DeviceButtons\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\CSBackend\Platform\Windows\Input\DeviceButtons\DeviceButtonSystem.cpp
+         DeviceButtonSystem.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\CSBackend\Platform\Windows\Input\Keyboard\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\CSBackend\Platform\Windows\Input\Keyboard\Keyboard.cpp
+         Keyboard.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\CSBackend\Platform\Windows\Input\Pointer\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\CSBackend\Platform\Windows\Input\Pointer\PointerSystem.cpp
+         PointerSystem.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\CSBackend\Platform\Windows\Input\TextEntry\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\CSBackend\Platform\Windows\Input\TextEntry\TextEntry.cpp
+         TextEntry.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\CSBackend\Platform\Windows\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\CSBackend\Platform\Windows\Main.cpp
+         Main.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\CSBackend\Platform\Windows\Networking\Http\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\CSBackend\Platform\Windows\Networking\Http\HttpRequest.cpp ..\..\Source\CSBackend\Platform\Windows\Networking\Http\HttpRequestSystem.cpp
+         HttpRequest.cpp
+         HttpRequestSystem.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\CSBackend\Platform\Windows\SFML\Base\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\CSBackend\Platform\Windows\SFML\Base\SFMLWindow.cpp
+         SFMLWindow.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\CSBackend\Rendering\OpenGL\Base\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\CSBackend\Rendering\OpenGL\Base\ContextRestorer.cpp ..\..\Source\CSBackend\Rendering\OpenGL\Base\GLError.cpp ..\..\Source\CSBackend\Rendering\OpenGL\Base\MeshBuffer.cpp ..\..\Source\CSBackend\Rendering\OpenGL\Base\RenderCapabilities.cpp ..\..\Source\CSBackend\Rendering\OpenGL\Base\RenderSystem.cpp ..\..\Source\CSBackend\Rendering\OpenGL\Base\RenderTarget.cpp
+         ContextRestorer.cpp
+         GLError.cpp
+         MeshBuffer.cpp
+         RenderCapabilities.cpp
+         RenderSystem.cpp
+         RenderTarget.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\CSBackend\Rendering\OpenGL\Shader\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\CSBackend\Rendering\OpenGL\Shader\GLSLShaderProvider.cpp ..\..\Source\CSBackend\Rendering\OpenGL\Shader\Shader.cpp
+         GLSLShaderProvider.cpp
+         Shader.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\CSBackend\Rendering\OpenGL\Texture\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\CSBackend\Rendering\OpenGL\Texture\Cubemap.cpp ..\..\Source\CSBackend\Rendering\OpenGL\Texture\Texture.cpp ..\..\Source\CSBackend\Rendering\OpenGL\Texture\TextureUnitSystem.cpp
+         Cubemap.cpp
+         Texture.cpp
+         TextureUnitSystem.cpp
+         Generating Code...
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csbin\Win32\Release\ChilliSource.lib" /NOLOGO C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Audio\CricketAudio\/CkAudioPlayer.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Audio\CricketAudio\/CkBank.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Audio\CricketAudio\/CkBankProvider.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Audio\CricketAudio\/CkSound.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Audio\CricketAudio\/CricketAudioSystem.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Base\/AppConfig.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Base\/Application.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Base\/ByteColour.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Base\/Colour.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Base\/ColourUtils.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Base\/Device.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Base\/Logging.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Base\/PlatformSystem.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Base\/Screen.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Base\/Utils.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Container\/ParamDictionary.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Container\/ParamDictionarySerialiser.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Container\Property\/PropertyMap.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Container\Property\/PropertyTypes.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Cryptographic\/AESEncrypt.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Cryptographic\/BaseEncoding.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Cryptographic\/HashCRC32.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Cryptographic\/HashMD5.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Cryptographic\/HashSHA1.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Cryptographic\/OAuth.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\DialogueBox\/DialogueBoxSystem.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Entity\/Component.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Entity\/Entity.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Entity\/Transform.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Event\/EventConnection.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\File\/AppDataStore.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\File\/CSBinaryChunk.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\File\/CSBinaryInputStream.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\File\/FileStream.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\File\/FileSystem.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\File\/TaggedFilePathResolver.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Image\/CSImageProvider.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Image\/ETC1ImageProvider.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Image\/Image.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Image\/ImageFormatConverter.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Image\/PNGImageProvider.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Image\/PVRImageProvider.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Json\/JsonUtils.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Localisation\/LocalisedText.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Localisation\/LocalisedTextProvider.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Math\Geometry\/ShapeIntersection.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Math\Geometry\/Shapes.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Math\/MathUtils.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Math\/Random.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Math\/UnifiedCoordinates.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Notification\/AppNotificationSystem.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Notification\/LocalNotificationSystem.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Notification\/NotificationManager.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Notification\/RemoteNotificationSystem.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Resource\/Resource.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Resource\/ResourcePool.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Resource\/ResourceProvider.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Scene\/Scene.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\State\/State.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\State\/StateManager.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\String\/StringParser.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\String\/StringUtils.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\String\/ToString.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\String\/UTF8StringUtils.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\System\/StateSystem.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Threading\/TaskScheduler.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Threading\/ThreadPool.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Time\/CoreTimer.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Time\/PerformanceTimer.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Time\/Timer.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\Volume\/VolumeComponent.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\XML\/XML.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Core\XML\/XMLUtils.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Input\Accelerometer\/Accelerometer.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Input\Base\/Filter.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Input\DeviceButtons\/DeviceButtonSystem.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Input\Gesture\/DragGesture.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Input\Gesture\/Gesture.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Input\Gesture\/GestureSystem.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Input\Gesture\/HoldGesture.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Input\Gesture\/PinchGesture.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Input\Gesture\/RotationGesture.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Input\Gesture\/TapGesture.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Input\Keyboard\/Keyboard.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Input\Pointer\/Pointer.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Input\Pointer\/PointerSystem.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Input\TextEntry\/TextEntry.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Networking\ContentDownload\/ContentManagementSystem.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Networking\ContentDownload\/MoContentDownloader.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Networking\Http\/HttpRequestSystem.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Networking\Http\/HttpResponse.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Networking\IAP\/IAPSystem.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Base\/AlignmentAnchors.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Base\/AspectRatioUtils.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Base\/CanvasRenderer.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Base\/CullingPredicates.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Base\/HorizontalTextJustification.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Base\/MeshBatch.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Base\/MeshBuffer.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Base\/RenderCapabilities.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Base\/RenderComponent.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Base\/RenderComponentFactory.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Base\/Renderer.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Base\/RendererSortPredicates.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Base\/RenderSystem.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Base\/VertexDeclaration.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Base\/VerticalTextJustification.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Camera\/CameraComponent.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Camera\/OrthographicCameraComponent.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Camera\/PerspectiveCameraComponent.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Font\/Font.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Font\/FontProvider.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Lighting\/AmbientLightComponent.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Lighting\/DirectionalLightComponent.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Lighting\/LightComponent.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Lighting\/PointLightComponent.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Material\/Material.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Material\/MaterialFactory.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Material\/MaterialProvider.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Model\/AnimatedMeshComponent.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Model\/CSAnimProvider.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Model\/CSModelProvider.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Model\/Mesh.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Model\/MeshDescriptor.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Model\/Skeleton.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Model\/SkinnedAnimation.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Model\/SkinnedAnimationGroup.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Model\/StaticMeshComponent.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Model\/SubMesh.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Particle\Affector\/AccelerationParticleAffector.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Particle\Affector\/AccelerationParticleAffectorDef.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Particle\Affector\/AngularAccelerationParticleAffector.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Particle\Affector\/AngularAccelerationParticleAffectorDef.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Particle\Affector\/ColourOverLifetimeParticleAffector.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Particle\Affector\/ColourOverLifetimeParticleAffectorDef.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Particle\Affector\/ParticleAffector.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Particle\Affector\/ParticleAffectorDef.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Particle\Affector\/ParticleAffectorDefFactory.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Particle\Affector\/ScaleOverLifetimeParticleAffector.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Particle\Affector\/ScaleOverLifetimeParticleAffectorDef.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Particle\/ConcurrentParticleData.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Particle\/CSParticleProvider.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Particle\/ParticleEffect.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Particle\/ParticleEffectComponent.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Particle\Drawable\/ParticleDrawable.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Particle\Drawable\/ParticleDrawableDef.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Particle\Drawable\/ParticleDrawableDefFactory.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Particle\Drawable\/StaticBillboardParticleDrawable.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Particle\Drawable\/StaticBillboardParticleDrawableDef.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Particle\Emitter\/CircleParticleEmitter.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Particle\Emitter\/CircleParticleEmitterDef.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Particle\Emitter\/Cone2DParticleEmitter.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Particle\Emitter\/Cone2DParticleEmitterDef.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Particle\Emitter\/ConeParticleEmitter.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Particle\Emitter\/ConeParticleEmitterDef.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Particle\Emitter\/ParticleEmitter.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Particle\Emitter\/ParticleEmitterDef.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Particle\Emitter\/ParticleEmitterDefFactory.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Particle\Emitter\/PointParticleEmitter.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Particle\Emitter\/PointParticleEmitterDef.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Particle\Emitter\/SphereParticleEmitter.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Particle\Emitter\/SphereParticleEmitterDef.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Particle\Property\/ParticlePropertyCurveFunctions.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Particle\Property\/ParticlePropertyFactoryImpl.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Shader\/Shader.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Sprite\/DynamicSpriteBatcher.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Sprite\/SpriteBatch.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Sprite\/SpriteComponent.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Texture\/Cubemap.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Texture\/CubemapProvider.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Texture\/CubemapResourceOptions.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Texture\/Texture.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Texture\/TextureAtlas.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Texture\/TextureAtlasProvider.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Texture\/TextureProvider.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Texture\/TextureResourceOptions.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Rendering\Texture\/UVs.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Social\Communications\/EmailComposer.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Social\Facebook\/FacebookAuthenticationSystem.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Social\Facebook\/FacebookPostSystem.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\UI\Base\/Canvas.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\UI\Base\/Component.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\UI\Base\/ComponentDesc.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\UI\Base\/ComponentFactory.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\UI\Base\/PropertyLink.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\UI\Base\/PropertyTypes.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\UI\Base\/SizePolicy.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\UI\Base\/Widget.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\UI\Base\/WidgetDef.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\UI\Base\/WidgetDefProvider.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\UI\Base\/WidgetDesc.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\UI\Base\/WidgetFactory.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\UI\Base\/WidgetParserUtils.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\UI\Base\/WidgetTemplate.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\UI\Base\/WidgetTemplateProvider.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\UI\Button\/HighlightComponent.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\UI\Button\/ToggleHighlightComponent.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\UI\Drawable\/Drawable.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\UI\Drawable\/DrawableComponent.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\UI\Drawable\/DrawableDef.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\UI\Drawable\/DrawableUtils.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\UI\Drawable\/NinePatchDrawable.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\UI\Drawable\/NinePatchDrawableDef.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\UI\Drawable\/StandardDrawable.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\UI\Drawable\/StandardDrawableDef.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\UI\Drawable\/ThreePatchDrawable.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\UI\Drawable\/ThreePatchDrawableDef.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\UI\Layout\/GridLayout.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\UI\Layout\/GridLayoutDef.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\UI\Layout\/HListLayout.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\UI\Layout\/HListLayoutDef.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\UI\Layout\/Layout.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\UI\Layout\/LayoutComponent.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\UI\Layout\/LayoutDef.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\UI\Layout\/VListLayout.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\UI\Layout\/VListLayoutDef.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\UI\ProgressBar\/ProgressBarComponent.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\UI\ProgressBar\/ProgressBarDirection.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\UI\ProgressBar\/ProgressBarType.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\UI\Slider\/SliderComponent.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\UI\Slider\/SliderDirection.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\UI\Text\/TextComponent.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\UI\Text\/TextIcon.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Video\Base\/CSSubtitlesProvider.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Video\Base\/Subtitles.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Video\Base\/VideoPlayer.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\ChilliSource\Web\Base\/WebView.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\CSBackend\Platform\Windows\Core\Base\/Device.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\CSBackend\Platform\Windows\Core\Base\/PlatformSystem.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\CSBackend\Platform\Windows\Core\Base\/Screen.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\CSBackend\Platform\Windows\Core\DialogueBox\/DialogueBoxSystem.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\CSBackend\Platform\Windows\Core\File\/FileSystem.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\CSBackend\Platform\Windows\Core\File\/WindowsFileUtils.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\CSBackend\Platform\Windows\Core\Image\/PngImage.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\CSBackend\Platform\Windows\Core\Image\/PNGImageProvider.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\CSBackend\Platform\Windows\Core\String\/WindowsStringUtils.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\CSBackend\Platform\Windows\Input\DeviceButtons\/DeviceButtonSystem.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\CSBackend\Platform\Windows\Input\Keyboard\/Keyboard.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\CSBackend\Platform\Windows\Input\Pointer\/PointerSystem.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\CSBackend\Platform\Windows\Input\TextEntry\/TextEntry.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\CSBackend\Platform\Windows\/Main.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\CSBackend\Platform\Windows\Networking\Http\/HttpRequest.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\CSBackend\Platform\Windows\Networking\Http\/HttpRequestSystem.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\CSBackend\Platform\Windows\SFML\Base\/SFMLWindow.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\CSBackend\Rendering\OpenGL\Base\/ContextRestorer.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\CSBackend\Rendering\OpenGL\Base\/GLError.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\CSBackend\Rendering\OpenGL\Base\/MeshBuffer.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\CSBackend\Rendering\OpenGL\Base\/RenderCapabilities.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\CSBackend\Rendering\OpenGL\Base\/RenderSystem.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\CSBackend\Rendering\OpenGL\Base\/RenderTarget.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\CSBackend\Rendering\OpenGL\Shader\/GLSLShaderProvider.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\CSBackend\Rendering\OpenGL\Shader\/Shader.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\CSBackend\Rendering\OpenGL\Texture\/Cubemap.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\CSBackend\Rendering\OpenGL\Texture\/Texture.obj
+         C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csobj\Win32\Release\a\b\/..\..\Source\CSBackend\Rendering\OpenGL\Texture\/TextureUnitSystem.obj
+         ChilliSource.vcxproj -> C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\csbin\Win32\Release\ChilliSource.lib
+     1>Done Building Project "C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\ChilliSource\Projects\Windows\ChilliSource.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:03:34.13
