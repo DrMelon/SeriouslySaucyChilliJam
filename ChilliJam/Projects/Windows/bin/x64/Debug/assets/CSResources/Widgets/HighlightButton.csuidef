@@ -1,0 +1,24 @@
+{
+  "Type": "HighlightButton",
+
+  "Components": [
+    {
+      "Type": "Drawable",
+      "Name": "Drawable"
+    },
+    {
+      "Type": "Highlight",
+      "Name": "Highlight"
+    }
+  ],
+
+  "ComponentPropertyLinks": {
+    "Drawable": "none",
+    "Highlight": "all"
+  },
+  
+  "DefaultPropertyValues": {
+    "Name": "HighlightButton",
+    "InputConsumeEnabled": "true"
+  }
+}

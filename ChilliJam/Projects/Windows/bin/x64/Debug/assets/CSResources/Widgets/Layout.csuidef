@@ -1,0 +1,18 @@
+{
+  "Type": "Layout",
+
+  "Components": [
+    {
+      "Type": "Layout",
+      "Name": "Layout"
+    }
+  ],
+
+  "ComponentPropertyLinks": {
+    "Layout": "all"
+  },
+  
+  "DefaultDefaultValues": {
+    "Name": "Layout"
+  }
+}

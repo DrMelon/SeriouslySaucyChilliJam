@@ -3,7 +3,7 @@
 #include <ChilliSource/Core/State.h>
 #include <ChilliSource/Core/Resource.h>
 #include <ChilliSource/Rendering/Model.h>
-#include <ChilliSource/Core/Tween.h>
+
 ////////
 // @Author: J. Brown / DrMelon
 // @Date: 17/04/2015
@@ -21,10 +21,6 @@ namespace ChilliJam
 	{
 		public:
 			// Public Members
-			CSCore::EntitySPtr cameraEntity;
-			float cameraYValue;
-			CSCore::EaseOutBackTween<f32> cameraTween;
-
 			// Resources
 
 
@@ -33,7 +29,6 @@ namespace ChilliJam
 			void OnInit() override;
 			void OnUpdate(f32 in_deltaTime) override;
 			void OnDestroy() override;
-			
 	};
 }
 

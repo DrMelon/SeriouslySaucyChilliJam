@@ -1,0 +1,12 @@
+﻿Build started 18/04/2015 02:02:07.
+     1>Project "C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\ChilliJam.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         ChilliJam.vcxproj -> C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\bin\Win32\Release\ChilliJam.exe
+       CustomBuildStep:
+         python C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\..\..\ChilliSource\Tools\Scripts\copy_windows_resources.py C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\  C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\bin\Win32\Release\
+         :VCEnd
+     1>Done Building Project "C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\ChilliJam.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.12

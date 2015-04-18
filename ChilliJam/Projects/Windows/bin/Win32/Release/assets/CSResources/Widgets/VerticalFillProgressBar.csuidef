@@ -1,0 +1,45 @@
+{
+  "Type": "VerticalFillProgressBar",
+
+  "Components": [
+    {
+      "Type": "Drawable",
+      "Name": "Drawable"
+    },
+    {
+      "Type": "ProgressBar",
+      "Name": "ProgressBar",
+      "BarWidgetName": "Bar",
+      "BarDirection": "Vertical",
+      "BarType": "Fill"
+    }
+  ],
+
+  "Children": [
+    {
+      "Type": "Image",
+      "Name": "Bar",
+      "RelSize": "0.0 1.0",
+      "ParentalAnchor": "MiddleLeft",
+      "OriginAnchor": "MiddleLeft"
+    }
+  ],
+
+  "ComponentPropertyLinks": {
+    "Drawable": "all",
+    "ProgressBar": {
+      "RelBarSize": "RelBarSize",
+      "Progress": "Progress"
+    }
+  },
+
+  "ChildPropertyLinks": {
+    "Bar": {
+      "BarDrawable": "Drawable"
+    }
+  },
+  
+  "DefaultPropertyValues": {
+    "Name": "VerticalFillProgressBar"
+  }
+}

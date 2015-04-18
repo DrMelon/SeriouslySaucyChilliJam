@@ -31,6 +31,7 @@
 
 #include <ChilliSource/ChilliSource.h>
 #include <ChilliSource/Core/State.h>
+#include <ChilliSource/Audio/CricketAudio.h>
 
 #include <vector>
 
@@ -63,6 +64,12 @@ namespace ChilliJam
 			// IN: N/A
 			// OUT: N/A
 			void Continue();
+
+			// Play a sound effect using the audioplayer of this state
+			// IN: (string) The event bank sound to play
+			// OUT: N/A
+			void PlaySound( string name );
+
 		private:
 			// Initialize the orthographic camera
 			// IN: N/A
@@ -93,6 +100,10 @@ namespace ChilliJam
 			// Array of selected recipes for beginning the game with
 			unsigned int LastStartRecipe;
 			string StartRecipe[2];
+
+			// Audio
+			CSAudio::CkAudioPlayer* AudioPlayer;
+			CSAudio::CkBankCSPtr AudioBank;
 	};
 }
 

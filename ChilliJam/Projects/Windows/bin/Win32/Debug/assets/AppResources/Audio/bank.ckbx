@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<bank name="Bank">
+    <sound name="UI_Click" source="click.wav" />
+    <sound name="Test" source="magicgoing.wav" />
+</bank>

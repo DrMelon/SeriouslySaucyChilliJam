@@ -26,12 +26,17 @@
 //  THE SOFTWARE.
 //
 
+// Associated Header
 #include <App.h>
 
+// Required Engine Header
+#include <ChilliSource\Rendering\Model\CSModelProvider.h>
+#include <ChilliSource\Audio\CricketAudio.h>
+
+// Required Application Header
 #include <State.h>
 #include <State_DayBegin.h>
-#include "DayPlaying.h"
-#include <ChilliSource\Rendering\Model\CSModelProvider.h>
+#include <DayPlaying.h>
 
 CSCore::Application* CreateApplication()
 {
@@ -44,6 +49,8 @@ namespace ChilliJam
 	{
 		//Create systems here.
 		CreateSystem<CSRendering::CSModelProvider>();
+		CreateSystem<CSAudio::CricketAudioSystem>();
+		CreateSystem<CSAudio::CkBankProvider>();
 	}
 
 	void App::OnInit()

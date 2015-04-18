@@ -1,0 +1,28 @@
+{
+	"Type": "Widget",
+	"Name": "Menu_DayBegin",
+	"RelSize": "1 1",
+
+	"Children": [
+		{
+			"Type": "HighlightButton",
+			"Name": "Panel",
+			"RelPosition": "0.0 0",
+			"RelSize": "0.6 0.8",
+			"NormalDrawable": {
+				"Type": "NinePatch",
+				"Insets": "0.25 0.25 0.25 0.25",
+				"TexturePath": "red_panel.png"
+			},
+			"Children": [
+				{
+					"Type": "Label",
+					"Name": "Label_Title",
+					"Text": "Choose Today's Recipes!",
+					"RelPosition": "0.0 0.4",
+					"TextColour": "1.0 0.5 0.1 1.0"
+				}
+			]
+		}
+	]
+}
