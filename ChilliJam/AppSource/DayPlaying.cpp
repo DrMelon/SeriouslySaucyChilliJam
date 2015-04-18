@@ -195,7 +195,7 @@ namespace ChilliJam
 		alienType = 0;
 		queueing = true;
 		hasChilli = false;
-		shopPosition = CSCore::Vector3(25, 0.5, -54); //Want them to come in from the right front
+		shopPosition = CSCore::Vector3(25 + rand()%5, 0.5, -54); //Want them to come in from the right front
 		targetPosition = shopPosition;
 		posInQueue = 0;
 		// ChilliSource Stuff (Note: for different aliens change p1_**** to be p2_ etc)
@@ -217,10 +217,17 @@ namespace ChilliJam
 		backSprite->SetVisible(queueing);
 
 		// Always move towards the target position
-		shopPosition += (targetPosition - shopPosition) * 0.1f * dt;
+		CSCore::Vector3 moveAmt = ((targetPosition - shopPosition) * dt);
+		moveAmt.Clamp(CSCore::Vector3(0, 0, 0), CSCore::Vector3(1.0f, 1.0f, 1.0f));
+		//hop
+		shopPosition.y = sin(shopPosition.z * 10) * 0.5f;
+		
+		shopPosition += moveAmt;
 
 		// Target position z = their position in the queue
-		targetPosition.z = (-16.0f) - posInQueue;
+		targetPosition.z = (-16.0f) - posInQueue * 2;
+
+		// 
 
 		// Update position in scene
 		myEntity->GetTransform().SetPosition(shopPosition);
