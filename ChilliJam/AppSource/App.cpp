@@ -36,6 +36,7 @@
 // Required Application Header
 #include <State.h>
 #include <State_DayBegin.h>
+#include <State_Score.h>
 #include <DayPlaying.h>
 
 CSCore::Application* CreateApplication()
@@ -153,7 +154,7 @@ namespace ChilliJam
 
 	void App::PushInitialState()
 	{
-		GetStateManager()->Push( CSCore::StateSPtr( new State_DayBegin() ) );
+		GetStateManager()->Push( CSCore::StateSPtr( new State_Score() ) );
 	}
 
 	void App::OnDestroy()
