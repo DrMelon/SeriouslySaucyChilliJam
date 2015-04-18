@@ -49,7 +49,7 @@
 							"Type": "HorizontalFillProgressBar",
 							"Name": "Progress",
 							"Progress": "0.0",
-							"RelBarSize": "0.99 0.95",
+							"RelBarSize": "0.99 0.87",
 							"Drawable": {
 								"Type": "NinePatch",
 								"Insets": "0.25 0.25 0.25 0.25",

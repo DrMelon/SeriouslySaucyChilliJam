@@ -1,8 +1,10 @@
-﻿Build started 18/04/2015 16:18:04.
+﻿Build started 18/04/2015 17:50:09.
      1>Project "C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\ChilliJam.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /MP /Od /Oy- /D _UNICODE /D UNICODE /D WIN32 /D _DEBUG /D DEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_ENABLE_DEBUG /D CS_LOGLEVEL_VERBOSE /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\obj\Win32\Debug\a\b\/..\..\AppSource\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\obj\Win32\Debug\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\AppSource\State_DayBegin.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /MP /Od /Oy- /D _UNICODE /D UNICODE /D WIN32 /D _DEBUG /D DEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_ENABLE_DEBUG /D CS_LOGLEVEL_VERBOSE /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\obj\Win32\Debug\a\b\/..\..\AppSource\/" /Fd"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\obj\Win32\Debug\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\AppSource\App.cpp ..\..\AppSource\State_DayBegin.cpp ..\..\AppSource\State_SpecialBegin.cpp
+         App.cpp
          State_DayBegin.cpp
+         State_SpecialBegin.cpp
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\bin\Win32\Debug\ChilliJam.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib opengl32.lib winmm.lib XAudio2.lib zlibstat.lib glew32s.lib "sfml-system-s-d.lib" "sfml-window-s-d.lib" ck.lib CSBase.lib ChilliSource.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\bin\Win32\Debug\ChilliJam.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\bin\Win32\Debug\ChilliJam.lib" /MACHINE:X86 C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\obj\Win32\Debug\a\b\/..\..\AppSource\/App.obj
          C:\Users\Matthew\Documents\GitHub\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\obj\Win32\Debug\a\b\/..\..\AppSource\/DayPlaying.obj
@@ -62,4 +64,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:06.83
+Time Elapsed 00:00:08.37

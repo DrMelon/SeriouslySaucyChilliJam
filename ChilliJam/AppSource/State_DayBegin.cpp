@@ -145,10 +145,28 @@ namespace ChilliJam
 		auto widgetfactory = CSCore::Application::Get()->GetWidgetFactory();
 
 		App* application = (App*) CSCore::Application::Get();
+		unsigned int currentrecipe = 0;
 		for ( unsigned int recipe = 0; recipe < RECIPES; recipe++ )
 		{
 			RecipeStruct recipeinfo = application->GetRecipes()[recipe];
 			string name = recipeinfo.Name;
+
+			// Check that all required ingredients have been unlocked
+			bool unlocked = true;
+			{
+				for ( unsigned int ingredient = 0; ingredient < recipeinfo.Ingredients; ingredient++ )
+				{
+					if ( !application->GetIngredients()[recipeinfo.Ingredient[ingredient]].Unlocked )
+					{
+						unlocked = false;
+						break;
+					}
+				}
+			}
+			if ( !unlocked )
+			{
+				continue;
+			}
 
 			// Load ui widget
 			auto templatewidget = resourcepool->LoadResource<CSUI::WidgetTemplate>( CSCore::StorageLocation::k_package, "UI/Recipe.csui" );
@@ -157,7 +175,7 @@ namespace ChilliJam
 			Recipe[recipe] = widgetfactory->Create( templatewidget );
 			{
 				Recipe[recipe]->GetWidget( "Panel" )->GetWidget( "Label_Title" )->GetComponent<CSUI::TextComponent>()->SetText( name );
-				Recipe[recipe]->GetWidget( "Panel" )->SetRelativePosition( CSCore::Vector2( 0, ( ( (float) recipe ) - 1.5f ) / -6 ) );
+				Recipe[recipe]->GetWidget( "Panel" )->SetRelativePosition( CSCore::Vector2( 0, ( ( (float) currentrecipe ) - 3.5f ) / -( RECIPES + 4 ) ) );
 
 				// Add recipe toggle button logic
 				ButtonConnection[recipe + 1] = Recipe[recipe]->GetWidget( "Panel" )->GetWidget( "Checkbox" )->GetReleasedInsideEvent().OpenConnection(
@@ -200,6 +218,8 @@ namespace ChilliJam
 				}
 			}
 			UI->GetWidget( "Panel" )->AddWidget( Recipe[recipe] );
+
+			currentrecipe++;
 		}
 	}
 
