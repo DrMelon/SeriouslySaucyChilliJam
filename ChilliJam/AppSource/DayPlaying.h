@@ -5,6 +5,7 @@
 #include <ChilliSource/Rendering/Model.h>
 #include <ChilliSource/Core/Tween.h>
 #include <Customer.h>
+#include "FoodStruct.h"
 ////////
 // @Author: J. Brown / DrMelon
 // @Date: 17/04/2015
@@ -18,17 +19,33 @@
 // Also in this class is a customer subclass/struct thing.
 // The customers are stored in a list & will link to seans class
 //
-// And there is also a food item class, so you can tell a food what kind it is and it'll load the right one
-// ye
+// And there is also a thoughtbubble class, so customers can think of food and it floats up
 
 namespace ChilliJam
 {
-	struct FoodStruct
+
+	class ThoughtBubble
 	{
-		std::shared_ptr<CSRendering::Material> foodMaterial;
-		std::shared_ptr<const CSRendering::TextureAtlas> foodAtlas;
-		std::string foodType;
+	public:
+		CSCore::Vector3 bubblePos;
+		CSRendering::SpriteComponentSPtr bubbleSpriteSmallest;
+		CSRendering::SpriteComponentSPtr bubbleSpriteSmaller;
+		CSRendering::SpriteComponentSPtr bubbleSpriteSmall;
+		CSRendering::SpriteComponentSPtr bubbleSpriteMain;
+		CSRendering::SpriteComponentSPtr foodInsideBubble;
+		CSCore::EntitySPtr bubbleMainEntity;
+		CSCore::EntitySPtr bubbleSmall;
+		CSCore::EntitySPtr bubbleSmaller;
+		CSCore::EntitySPtr bubbleSmallest;
+
+
+		CSRendering::RenderComponentFactory* renderComponentFactory;
+
+		float xOffset;
+		ThoughtBubble(CSRendering::RenderComponentFactory* n_renderComponentFactory, FoodStruct foodToThinkOf, CSCore::Vector3 startPos, CSCore::Scene* scenePointer);
+		void Update(float deltaTime); // sinewaves sideways and goes up :)
 	};
+
 
 	class ShopCustomer
 	{
@@ -49,16 +66,19 @@ namespace ChilliJam
 			CSCore::EntitySPtr myEntity;
 			// Sean Citizen Class 
 			Customer* internalCustomerStuff;
+			int wantedFoodType;
+			bool gotwantedfood;
 
 			// Target Food
 			FoodStruct targetFood;
+			ThoughtBubble* thoughtBubble;
 
 			// Current State
 			CSRendering::RenderComponentFactory* renderComponentFactory;
 
 
 			// Functions
-			ShopCustomer(CSRendering::RenderComponentFactory* n_renderComponentFactory, std::shared_ptr<CSRendering::Material> alienMaterial, std::shared_ptr<const CSRendering::TextureAtlas> alienAtlas);
+			ShopCustomer(CSRendering::RenderComponentFactory* n_renderComponentFactory, std::shared_ptr<const CSRendering::TextureAtlas> alienAtlas);
 			//void MoveInQueue(); // This function sets where in the room they should move to in order to be part of the queue.
 			void Update(float dt); // Called in update ofc, moving towards target pos
 			void AddFood(FoodStruct food);
