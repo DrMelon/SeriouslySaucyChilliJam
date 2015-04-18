@@ -97,6 +97,7 @@ namespace ChilliJam
 
 			// The menu UI widget
 			CSUI::WidgetSPtr UI;
+			CSUI::WidgetSPtr UI_HUD;
 			CSUI::WidgetSPtr* Recipe;
 			vector<CSUI::WidgetSPtr> Ingredient;
 
