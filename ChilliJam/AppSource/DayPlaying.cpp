@@ -32,6 +32,8 @@ namespace ChilliJam
 
 		// Load resource pool
 		auto theResourcePool = CSCore::Application::Get()->GetResourcePool();
+		// Load material factory
+		auto theMaterialFactory = CSCore::Application::Get()->GetSystem<CSRendering::MaterialFactory>();
 
 		// Load 2D resources (sprites and textures)
 		auto tiledFloorMaterial = theResourcePool->LoadResource<CSRendering::Material>(CSCore::StorageLocation::k_package, "Materials/tiledfloor.csmaterial");
@@ -41,9 +43,14 @@ namespace ChilliJam
 		// Load atlases
 		auto littleAliensTexture = theResourcePool->LoadResource<CSRendering::Texture>(CSCore::StorageLocation::k_package, "TextureAtlases/LittleAliens/LittleAliens.csimage");
 		auto littleAliensAtlas = theResourcePool->LoadResource<CSRendering::TextureAtlas>(CSCore::StorageLocation::k_package, "TextureAtlases/LittleAliens/LittleAliens.csatlas");
-		auto theMaterialFactory = CSCore::Application::Get()->GetSystem<CSRendering::MaterialFactory>();
+		auto cartTexture = theResourcePool->LoadResource<CSRendering::Texture>(CSCore::StorageLocation::k_package, "TextureAtlases/cart/cart.csimage");
+		auto cartAtlas = theResourcePool->LoadResource<CSRendering::Texture>(CSCore::StorageLocation::k_package, "TextureAtlases/cart/cart.csatlas");
+
+		// Create materials
 		auto littleAliensMaterial = theMaterialFactory->CreateSprite("littleAliensMat", littleAliensTexture);
 		littleAliensMaterial->SetTransparencyEnabled(true);
+		auto cartMaterial = theMaterialFactory->CreateSprite("cartMat", cartTexture);
+		cartMaterial->SetTransparencyEnabled(true);
 
 		// Load 3D model resources (planes)
 		auto simplePlaneModel = theResourcePool->LoadResource<CSRendering::Mesh>(CSCore::StorageLocation::k_package, "Models/plane.csmodel");
@@ -97,8 +104,16 @@ namespace ChilliJam
 		backWallEntity->GetTransform().ScaleBy(75, 1, 20);
 		backWallEntity->GetTransform().SetOrientation(CSCore::Quaternion(CSCore::Vector3(1, 0, 0), -90 * 3.14 / 180));
 		
+		// Cart Sprite
+		CSRendering::SpriteComponentSPtr cartSprite = renderComponentFactory->CreateSpriteComponent(CSCore::Vector2::k_one, cartMaterial, CSRendering::SpriteComponent::SizePolicy::k_fitMaintainingAspect);
+		CSCore::EntitySPtr cartEntity = CSCore::Entity::Create();
+		cartEntity->AddComponent(cartSprite);
+		cartEntity->GetTransform().SetPosition(-20, 0, -15.5);
+		cartEntity->GetTransform().ScaleBy(15);
 
-		// Crowd sprite
+		// Vendor Sprite
+
+		// Crowd sprites
 		// make std vector of these little ones
 		CSRendering::SpriteComponentSPtr testCrowdSprite = renderComponentFactory->CreateSpriteComponent(CSCore::Vector2::k_one, littleAliensAtlas, "p1_front", littleAliensMaterial, CSRendering::SpriteComponent::SizePolicy::k_fitMaintainingAspect);
 		CSCore::EntitySPtr testCrowdSpriteEntity = CSCore::Entity::Create();
@@ -107,7 +122,7 @@ namespace ChilliJam
 		testCrowdSpriteEntity->GetTransform().ScaleBy(10);
 		
 		// Create camera tween
-		cameraTween = CSCore::MakeEaseOutBackTween<f32>(0.0, 5.0, 1.8, 1.0, 0.0);
+		cameraTween = CSCore::MakeEaseOutBackTween<f32>(-4.0, 5.0, 1.8, 1.0, 0.0);
 		cameraTween.Play(CSCore::TweenPlayMode::k_once);
 
 
@@ -120,6 +135,7 @@ namespace ChilliJam
 		GetScene()->Add(ceilingPlaneEntity);
 		GetScene()->Add(backWallEntity);
 		GetScene()->Add(testCrowdSpriteEntity);
+		GetScene()->Add(cartEntity);
 	}
 
 	void DayPlayingState::OnUpdate(f32 in_deltaTime)
