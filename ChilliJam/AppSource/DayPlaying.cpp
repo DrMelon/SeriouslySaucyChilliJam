@@ -18,6 +18,11 @@ namespace ChilliJam
 
 	void DayPlayingState::OnInit()
 	{
+
+		// Set number of customers etc
+		customersToday = 10;
+
+
 		// Create the camera component
 		CSRendering::RenderComponentFactory* renderComponentFactory = CSCore::Application::Get()->GetSystem<CSRendering::RenderComponentFactory>();
 		CSRendering::CameraComponentSPtr cameraComponent = renderComponentFactory->CreatePerspectiveCameraComponent(CSCore::MathUtils::k_pi / 2.0f, 1.0f, 1000.0f);
@@ -44,13 +49,17 @@ namespace ChilliJam
 		auto littleAliensTexture = theResourcePool->LoadResource<CSRendering::Texture>(CSCore::StorageLocation::k_package, "TextureAtlases/LittleAliens/LittleAliens.csimage");
 		auto littleAliensAtlas = theResourcePool->LoadResource<CSRendering::TextureAtlas>(CSCore::StorageLocation::k_package, "TextureAtlases/LittleAliens/LittleAliens.csatlas");
 		auto cartTexture = theResourcePool->LoadResource<CSRendering::Texture>(CSCore::StorageLocation::k_package, "TextureAtlases/cart/cart.csimage");
-		auto cartAtlas = theResourcePool->LoadResource<CSRendering::Texture>(CSCore::StorageLocation::k_package, "TextureAtlases/cart/cart.csatlas");
+		auto cartAtlas = theResourcePool->LoadResource<CSRendering::TextureAtlas>(CSCore::StorageLocation::k_package, "TextureAtlases/cart/cart.csatlas");
+		auto vendorTexture = theResourcePool->LoadResource<CSRendering::Texture>(CSCore::StorageLocation::k_package, "TextureAtlases/vendor/vendor.csimage");
+		auto vendorAtlas = theResourcePool->LoadResource<CSRendering::TextureAtlas>(CSCore::StorageLocation::k_package, "TextureAtlases/vendor/vendor.csatlas");
 
 		// Create materials
 		auto littleAliensMaterial = theMaterialFactory->CreateSprite("littleAliensMat", littleAliensTexture);
 		littleAliensMaterial->SetTransparencyEnabled(true);
 		auto cartMaterial = theMaterialFactory->CreateSprite("cartMat", cartTexture);
 		cartMaterial->SetTransparencyEnabled(true);
+		auto vendorMaterial = theMaterialFactory->CreateSprite("vendorMat", vendorTexture);
+		vendorMaterial->SetTransparencyEnabled(true);
 
 		// Load 3D model resources (planes)
 		auto simplePlaneModel = theResourcePool->LoadResource<CSRendering::Mesh>(CSCore::StorageLocation::k_package, "Models/plane.csmodel");
@@ -112,14 +121,14 @@ namespace ChilliJam
 		cartEntity->GetTransform().ScaleBy(15);
 
 		// Vendor Sprite
+		CSRendering::SpriteComponentSPtr vendorSprite = renderComponentFactory->CreateSpriteComponent(CSCore::Vector2::k_one, vendorAtlas, "person", vendorMaterial, CSRendering::SpriteComponent::SizePolicy::k_fitMaintainingAspect);
+		CSCore::EntitySPtr vendorEntity = CSCore::Entity::Create();
+		vendorEntity->AddComponent(vendorSprite);
+		vendorEntity->GetTransform().SetPosition(-23, 2.5, -14.0);
+		vendorEntity->GetTransform().ScaleBy(15);
 
-		// Crowd sprites
-		// make std vector of these little ones
-		CSRendering::SpriteComponentSPtr testCrowdSprite = renderComponentFactory->CreateSpriteComponent(CSCore::Vector2::k_one, littleAliensAtlas, "p1_front", littleAliensMaterial, CSRendering::SpriteComponent::SizePolicy::k_fitMaintainingAspect);
-		CSCore::EntitySPtr testCrowdSpriteEntity = CSCore::Entity::Create();
-		testCrowdSpriteEntity->AddComponent(testCrowdSprite);
-		testCrowdSpriteEntity->GetTransform().SetPosition(0, 5, -15);
-		testCrowdSpriteEntity->GetTransform().ScaleBy(10);
+
+		
 		
 		// Create camera tween
 		cameraTween = CSCore::MakeEaseOutBackTween<f32>(-4.0, 5.0, 1.8, 1.0, 0.0);
@@ -134,8 +143,19 @@ namespace ChilliJam
 		GetScene()->Add(rightWallPlaneEntity);
 		GetScene()->Add(ceilingPlaneEntity);
 		GetScene()->Add(backWallEntity);
-		GetScene()->Add(testCrowdSpriteEntity);
 		GetScene()->Add(cartEntity);
+		GetScene()->Add(vendorEntity);
+
+		// Crowd sprites
+		for (int i = 0; i < customersToday; i++)
+		{
+			Customer* newCustomer = new Customer(renderComponentFactory, littleAliensMaterial, littleAliensAtlas);
+			newCustomer->posInQueue = i;
+
+			GetScene()->Add(newCustomer->myEntity);
+
+			customersList.push_back(newCustomer);
+		}
 	}
 
 	void DayPlayingState::OnUpdate(f32 in_deltaTime)
@@ -147,11 +167,70 @@ namespace ChilliJam
 		
 		cameraEntity->GetTransform().SetLookAt(CSCore::Vector3(0.0f, cameraYValue, -50.0f - cameraYValue), CSCore::Vector3::k_zero, CSCore::Vector3::k_unitPositiveY);
 
+		for (int i = 0; i < customersList.size(); i++)
+		{
+			customersList.at(i)->Update(in_deltaTime);
+		}
 
 	}
 
 	void DayPlayingState::OnDestroy()
 	{
 		// Destruction stuff here.
+		for (int i = 0; i < customersList.size(); i++)
+		{
+			delete (customersList.at(i));
+			(customersList.at(i)) = 0;
+		}
 	}
+
+
+
+
+	// Customer Stuff
+
+	Customer::Customer(CSRendering::RenderComponentFactory* renderComponentFactory, std::shared_ptr<CSRendering::Material> alienMaterial, std::shared_ptr<const CSRendering::TextureAtlas> alienAtlas)
+	{
+		// Alien Type Stuff
+		alienType = 0;
+		queueing = true;
+		hasChilli = false;
+		shopPosition = CSCore::Vector3(25 + rand()%5, 0.5, -54); //Want them to come in from the right front
+		targetPosition = shopPosition;
+		posInQueue = 0;
+		// ChilliSource Stuff (Note: for different aliens change p1_**** to be p2_ etc)
+		frontSprite = renderComponentFactory->CreateSpriteComponent(CSCore::Vector2::k_one, alienAtlas, "p1_front", alienMaterial, CSRendering::SpriteComponent::SizePolicy::k_fitMaintainingAspect);
+		backSprite = renderComponentFactory->CreateSpriteComponent(CSCore::Vector2::k_one, alienAtlas, "p1_back", alienMaterial, CSRendering::SpriteComponent::SizePolicy::k_fitMaintainingAspect);
+		frontSprite->SetVisible(!queueing);
+		backSprite->SetVisible(queueing);
+		myEntity = CSCore::Entity::Create();
+		myEntity->AddComponent(frontSprite);
+		myEntity->AddComponent(backSprite);
+		myEntity->GetTransform().SetPosition(shopPosition);
+		myEntity->GetTransform().ScaleBy(10);
+	}
+
+	void Customer::Update(float dt)
+	{
+		// Make sure the visibility of the sprites is right; when a person stops queueing (and starts getting chilli) they face the camera.
+		frontSprite->SetVisible(!queueing);
+		backSprite->SetVisible(queueing);
+
+		// Always move towards the target position
+		CSCore::Vector3 moveAmt = ((targetPosition - shopPosition) * dt);
+		moveAmt.Clamp(CSCore::Vector3(0, 0, 0), CSCore::Vector3(1.0f, 1.0f, 1.0f));
+		//hop
+		shopPosition.y = sin(shopPosition.z * 10) * 0.5f;
+		
+		shopPosition += moveAmt;
+
+		// Target position z = their position in the queue
+		targetPosition.z = (-16.0f) - posInQueue * 2;
+
+		// 
+
+		// Update position in scene
+		myEntity->GetTransform().SetPosition(shopPosition);
+	}
+
 }

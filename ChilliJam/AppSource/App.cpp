@@ -233,7 +233,7 @@ namespace ChilliJam
 
 	void App::PushInitialState()
 	{
-		GetStateManager()->Push( CSCore::StateSPtr( new State_DayBegin() ) );
+		GetStateManager()->Push( CSCore::StateSPtr( new DayPlayingState() ) );
 	}
 
 	void App::OnDestroy()
