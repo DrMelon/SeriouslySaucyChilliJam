@@ -8,6 +8,7 @@
 #include <ChilliSource/Rendering/Camera.h>
 #include <ChilliSource/Rendering/Material/MaterialFactory.h>
 #include <ChilliSource/Rendering/Texture.h>
+#include "State_DayBegin.h"
 
 namespace ChilliJam
 {
@@ -58,18 +59,33 @@ namespace ChilliJam
 		
 
 		// Create materials
-		auto littleAliensMaterial = theMaterialFactory->CreateSprite("littleAliensMat", littleAliensTexture);
-		littleAliensMaterial->SetTransparencyEnabled(true);
-		auto cartMaterial = theMaterialFactory->CreateSprite("cartMat", cartTexture);
-		cartMaterial->SetTransparencyEnabled(true);
-		auto vendorMaterial = theMaterialFactory->CreateSprite("vendorMat", vendorTexture);
-		vendorMaterial->SetTransparencyEnabled(true);
-		auto foodMaterial = theMaterialFactory->CreateSprite("foodMat", foodTexture);
-		foodMaterial->SetTransparencyEnabled(true);
-		auto bubbleMaterial = theMaterialFactory->CreateSprite("bubbleMat", bubbleTexture);
-		bubbleMaterial->SetTransparencyEnabled(true);
+		CSRendering::MaterialCSPtr littleAliensMaterial;
+		CSRendering::MaterialCSPtr cartMaterial;
+		CSRendering::MaterialCSPtr vendorMaterial;
+		CSRendering::MaterialCSPtr foodMaterial;
+		CSRendering::MaterialCSPtr bubbleMaterial;
 
-		// Initialize food types
+		if (theResourcePool->GetResource<CSRendering::Material>("littleAliensMat") == nullptr)
+		{
+			auto littleAliensMaterial_s = theMaterialFactory->CreateSprite("littleAliensMat", littleAliensTexture);
+			littleAliensMaterial_s->SetTransparencyEnabled(true);
+			auto cartMaterial_s = theMaterialFactory->CreateSprite("cartMat", cartTexture);
+			cartMaterial_s->SetTransparencyEnabled(true);
+			auto vendorMaterial_s = theMaterialFactory->CreateSprite("vendorMat", vendorTexture);
+			vendorMaterial_s->SetTransparencyEnabled(true);
+			auto foodMaterial_s = theMaterialFactory->CreateSprite("foodMat", foodTexture);
+			foodMaterial_s->SetTransparencyEnabled(true);
+			auto bubbleMaterial_s = theMaterialFactory->CreateSprite("bubbleMat", bubbleTexture);
+			bubbleMaterial_s->SetTransparencyEnabled(true);
+		}
+
+		littleAliensMaterial = theResourcePool->GetResource<CSRendering::Material>("littleAliensMat");
+		cartMaterial = theResourcePool->GetResource<CSRendering::Material>("cartMat");
+		vendorMaterial = theResourcePool->GetResource<CSRendering::Material>("vendorMat");
+		foodMaterial = theResourcePool->GetResource<CSRendering::Material>("foodMat");
+		bubbleMaterial = theResourcePool->GetResource<CSRendering::Material>("bubbleMat");
+		
+	// Initialize food types
 		foodOne.foodAtlas = foodAtlas;
 		foodOne.foodMaterial = foodMaterial;
 		foodOne.foodType = "0";
@@ -164,7 +180,7 @@ namespace ChilliJam
 		// Crowd sprites
 		for (int i = 0; i < customersToday; i++)
 		{
-			ShopCustomer* newCustomer = new ShopCustomer(renderComponentFactory, littleAliensMaterial, littleAliensAtlas);
+			ShopCustomer* newCustomer = new ShopCustomer(renderComponentFactory, littleAliensAtlas);
 			newCustomer->posInQueue = i;
 
 			// Assign food type to buy & wanted food type (if wanted food type is available today, buy that one)
@@ -239,7 +255,7 @@ namespace ChilliJam
 
 	// Customer Stuff
 
-	ShopCustomer::ShopCustomer(CSRendering::RenderComponentFactory* n_renderComponentFactory, std::shared_ptr<CSRendering::Material> alienMaterial, std::shared_ptr<const CSRendering::TextureAtlas> alienAtlas)
+	ShopCustomer::ShopCustomer(CSRendering::RenderComponentFactory* n_renderComponentFactory, std::shared_ptr<const CSRendering::TextureAtlas> alienAtlas)
 	{
 		renderComponentFactory = n_renderComponentFactory;
 		thoughtBubble = nullptr;
@@ -258,6 +274,8 @@ namespace ChilliJam
 		std::string numberstring = std::to_string(alienType);
 		std::string frontstring = firstbit + numberstring + frontlastbit;
 		std::string backstring = firstbit + numberstring + backlastbit;
+		auto theResourcePool = CSCore::Application::Get()->GetResourcePool();
+		CSRendering::MaterialCSPtr alienMaterial = theResourcePool->GetResource<CSRendering::Material>("littleAliensMat");
 
 		frontSprite = renderComponentFactory->CreateSpriteComponent(CSCore::Vector2::k_one, alienAtlas, frontstring, alienMaterial, CSRendering::SpriteComponent::SizePolicy::k_fitMaintainingAspect);
 		backSprite = renderComponentFactory->CreateSpriteComponent(CSCore::Vector2::k_one, alienAtlas, backstring, alienMaterial, CSRendering::SpriteComponent::SizePolicy::k_fitMaintainingAspect);
@@ -330,7 +348,7 @@ namespace ChilliJam
 				// set up external state application stuff (like moneys, how many people today etc)
 
 				// go next state
-				//CSCore::Application::Get()->GetStateManager()->Change((CSCore::StateSPtr) new NightState());
+				CSCore::Application::Get()->GetStateManager()->Change((CSCore::StateSPtr) new State_DayBegin());
 
 			}
 		}

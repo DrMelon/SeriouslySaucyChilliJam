@@ -18,7 +18,7 @@
 
 struct FoodStruct
 {
-	std::shared_ptr<CSRendering::Material> foodMaterial;
+	CSRendering::MaterialCSPtr foodMaterial;
 	std::shared_ptr<const CSRendering::TextureAtlas> foodAtlas;
 	std::string foodType;
 };

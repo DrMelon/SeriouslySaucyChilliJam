@@ -181,8 +181,8 @@ namespace ChilliJam
 			[]( CSUI::Widget* in_widget, const CSInput::Pointer& in_pointer, CSInput::Pointer::InputType in_inputType )
 			{
 				// Temp return to daybegin
-				CSCore::Application::Get()->GetStateManager()->Change( ( CSCore::StateSPtr ) new State_DayBegin );
-				//CSCore::Application::Get()->GetStateManager()->Change( (CSCore::StateSPtr) new DayPlayingState );
+				//CSCore::Application::Get()->GetStateManager()->Change( ( CSCore::StateSPtr ) new State_DayBegin );
+				CSCore::Application::Get()->GetStateManager()->Change( (CSCore::StateSPtr) new DayPlayingState );
 			}
 		);
 	}

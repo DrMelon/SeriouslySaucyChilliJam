@@ -78,7 +78,7 @@ namespace ChilliJam
 
 
 			// Functions
-			ShopCustomer(CSRendering::RenderComponentFactory* n_renderComponentFactory, std::shared_ptr<CSRendering::Material> alienMaterial, std::shared_ptr<const CSRendering::TextureAtlas> alienAtlas);
+			ShopCustomer(CSRendering::RenderComponentFactory* n_renderComponentFactory, std::shared_ptr<const CSRendering::TextureAtlas> alienAtlas);
 			//void MoveInQueue(); // This function sets where in the room they should move to in order to be part of the queue.
 			void Update(float dt); // Called in update ofc, moving towards target pos
 			void AddFood(FoodStruct food);
