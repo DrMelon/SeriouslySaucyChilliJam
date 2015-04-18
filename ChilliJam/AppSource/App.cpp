@@ -31,8 +31,9 @@
 #include <time.h>
 
 // Required Engine Header
-#include <ChilliSource\Rendering\Model\CSModelProvider.h>
-#include <ChilliSource\Audio\CricketAudio.h>
+#include <ChilliSource/Rendering/Model/CSModelProvider.h>
+
+#include <ChilliSource/Audio/CricketAudio.h>
 
 // Required Application Header
 #include <State.h>
@@ -57,6 +58,9 @@ namespace ChilliJam
 
 	void App::OnInit()
 	{
+		// Initialize day counter
+		Day = 1;
+
 		// Create the chilli ingredients
 		Ingredient = new IngredientStruct[INGREDIENTS];
 		{
