@@ -31,6 +31,7 @@
 
 #include <ChilliSource/ChilliSource.h>
 #include <ChilliSource/Core/State.h>
+
 #include <ChilliSource/Audio/CricketAudio.h>
 
 #include <vector>
@@ -85,6 +86,11 @@ namespace ChilliJam
 			// IN: N/A
 			// OUT: N/A
 			void Initialize_Recipe();
+
+			// Update the progress bar
+			// IN: N/A
+			// OUT: N/A
+			void UpdateRecipe();
 
 			// The menu orthographic camera
 			CSCore::EntitySPtr Camera;

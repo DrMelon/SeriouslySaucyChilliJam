@@ -1,7 +1,12 @@
 {
-	"Type": "Widget",
+	"Type": "Image",
 	"Name": "Menu_SpecialBegin",
 	"RelSize": "1 1",
+	"Drawable": {
+		"Type": "NinePatch",
+		"Insets": "0.25 0.25 0.25 0.25",
+		"TexturePath": "background.png"
+	},
 
 	"Children": [
 		{

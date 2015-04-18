@@ -33,6 +33,8 @@
 #include <ChilliSource/ChilliSource.h>
 #include <ChilliSource/Core/State.h>
 
+#include <ChilliSource/Audio/CricketAudio.h>
+
 // Required C++ Header
 #include <vector>
 
@@ -42,6 +44,8 @@
 
 #define AFFECT_JUICE_TASTE -1
 #define AFFECT_JUICE_JUICE 1
+
+#define BUTTONS 5
 
 // Namespaces
 using std::vector;
@@ -71,6 +75,11 @@ namespace ChilliJam
 			// IN: N/A
 			// OUT: N/A
 			void Continue();
+
+			// Play a sound effect using the audioplayer of this state
+			// IN: (string) The event bank sound to play
+			// OUT: N/A
+			void PlaySound( string name );
 		private:
 			// Initialize the orthographic camera
 			// IN: N/A
@@ -81,6 +90,11 @@ namespace ChilliJam
 			// IN: N/A
 			// OUT: N/A
 			void Initialize_GUI();
+
+			// Initialize the GUI buttons & add events to them
+			// IN: N/A
+			// OUT: N/A
+			void Initialize_Button();
 
 			// The menu orthographic camera
 			CSCore::EntitySPtr Camera;
@@ -98,6 +112,10 @@ namespace ChilliJam
 			// Temporary resource changes during this state before finalizing
 			int Resource_Money;
 			int Resource_Juice;
+
+			// Audio
+			CSAudio::CkAudioPlayer* AudioPlayer;
+			CSAudio::CkBankCSPtr AudioBank;
 	};
 }
 

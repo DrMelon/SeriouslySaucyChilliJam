@@ -1,7 +1,12 @@
 {
-	"Type": "Widget",
+	"Type": "Image",
 	"Name": "Menu_DayBegin",
 	"RelSize": "1 1",
+	"Drawable": {
+		"Type": "NinePatch",
+		"Insets": "0.25 0.25 0.25 0.25",
+		"TexturePath": "background.png"
+	},
 
 	"Children": [
 		{
@@ -41,9 +46,25 @@
 					},
 					"Children": [
 						{
+							"Type": "HorizontalFillProgressBar",
+							"Name": "Progress",
+							"Progress": "0.0",
+							"RelBarSize": "0.99 0.95",
+							"Drawable": {
+								"Type": "NinePatch",
+								"Insets": "0.25 0.25 0.25 0.25",
+								"TexturePath": "grey_panel.png"
+							},
+							"BarDrawable": {
+								"Type": "NinePatch",
+								"Insets": "0.25 0.25 0.25 0.25",
+								"TexturePath": "red_panel.png"
+							}
+						},
+						{
 							"Type": "Label",
 							"Name": "Label_Button_Continue",
-							"Text": "",
+							"Text": "0 of 2",
 							"RelPosition": "0.0 0.0",
 							"TextColour": "1.0 0.5 0.1 1.0",
 							"TextScale": "0.5 0.5"

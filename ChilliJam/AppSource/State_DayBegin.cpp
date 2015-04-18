@@ -42,6 +42,7 @@
 #include <ChilliSource/UI/Base.h>
 #include <ChilliSource/UI/Text.h>
 #include <ChilliSource/UI/Button.h>
+#include <ChilliSource/UI/ProgressBar.h>
 
 // Required Application Header
 #include <App.h>
@@ -233,6 +234,9 @@ namespace ChilliJam
 		// Update to new start recipes
 		StartRecipe[LastStartRecipe] = recipe;
 		LastStartRecipe = !LastStartRecipe;
+
+		// Update the progress bar
+		UpdateRecipe();
 	}
 
 	// Remove a recipe from the selection, must already be selected
@@ -248,6 +252,44 @@ namespace ChilliJam
 				LastStartRecipe = index;
 			}
 		}
+
+		// Update the progress bar
+		UpdateRecipe();
+	}
+
+	// Update the progress bar
+	// IN: N/A
+	// OUT: N/A
+	void State_DayBegin::UpdateRecipe()
+	{
+		unsigned int count = 0;
+		for ( unsigned int index = 0; index < 2; index++ )
+		{
+			if ( StartRecipe[index] != "" )
+			{
+				count++;
+			}
+		}
+
+		float progress = 0;
+		string text = "0 of 2";
+		CSCore::Colour colour( 1.0f, 0.5f, 0.1f, 1.0f );
+		{
+			if ( count > 1 )
+			{
+				progress = 1;
+				text = "Continue";
+				colour = CSCore::Colour( 0.9f, 0.9f, 0.9f, 1.0f );
+			}
+			else if ( count > 0 )
+			{
+				progress = 0.5f;
+				text = "1 of 2";
+			}
+		}
+		UI->GetWidget( "Panel" )->GetWidget( "Button_Continue" )->GetWidget( "Label_Button_Continue" )->GetComponent<CSUI::TextComponent>()->SetText( text );
+		UI->GetWidget( "Panel" )->GetWidget( "Button_Continue" )->GetWidget( "Label_Button_Continue" )->GetComponent<CSUI::TextComponent>()->SetTextColour( colour );
+		UI->GetWidget( "Panel" )->GetWidget( "Button_Continue" )->GetWidget( "Progress" )->GetComponent<CSUI::ProgressBarComponent>()->SetProgress( progress );
 	}
 
 	// Move on to the next state in the game, if the requirements of this one have been met

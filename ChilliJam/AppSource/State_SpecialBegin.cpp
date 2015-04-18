@@ -50,7 +50,7 @@ namespace ChilliJam
 {
 	void State_SpecialBegin::CreateSystems()
 	{
-		
+		AudioPlayer = CreateSystem<CSAudio::CkAudioPlayer>();
 	}
 
 	void State_SpecialBegin::OnInit()
@@ -59,6 +59,12 @@ namespace ChilliJam
 
 		Initialize_Camera();
 		Initialize_GUI();
+		Initialize_Button();
+
+		auto resourcePool = CSCore::Application::Get()->GetResourcePool();
+		AudioBank = resourcePool->LoadResource<CSAudio::CkBank>( CSCore::StorageLocation::k_package, "Audio/bank.ckb" );
+
+		AudioPlayer->PlayEffect( AudioBank, "UI_Click" );
 	}
 
 	void State_SpecialBegin::OnUpdate( f32 in_deltaTime )
@@ -107,6 +113,44 @@ namespace ChilliJam
 		GetUICanvas()->AddWidget( UI );
 	}
 
+	// Initialize the GUI buttons & add events to them
+	// IN: N/A
+	// OUT: N/A
+	void State_SpecialBegin::Initialize_Button()
+	{
+		unsigned int button = 0;
+		ButtonConnection = new CSCore::EventConnectionUPtr[BUTTONS];
+
+		ButtonConnection[button++] = UI->GetWidget( "Panel" )->GetWidget( "Panel_Adjust_Money" )->GetWidget( "Button_Plus" )->GetReleasedInsideEvent().OpenConnection(
+			[]( CSUI::Widget* in_widget, const CSInput::Pointer& in_pointer, CSInput::Pointer::InputType in_inputType )
+			{
+				State_SpecialBegin* state = (State_SpecialBegin*) CSCore::Application::Get()->GetStateManager()->GetActiveState().get();
+				state->PlaySound( "UI_Click" );
+			}
+		);
+		ButtonConnection[button++] = UI->GetWidget( "Panel" )->GetWidget( "Panel_Adjust_Money" )->GetWidget( "Button_Minus" )->GetReleasedInsideEvent().OpenConnection(
+			[]( CSUI::Widget* in_widget, const CSInput::Pointer& in_pointer, CSInput::Pointer::InputType in_inputType )
+			{
+				State_SpecialBegin* state = (State_SpecialBegin*) CSCore::Application::Get()->GetStateManager()->GetActiveState().get();
+				state->PlaySound( "UI_Click" );
+			}
+		);
+		ButtonConnection[button++] = UI->GetWidget( "Panel" )->GetWidget( "Panel_Adjust_Juice" )->GetWidget( "Button_Plus" )->GetReleasedInsideEvent().OpenConnection(
+			[]( CSUI::Widget* in_widget, const CSInput::Pointer& in_pointer, CSInput::Pointer::InputType in_inputType )
+			{
+				State_SpecialBegin* state = (State_SpecialBegin*) CSCore::Application::Get()->GetStateManager()->GetActiveState().get();
+				state->PlaySound( "UI_Click" );
+			}
+		);
+		ButtonConnection[button++] = UI->GetWidget( "Panel" )->GetWidget( "Panel_Adjust_Juice" )->GetWidget( "Button_Minus" )->GetReleasedInsideEvent().OpenConnection(
+			[]( CSUI::Widget* in_widget, const CSInput::Pointer& in_pointer, CSInput::Pointer::InputType in_inputType )
+			{
+				State_SpecialBegin* state = (State_SpecialBegin*) CSCore::Application::Get()->GetStateManager()->GetActiveState().get();
+				state->PlaySound( "UI_Click" );
+			}
+		);
+	}
+
 	// Add or remove money to/from the mix
 	// IN: (amount) The amount to add/remove
 	// OUT: N/A
@@ -134,5 +178,13 @@ namespace ChilliJam
 	void State_SpecialBegin::Continue()
 	{
 		
+	}
+
+	// Play a sound effect using the audioplayer of this state
+	// IN: (string) The event bank sound to play
+	// OUT: N/A
+	void State_SpecialBegin::PlaySound( string name )
+	{
+		AudioPlayer->PlayEffect( AudioBank, "UI_Click" );
 	}
 }
