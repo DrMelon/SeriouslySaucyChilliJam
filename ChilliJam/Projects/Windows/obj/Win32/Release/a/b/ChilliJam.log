@@ -1,56 +1,65 @@
-﻿Build started 19/04/2015 13:20:47.
+﻿Build started 19/04/2015 15:26:57.
      1>Project "Z:\ActiveProjects\ChilliJam\Repository\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\ChilliJam.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /MP /O2 /Oi /Oy- /GL /D _UNICODE /D UNICODE /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Z:\ActiveProjects\ChilliJam\Repository\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\obj\Win32\Release\a\b\/..\..\AppSource\/" /Fd"Z:\ActiveProjects\ChilliJam\Repository\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\obj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\AppSource\App.cpp ..\..\AppSource\Customer.cpp ..\..\AppSource\DayPlaying.cpp ..\..\AppSource\State.cpp ..\..\AppSource\State_DayBegin.cpp ..\..\AppSource\State_SpecialBegin.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /MP /O2 /Oi /Oy- /GL /D _UNICODE /D UNICODE /D WIN32 /D NDEBUG /D GLEW_STATIC /D SFML_STATIC /D CS_TARGETPLATFORM_WINDOWS /D CS_LOGLEVEL_WARNING /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Z:\ActiveProjects\ChilliJam\Repository\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\obj\Win32\Release\a\b\/..\..\AppSource\/" /Fd"Z:\ActiveProjects\ChilliJam\Repository\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\obj\Win32\Release\a\b\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\AppSource\App.cpp ..\..\AppSource\DayPlaying.cpp ..\..\AppSource\Game_Controller.cpp ..\..\AppSource\Score_Controller.cpp ..\..\AppSource\State.cpp ..\..\AppSource\State_DayBegin.cpp ..\..\AppSource\State_Score.cpp ..\..\AppSource\State_SpecialBegin.cpp
          App.cpp
-         Customer.cpp
          DayPlaying.cpp
+         Game_Controller.cpp
+         Score_Controller.cpp
          State.cpp
+         State_DayBegin.cpp
      1>Z:\ActiveProjects\ChilliJam\Repository\SeriouslySaucyChilliJam\ChilliJam\AppSource\App.h(89): warning C4244: '=' : conversion from 'float' to 'unsigned int', possible loss of data (..\..\AppSource\App.cpp)
      1>Z:\ActiveProjects\ChilliJam\Repository\SeriouslySaucyChilliJam\ChilliJam\AppSource\App.h(90): warning C4244: 'return' : conversion from 'unsigned int' to 'float', possible loss of data (..\..\AppSource\App.cpp)
-         State_DayBegin.cpp
      1>..\..\AppSource\App.cpp(46): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
      1>Z:\ActiveProjects\ChilliJam\Repository\SeriouslySaucyChilliJam\ChilliJam\AppSource\App.h(89): warning C4244: '=' : conversion from 'float' to 'unsigned int', possible loss of data (..\..\AppSource\State.cpp)
      1>Z:\ActiveProjects\ChilliJam\Repository\SeriouslySaucyChilliJam\ChilliJam\AppSource\App.h(90): warning C4244: 'return' : conversion from 'unsigned int' to 'float', possible loss of data (..\..\AppSource\State.cpp)
-     1>..\..\AppSource\State.cpp(147): warning C4018: '<' : signed/unsigned mismatch
-     1>..\..\AppSource\State.cpp(152): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
-     1>..\..\AppSource\State.cpp(163): warning C4244: 'argument' : conversion from 'int' to 'f32', possible loss of data
-     1>..\..\AppSource\State.cpp(171): warning C4244: 'argument' : conversion from 'int' to 'f32', possible loss of data
-     1>..\..\AppSource\State.cpp(222): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdlib.h(937) : see declaration of 'itoa'
-     1>..\..\AppSource\State.cpp(230): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
-     1>..\..\AppSource\State.cpp(245): warning C4244: 'argument' : conversion from 'double' to 'f32', possible loss of data
-     1>..\..\AppSource\State.cpp(265): warning C4018: '<' : signed/unsigned mismatch
-     1>..\..\AppSource\State.cpp(295): warning C4244: '=' : conversion from 'float' to '__int64', possible loss of data
-     1>..\..\AppSource\State.cpp(316): warning C4244: 'argument' : conversion from 'double' to 'f32', possible loss of data
-     1>Z:\ActiveProjects\ChilliJam\Repository\SeriouslySaucyChilliJam\ChilliJam\AppSource\App.h(89): warning C4244: '=' : conversion from 'float' to 'unsigned int', possible loss of data (..\..\AppSource\DayPlaying.cpp)
-     1>Z:\ActiveProjects\ChilliJam\Repository\SeriouslySaucyChilliJam\ChilliJam\AppSource\App.h(90): warning C4244: 'return' : conversion from 'unsigned int' to 'float', possible loss of data (..\..\AppSource\DayPlaying.cpp)
-     1>..\..\AppSource\DayPlaying.cpp(136): warning C4305: 'argument' : truncation from 'double' to 'f32'
-     1>..\..\AppSource\DayPlaying.cpp(146): warning C4305: 'argument' : truncation from 'double' to 'f32'
-     1>..\..\AppSource\DayPlaying.cpp(166): warning C4305: 'argument' : truncation from 'double' to 'f32'
-         State_SpecialBegin.cpp
-     1>..\..\AppSource\DayPlaying.cpp(183): warning C4305: 'argument' : truncation from 'double' to 'f32'
-     1>..\..\AppSource\DayPlaying.cpp(257): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdlib.h(937) : see declaration of 'itoa'
-     1>..\..\AppSource\DayPlaying.cpp(265): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
-     1>..\..\AppSource\DayPlaying.cpp(278): warning C4305: 'argument' : truncation from 'double' to 'f32'
-     1>..\..\AppSource\DayPlaying.cpp(283): warning C4018: '<' : signed/unsigned mismatch
-     1>..\..\AppSource\DayPlaying.cpp(294): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
-     1>..\..\AppSource\DayPlaying.cpp(303): warning C4018: '<' : signed/unsigned mismatch
-     1>..\..\AppSource\DayPlaying.cpp(331): warning C4244: 'argument' : conversion from 'int' to 'f32', possible loss of data
-     1>..\..\AppSource\DayPlaying.cpp(435): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>..\..\AppSource\DayPlaying.cpp(441): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>..\..\AppSource\DayPlaying.cpp(492): warning C4305: 'argument' : truncation from 'double' to 'f32'
      1>Z:\ActiveProjects\ChilliJam\Repository\SeriouslySaucyChilliJam\ChilliJam\AppSource\App.h(89): warning C4244: '=' : conversion from 'float' to 'unsigned int', possible loss of data (..\..\AppSource\State_DayBegin.cpp)
      1>Z:\ActiveProjects\ChilliJam\Repository\SeriouslySaucyChilliJam\ChilliJam\AppSource\App.h(90): warning C4244: 'return' : conversion from 'unsigned int' to 'float', possible loss of data (..\..\AppSource\State_DayBegin.cpp)
+     1>..\..\AppSource\State.cpp(151): warning C4244: '=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>..\..\AppSource\State.cpp(154): warning C4244: '=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>..\..\AppSource\State.cpp(158): warning C4244: '=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>..\..\AppSource\State.cpp(161): warning C4244: '=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>..\..\AppSource\State.cpp(166): warning C4018: '<' : signed/unsigned mismatch
+     1>..\..\AppSource\State.cpp(171): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>..\..\AppSource\State.cpp(182): warning C4244: 'argument' : conversion from 'int' to 'f32', possible loss of data
+     1>..\..\AppSource\State.cpp(190): warning C4244: 'argument' : conversion from 'int' to 'f32', possible loss of data
+     1>..\..\AppSource\State.cpp(241): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdlib.h(937) : see declaration of 'itoa'
+     1>..\..\AppSource\State.cpp(249): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>..\..\AppSource\State.cpp(264): warning C4244: 'argument' : conversion from 'double' to 'f32', possible loss of data
+     1>..\..\AppSource\State.cpp(314): warning C4244: '=' : conversion from 'float' to '__int64', possible loss of data
+     1>..\..\AppSource\State.cpp(335): warning C4244: 'argument' : conversion from 'double' to 'f32', possible loss of data
+     1>..\..\AppSource\State.cpp(393): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>..\..\AppSource\State.cpp(397): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
      1>..\..\AppSource\State_DayBegin.cpp(155): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdlib.h(937) : see declaration of 'itoa'
      1>..\..\AppSource\State_DayBegin.cpp(163): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>Z:\ActiveProjects\ChilliJam\Repository\SeriouslySaucyChilliJam\ChilliJam\AppSource\App.h(89): warning C4244: '=' : conversion from 'float' to 'unsigned int', possible loss of data (..\..\AppSource\DayPlaying.cpp)
+     1>Z:\ActiveProjects\ChilliJam\Repository\SeriouslySaucyChilliJam\ChilliJam\AppSource\App.h(90): warning C4244: 'return' : conversion from 'unsigned int' to 'float', possible loss of data (..\..\AppSource\DayPlaying.cpp)
+     1>..\..\AppSource\DayPlaying.cpp(137): warning C4305: 'argument' : truncation from 'double' to 'f32'
+     1>..\..\AppSource\DayPlaying.cpp(147): warning C4305: 'argument' : truncation from 'double' to 'f32'
+     1>..\..\AppSource\DayPlaying.cpp(167): warning C4305: 'argument' : truncation from 'double' to 'f32'
+     1>..\..\AppSource\DayPlaying.cpp(195): warning C4305: 'argument' : truncation from 'double' to 'f32'
+     1>..\..\AppSource\DayPlaying.cpp(270): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdlib.h(937) : see declaration of 'itoa'
+     1>..\..\AppSource\DayPlaying.cpp(278): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>..\..\AppSource\DayPlaying.cpp(291): warning C4305: 'argument' : truncation from 'double' to 'f32'
+     1>..\..\AppSource\DayPlaying.cpp(296): warning C4018: '<' : signed/unsigned mismatch
+     1>..\..\AppSource\DayPlaying.cpp(307): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>..\..\AppSource\DayPlaying.cpp(316): warning C4018: '<' : signed/unsigned mismatch
+     1>..\..\AppSource\DayPlaying.cpp(344): warning C4244: 'argument' : conversion from 'int' to 'f32', possible loss of data
+     1>..\..\AppSource\DayPlaying.cpp(448): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>..\..\AppSource\DayPlaying.cpp(454): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>..\..\AppSource\DayPlaying.cpp(505): warning C4305: 'argument' : truncation from 'double' to 'f32'
+         State_Score.cpp
+         State_SpecialBegin.cpp
+     1>Z:\ActiveProjects\ChilliJam\Repository\SeriouslySaucyChilliJam\ChilliJam\AppSource\App.h(89): warning C4244: '=' : conversion from 'float' to 'unsigned int', possible loss of data (..\..\AppSource\State_Score.cpp)
+     1>Z:\ActiveProjects\ChilliJam\Repository\SeriouslySaucyChilliJam\ChilliJam\AppSource\App.h(90): warning C4244: 'return' : conversion from 'unsigned int' to 'float', possible loss of data (..\..\AppSource\State_Score.cpp)
      1>Z:\ActiveProjects\ChilliJam\Repository\SeriouslySaucyChilliJam\ChilliJam\AppSource\App.h(89): warning C4244: '=' : conversion from 'float' to 'unsigned int', possible loss of data (..\..\AppSource\State_SpecialBegin.cpp)
      1>Z:\ActiveProjects\ChilliJam\Repository\SeriouslySaucyChilliJam\ChilliJam\AppSource\App.h(90): warning C4244: 'return' : conversion from 'unsigned int' to 'float', possible loss of data (..\..\AppSource\State_SpecialBegin.cpp)
      1>..\..\AppSource\State_SpecialBegin.cpp(142): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
@@ -64,8 +73,11 @@
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"Z:\ActiveProjects\ChilliJam\Repository\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\bin\Win32\Release\ChilliJam.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib opengl32.lib winmm.lib XAudio2.lib zlibstat.lib glew32s.lib "sfml-system-s.lib" "sfml-window-s.lib" ck.lib CSBase.lib ChilliSource.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:"Z:\ActiveProjects\ChilliJam\Repository\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\bin\Win32\Release\ChilliJam.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"Z:\ActiveProjects\ChilliJam\Repository\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\bin\Win32\Release\ChilliJam.lib" /MACHINE:X86 /SAFESEH Z:\ActiveProjects\ChilliJam\Repository\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\obj\Win32\Release\a\b\/..\..\AppSource\/App.obj
          Z:\ActiveProjects\ChilliJam\Repository\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\obj\Win32\Release\a\b\/..\..\AppSource\/Customer.obj
          Z:\ActiveProjects\ChilliJam\Repository\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\obj\Win32\Release\a\b\/..\..\AppSource\/DayPlaying.obj
+         Z:\ActiveProjects\ChilliJam\Repository\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\obj\Win32\Release\a\b\/..\..\AppSource\/Game_Controller.obj
+         Z:\ActiveProjects\ChilliJam\Repository\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\obj\Win32\Release\a\b\/..\..\AppSource\/Score_Controller.obj
          Z:\ActiveProjects\ChilliJam\Repository\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\obj\Win32\Release\a\b\/..\..\AppSource\/State.obj
          Z:\ActiveProjects\ChilliJam\Repository\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\obj\Win32\Release\a\b\/..\..\AppSource\/State_DayBegin.obj
+         Z:\ActiveProjects\ChilliJam\Repository\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\obj\Win32\Release\a\b\/..\..\AppSource\/State_Score.obj
          Z:\ActiveProjects\ChilliJam\Repository\SeriouslySaucyChilliJam\ChilliJam\Projects\Windows\\obj\Win32\Release\a\b\/..\..\AppSource\/State_SpecialBegin.obj
      1>MSVCRT.lib(cinitexe.obj) : warning LNK4098: defaultlib 'libcmt.lib' conflicts with use of other libs; use /NODEFAULTLIB:library
          Generating code
@@ -90,4 +102,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:14.49
+Time Elapsed 00:00:20.86
