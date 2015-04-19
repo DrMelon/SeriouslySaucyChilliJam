@@ -144,6 +144,24 @@ namespace ChilliJam
 			GetScene()->Add( spriteentity2 );
 		}
 
+		// Initialize effects of having a tastey or juicey recipe
+		{
+			// Juice is passed as 100% from SpecialBegin
+			// It is used for amount of affected
+			Affect_Juice = application->GetAffect();
+			{
+				// Percentage of consumers to affect
+				Affect_Juice = ceil( (float) application->GetConsumers() / 100 * Affect_Juice );
+			}
+			// Taste is passed as 0% from SpecialBegin,
+			// It is used for size of effect
+			Affect_Taste = 100 - application->GetAffect();
+			{
+				// Percentage effect of max size
+				Affect_Taste = ceil( (float) AFFECT_SIZE / 100 * Affect_Taste );
+			}
+		}
+
 		// Add people to the screen
 		for ( unsigned int person = 0; person < application->GetConsumers(); person++ )
 		{
@@ -198,7 +216,7 @@ namespace ChilliJam
 
 		// Initialize affected logic
 		Affected_Current = 0;
-		Affected_Target = Person.size() / ( ( rand() % 3 ) + 1 );
+		Affected_Target = Affect_Juice;
 		{
 			if ( application->GetDay() == 1 )
 			{
@@ -263,7 +281,7 @@ namespace ChilliJam
 				// Create effect
 				EffectStruct effect;
 				{
-					for ( unsigned int piece = 0; piece < ( rand() % 3 ) + 6; piece++ )
+					for ( unsigned int piece = 0; piece < Affect_Taste; piece++ )
 					{
 						CSCore::EntitySPtr sprite = CSCore::Entity::Create();
 						{
@@ -363,7 +381,7 @@ namespace ChilliJam
 			{
 				App* application = (App*) CSCore::Application::Get();
 				{
-					application->SetConsumers( Effect.size() * 6 );
+					application->SetConsumers( Effect.size() * Affect_Taste );
 				}
 				State_Score* state = new State_Score();
 				{

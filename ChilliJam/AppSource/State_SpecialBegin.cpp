@@ -215,7 +215,7 @@ namespace ChilliJam
 	// OUT: N/A
 	void State_SpecialBegin::AddMoney( int amount )
 	{
-		Affect = 0;
+		Affect = 20;
 
 		UpdateBars();
 	}
@@ -225,7 +225,7 @@ namespace ChilliJam
 	// OUT: N/A
 	void State_SpecialBegin::AddJuice( int amount )
 	{
-		Affect = 100;
+		Affect = 80;
 
 		UpdateBars();
 	}

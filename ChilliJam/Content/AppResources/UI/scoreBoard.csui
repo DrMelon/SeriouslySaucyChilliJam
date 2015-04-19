@@ -64,7 +64,7 @@
             "Type": "Image",
             "Name": "CoinLoad",
             "RelPosition": "-0.1 .145",
-            "RelSize": ".025 .04",
+            "RelSize": ".045 .08",
             "Drawable": {
                 "Type": "Standard",
                 "TexturePath": "hud_coins.png"
@@ -83,7 +83,7 @@
             "Type": "Image",
             "Name": "AlienJuice",
             "RelPosition": "-0.1 .005",
-            "RelSize": ".025 .04",
+            "RelSize": ".045 .08",
             "Drawable": {
                 "Type": "Standard",
                 "TexturePath": "ufoGreen.png"
