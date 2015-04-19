@@ -1,0 +1,67 @@
+{
+	"Type": "Widget",
+	"Name": "Recipe",
+	"RelSize": "0.1 0.1",
+	"RelPosition": "-0.43 0.47",
+
+	"Children": [
+		{
+			"Type": "Image",
+			"Name": "Panel",
+			"RelPosition": "0.0 0.0",
+			"RelSize": "1.0 1.0",
+			"Drawable": {
+				"Type": "NinePatch",
+				"Insets": "0.25 0.25 0.25 0.25",
+				"TexturePath": "green_panel.png"
+			}
+		},
+		{
+			"Type": "Label",
+			"Name": "Label_Title",
+			"Text": "Day",
+			"RelPosition": "0.0 0.1",
+			"TextColour": "0.9 0.9 0.9 1.0",
+			"TextScale": "0.5 0.5"
+		},
+		{
+			"Type": "Label",
+			"Name": "Day",
+			"Text": "0",
+			"RelPosition": "0.0 -0.25",
+			"TextColour": "0.9 0.9 0.9 1.0",
+			"TextScale": "0.5 0.5"
+		},
+		{
+			"Type": "Image",
+			"Name": "MoneyGainedPanel",
+			"RelPosition": "2.0 0.0",
+			"RelSize": "3.0 1.0",
+			"Drawable": {
+				"Type": "NinePatch",
+				"Insets": "0.25 0.25 0.25 0.25",
+				"TexturePath": "green_panel.png"
+			}
+		},
+		{
+			"Type": "Image",
+			"Name": "DollaImage",
+			"RelPosition": "0.8 -0.05",
+			"RelSize": "0.5625 1.0",
+			"Drawable": {
+				"Type": "Standard",
+				"TexturePath": "coin.png"
+			}
+
+		},
+		{
+			"Type": "Label",
+			"Name": "Dolla",
+			"Text": "$0,000,000.00",
+			"RelPosition": "2.1 0.0",
+			"TextColour": "0.9 0.9 0.9 1.0",
+			"TextScale": "0.5 1.0"
+		}
+	
+	]
+}

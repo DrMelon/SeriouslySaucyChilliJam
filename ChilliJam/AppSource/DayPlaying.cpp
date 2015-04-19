@@ -32,7 +32,7 @@ namespace ChilliJam
 		App* application = (App*)CSCore::Application::Get();
 
 		// Set number of customers etc
-		customersToday = 5 + (application->GetDay() * 5);
+		customersToday = application->GetConsumers();
 
 		// Begin playing music.
 		AudioPlayer->PlayMusic(CSCore::StorageLocation::k_package, "Audio/ChilliToAliens.ogg");
