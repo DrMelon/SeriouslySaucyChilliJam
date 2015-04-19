@@ -59,6 +59,7 @@ namespace ChilliJam
 		auto tiledFloorMaterial = theResourcePool->LoadResource<CSRendering::Material>(CSCore::StorageLocation::k_package, "Materials/tiledfloor.csmaterial");
 		auto wallsMaterial = theResourcePool->LoadResource<CSRendering::Material>(CSCore::StorageLocation::k_package, "Materials/walls.csmaterial");
 		auto backwallsMaterial = theResourcePool->LoadResource<CSRendering::Material>(CSCore::StorageLocation::k_package, "Materials/backwall.csmaterial");
+		auto shelfMaterial = theResourcePool->LoadResource<CSRendering::Material>(CSCore::StorageLocation::k_package, "Materials/shelf.csmaterial");
 
 		// Load atlases
 		auto littleAliensTexture = theResourcePool->LoadResource<CSRendering::Texture>(CSCore::StorageLocation::k_package, "TextureAtlases/LittleAliens/LittleAliens.csimage");
@@ -164,6 +165,17 @@ namespace ChilliJam
 		backWallEntity->GetTransform().SetPosition(0, 5, 0);
 		backWallEntity->GetTransform().ScaleBy(75, 1, 20);
 		backWallEntity->GetTransform().SetOrientation(CSCore::Quaternion(CSCore::Vector3(1, 0, 0), -90 * 3.14 / 180));
+
+		// Add plane model for shelves
+		CSRendering::StaticMeshComponentSPtr shelfPlane = renderComponentFactory->CreateStaticMeshComponent(simplePlaneModel, shelfMaterial);
+
+		CSCore::EntitySPtr shelfEntity = CSCore::Entity::Create();
+		shelfEntity->AddComponent(shelfPlane);
+
+		// Position SHELF plane (WARNING: MAGIC NUMBERS OUT OF THE WAZOO)
+		shelfEntity->GetTransform().SetPosition(75 / 2.0f, 3, -15);
+		shelfEntity->GetTransform().ScaleBy(3, 3, 40);
+		//shelfEntity->GetTransform().SetOrientation(CSCore::Quaternion(CSCore::Vector3(1, 0, 0), -90 * 3.14 / 180));
 		
 		// Cart Sprite
 		CSRendering::SpriteComponentSPtr cartSprite = renderComponentFactory->CreateSpriteComponent(CSCore::Vector2::k_one, cartMaterial, CSRendering::SpriteComponent::SizePolicy::k_fitMaintainingAspect);
@@ -192,6 +204,7 @@ namespace ChilliJam
 		GetScene()->Add(rightWallPlaneEntity);
 		GetScene()->Add(ceilingPlaneEntity);
 		GetScene()->Add(backWallEntity);
+		GetScene()->Add(shelfEntity);
 		GetScene()->Add(cartEntity);
 		GetScene()->Add(vendorEntity);
 
