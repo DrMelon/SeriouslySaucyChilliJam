@@ -58,11 +58,13 @@ namespace ChilliJam
 			bool facingCam;
 			int posInQueue;
 			int hopAmt;
+
 			ShopCustomer* nextInLine;
 			CSCore::Vector3 shopPosition;
 			CSCore::Vector3 targetPosition;
 			CSRendering::SpriteComponentSPtr frontSprite;
 			CSRendering::SpriteComponentSPtr backSprite;
+			CSAudio::CkAudioPlayer* AudioPlayer;
 			CSCore::EntitySPtr myEntity;
 			// Sean Citizen Class 
 			Customer* internalCustomerStuff;
@@ -83,6 +85,8 @@ namespace ChilliJam
 			void Update(float dt); // Called in update ofc, moving towards target pos
 			void AddFood(FoodStruct food);
 			void GoNext(); // tells the next customer in line to go
+			void PlayCashRegisterNoise(CSAudio::CkAudioPlayer* AudioPlayer);
+			void PlayFavouriteFoodNoise(CSAudio::CkAudioPlayer* AudioPlayer);
 
 	};
 
@@ -105,13 +109,18 @@ namespace ChilliJam
 		int customersToday;
 		std::vector<ShopCustomer*> customersList;
 
+		// HUD STuff
 		CSUI::WidgetSPtr UI_HUD;
+
+		// Audio
+		CSAudio::CkAudioPlayer* AudioPlayer;
+		CSAudio::CkBankCSPtr AudioBank;
 
 		// Public Methods
 		void CreateSystems() override;
 		void OnInit() override;
 		void OnUpdate(f32 in_deltaTime) override;
 		void OnDestroy() override;
-
+		void PlaySound(std::string name);
 	};
 }

@@ -21,7 +21,7 @@ namespace ChilliJam
 {
 	void DayPlayingState::CreateSystems()
 	{
-
+		AudioPlayer = CreateSystem<CSAudio::CkAudioPlayer>();
 	}
 
 	void DayPlayingState::OnInit()
@@ -100,12 +100,19 @@ namespace ChilliJam
 	// Initialize food types
 		foodOne.foodAtlas = foodAtlas;
 		foodOne.foodMaterial = foodMaterial;
-		foodOne.foodType = "0";
-		foodTwo = foodOne;
+		foodOne.foodType = std::to_string(application->GetDayRecipe(0));
+
+		foodTwo.foodAtlas = foodAtlas;
+		foodTwo.foodMaterial = foodMaterial;
+		foodTwo.foodType = std::to_string(application->GetDayRecipe(1));
+
 
 
 		// Load 3D model resources (planes)
 		auto simplePlaneModel = theResourcePool->LoadResource<CSRendering::Mesh>(CSCore::StorageLocation::k_package, "Models/plane.csmodel");
+
+		// Load audio
+		AudioBank = theResourcePool->LoadResource<CSAudio::CkBank>(CSCore::StorageLocation::k_package, "Audio/bank.ckb");
 
 		// Add plane model for floor
 		CSRendering::StaticMeshComponentSPtr floorPlane = renderComponentFactory->CreateStaticMeshComponent(simplePlaneModel, tiledFloorMaterial);
@@ -191,6 +198,7 @@ namespace ChilliJam
 		{
 			ShopCustomer* newCustomer = new ShopCustomer(renderComponentFactory, littleAliensAtlas);
 			newCustomer->posInQueue = i;
+			newCustomer->AudioPlayer = AudioPlayer;
 
 			// Assign food type to buy & wanted food type (if wanted food type is available today, buy that one)
 			newCustomer->wantedFoodType = rand() % 5;
@@ -299,7 +307,11 @@ namespace ChilliJam
 		}
 	}
 
-
+	// Pass in the name and the sound gets played O: woooa
+	void DayPlayingState::PlaySound(string name)
+	{
+		AudioPlayer->PlayEffect(AudioBank, name);
+	}
 
 
 	// Customer Stuff
@@ -417,11 +429,13 @@ namespace ChilliJam
 		CSRendering::SpriteComponentSPtr foodSprite = renderComponentFactory->CreateSpriteComponent(CSCore::Vector2::k_one, food.foodAtlas, food.foodType, food.foodMaterial, CSRendering::SpriteComponent::SizePolicy::k_fitMaintainingAspect);
 		myEntity->AddComponent(foodSprite);
 		application->AddDolla(internalCustomerStuff->getCustomerMoney());
+		PlayCashRegisterNoise(AudioPlayer);
 		// If they got their wanted food, add a smiley face above them or something & pay double moneys
 		if (gotwantedfood)
 		{
 			//chaching!!
 			application->AddDolla(internalCustomerStuff->getCustomerMoney());
+			PlayFavouriteFoodNoise(AudioPlayer);
 		}
 	}
 
@@ -433,6 +447,22 @@ namespace ChilliJam
 			nextInLine->posInQueue--;
 			nextInLine->GoNext();
 		}
+	}
+
+	void ShopCustomer::PlayCashRegisterNoise(CSAudio::CkAudioPlayer* AudioPlayer)
+	{
+		// Load resource pool
+		auto theResourcePool = CSCore::Application::Get()->GetResourcePool();
+		auto AudioBank = theResourcePool->LoadResource<CSAudio::CkBank>(CSCore::StorageLocation::k_package, "Audio/bank.ckb"); 
+		AudioPlayer->PlayEffect(AudioBank, "Cash_Register");
+	}
+
+	void ShopCustomer::PlayFavouriteFoodNoise(CSAudio::CkAudioPlayer* AudioPlayer)
+	{
+		// Load resource pool
+		auto theResourcePool = CSCore::Application::Get()->GetResourcePool();
+		auto AudioBank = theResourcePool->LoadResource<CSAudio::CkBank>(CSCore::StorageLocation::k_package, "Audio/bank.ckb");
+		AudioPlayer->PlayEffect(AudioBank, "Favourite_Food");
 	}
 
 	ThoughtBubble::ThoughtBubble(CSRendering::RenderComponentFactory* n_renderComponentFactory, FoodStruct foodToThinkOf, CSCore::Vector3 startPos, CSCore::Scene* scenePointer)
