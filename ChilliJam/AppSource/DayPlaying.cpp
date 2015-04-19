@@ -436,6 +436,12 @@ namespace ChilliJam
 			//chaching!!
 			application->AddDolla(internalCustomerStuff->getCustomerMoney());
 			PlayFavouriteFoodNoise(AudioPlayer);
+
+			// create a triple dolla and add it to the scene, make it float up
+		}
+		else
+		{
+			// create a dolla and add it to the scene, make it float up
 		}
 	}
 
