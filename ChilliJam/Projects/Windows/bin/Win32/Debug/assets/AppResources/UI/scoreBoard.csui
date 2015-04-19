@@ -1,0 +1,153 @@
+{
+    "Type": "Widget",
+    "Name": "ScoreBoard",
+    "RelSize": "1 1",
+    //Panel for Scorebaord
+    "Type": "Image",
+    "Name": "Panel",
+    "RelPosition": "0.0 0",
+    "RelSize": "0.8 0.8",
+    "Drawable": {
+        "Type": "NinePatch",
+        "Insets": "0.25 0.25 0.25 0.25",
+        "TexturePath": "red_panel.png"
+    },
+
+
+    "Children": [
+        {
+            "Type": "Label",
+            "Name": "Label_Title",
+            "Text": "Today's Takings!",
+            "RelPosition": "0.0 0.45",
+            "TextColour": "0.0 0.0 0.0 1.0"
+        },
+       
+        {
+            "Type": "HighlightButton",
+            "Name": "PlayButton",
+            "RelPosition": "0.0 -0.4",
+            "RelSize": "0.4 0.1",
+            "NormalDrawable": {
+                "Type": "ThreePatch",
+                "Insets": "0.25 0.25",
+                "TexturePath": "grey_panel.png",
+                "Direction": "Horizontal"
+            },
+
+            "HighlightDrawable": {
+                "Type": "ThreePatch",
+                "Insets": "0.25 0.25",
+                "TexturePath": "red_panel.png",
+                "Direction": "Horizontal"
+            },
+
+            "Children": [
+                
+            ]
+        },
+        {
+            "Type": "Image",
+            "Name": "Panel",
+            "RelPosition": "0.0 0.08",
+            "RelSize": "0.45 0.5",
+            "Drawable": {
+                "Type": "NinePatch",
+                "Insets": "0.25 0.25 0.25 0.25",
+                "TexturePath": "grey_panel.png"
+            }
+        },
+       
+
+        // coin logo
+        {
+            "Type": "Image",
+            "Name": "CoinLoad",
+            "RelPosition": "-0.1 .145",
+            "RelSize": ".025 .04",
+            "Drawable": {
+                "Type": "Standard",
+                "TexturePath": "hud_coins.png"
+            }
+        },
+        { //Money value
+            "Type": "Label",
+            "Name": "MoneyScore",
+            "Text": "00000",
+            "RelPosition": "-0.005 .15",
+            "TextColour": "0.0 0.0 0.0 1.0"
+        },
+
+
+        { //Alien juice icon
+            "Type": "Image",
+            "Name": "AlienJuice",
+            "RelPosition": "-0.1 .005",
+            "RelSize": ".025 .04",
+            "Drawable": {
+                "Type": "Standard",
+                "TexturePath": "ufoGreen.png"
+            }
+        },
+        { //Alien juice score
+            "Type": "Label",
+            "Name": "AlienScore",
+            "Text": "00000",
+            "RelPosition": "-0.005 .005",
+            "TextColour": "0.0 0.0 0.0 1.0"
+        },
+        {
+            "Type": "Label",
+            "Text": "Next Day",
+            "TextScale": "0.75 0.75",
+            "RelPosition": "0.0 -0.4",
+            "TextColour": "0.0 0.0 0.0 1.0"
+        },
+      
+        {
+            "Type": "Label",
+            "Name": "MoneyUpdate",
+            "Text": "+000",
+            "TextScale": "0.75 0.75",
+            "RelPosition": "0.15 .15",
+            "TextColour": "0.0 0.0 0.0 1.0"
+        },
+
+        {
+            "Type": "Label",
+            "Name": "AlienUpdate",
+            "Text": "+000",
+            "TextScale": "0.75 0.75",
+            "RelPosition": "0.15 .005",
+            "TextColour": "0.0 0.0 0.0 1.0"
+        },
+      
+        {
+            "Type": "Image",
+            "RelPosition": "0.1 .145",
+            "RelSize": ".025 .04",
+            "Drawable": {
+                "Type": "Standard",
+                "TexturePath": "plus.png"
+            }
+        },
+        {
+            "Type": "Image",
+            "RelPosition": "0.1 .005",
+            "RelSize": ".025 .04",
+            "Drawable": {
+                "Type": "Standard",
+                "TexturePath": "plus.png"
+            }
+        }
+      
+
+
+
+    ]
+
+
+
+        }
+       
+
