@@ -158,7 +158,7 @@ namespace ChilliJam
 		// Convert $$$$ number to string and display on HUD
 		float amt = application->GetDolla();
 		char dollabuffer[50];
-		std::sprintf(dollabuffer, "%.2f", amt);
+		std::sprintf(dollabuffer, "$%.2f", amt);
 		string dolla(dollabuffer);
 		UI_HUD->GetWidget("Dolla")->GetComponent<CSUI::TextComponent>()->SetText(dolla);
 	}

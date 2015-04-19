@@ -41,15 +41,18 @@
 				"Type": "NinePatch",
 				"Insets": "0.25 0.25 0.25 0.25",
 				"TexturePath": "green_panel.png"
-				}
+			}
 		},
 		{
-			"Type": "Label",
-			"Name": "Label_Dolla",
-			"Text": "$",
-			"RelPosition": "0.8 0.0",
-			"TextColour": "0.9 0.9 0.9 1.0",
-			"TextScale": "1.0 1.0"
+			"Type": "Image",
+			"Name": "DollaImage",
+			"RelPosition": "0.8 -0.05",
+			"RelSize": "0.5625 1.0",
+			"Drawable": {
+				"Type": "Standard",
+				"TexturePath": "coin.png"
+			}
+
 		},
 		{
 			"Type": "Label",

@@ -250,7 +250,7 @@ namespace ChilliJam
 		// Convert $$$$ number to string and display on HUD
 		float amt = application->GetDolla();
 		char dollabuffer[50];
-		std::sprintf(dollabuffer, "%.2f", amt);
+		std::sprintf(dollabuffer, "$%.2f", amt);
 		string dolla(dollabuffer);
 
 		UI_HUD->GetWidget( "Dolla" )->GetComponent<CSUI::TextComponent>()->SetText( dolla );
@@ -279,7 +279,7 @@ namespace ChilliJam
 		// Convert $$$$ number to string and display on HUD
 		float amt = application->GetDolla();
 		char dollabuffer[50];
-		std::sprintf(dollabuffer, "%.2f", amt);
+		std::sprintf(dollabuffer, "$%.2f", amt);
 		string dolla(dollabuffer);
 		UI_HUD->GetWidget("Dolla")->GetComponent<CSUI::TextComponent>()->SetText(dolla);
 
@@ -362,7 +362,7 @@ namespace ChilliJam
 		CSCore::Vector3 moveAmt = ((targetPosition - shopPosition) * dt);
 		moveAmt.Clamp(CSCore::Vector3(-1.0, -1.0, -1.0), CSCore::Vector3(1.0f, 1.0f, 1.0f));
 		//hop
-		shopPosition.y = sin((shopPosition.x + shopPosition.z + hopAmt) * (5)) * 0.5f;
+		shopPosition.y = sin((cos(shopPosition.x) + shopPosition.z + hopAmt) * (3)) * 0.5f;
 		shopPosition += moveAmt;
 
 		// Target position z = their position in the queue
