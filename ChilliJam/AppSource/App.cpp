@@ -39,6 +39,7 @@
 #include <State.h>
 #include <State_DayBegin.h>
 #include <DayPlaying.h>
+#include "State_Score.h"
 
 CSCore::Application* CreateApplication()
 {
@@ -63,6 +64,15 @@ namespace ChilliJam
 
 		// Initialize money
 		Dolla = 0.0f;
+
+		// Initialize juice
+		Juice = 0;
+
+		// Initialize number of customers
+		Consumers = 1;
+
+		// Initialize Taste/Juice affect to default between the two
+		Affect = 50;
 
 		// Create the chilli ingredients
 		Ingredient = new IngredientStruct[INGREDIENTS];
@@ -243,7 +253,9 @@ namespace ChilliJam
 	void App::PushInitialState()
 	{
 
+
 		GetStateManager()->Push( CSCore::StateSPtr( new State_DayBegin() ) );
+
 	}
 
 	void App::OnDestroy()

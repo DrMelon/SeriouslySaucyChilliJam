@@ -40,7 +40,7 @@
 
 // Defines
 #define AFFECT_MONEY_TASTE 1
-#define AFFECT_MONEY_JUICE 0
+#define AFFECT_MONEY_JUICE -1
 
 #define AFFECT_JUICE_TASTE -1
 #define AFFECT_JUICE_JUICE 1
@@ -115,8 +115,12 @@ namespace ChilliJam
 			int Affect;
 
 			// Temporary resource changes during this state before finalizing
-			int Resource_Money;
+			float Resource_Money;
 			int Resource_Juice;
+
+			// Additions of each resource to the pools
+			float Addition_Money;
+			int Addition_Juice;
 
 			// Audio
 			CSAudio::CkAudioPlayer* AudioPlayer;

@@ -79,6 +79,16 @@ namespace ChilliJam
 			inline void AddDolla(float amt) { Dolla += amt; };
 			inline float GetDolla() { return Dolla; };
 
+			inline void AddJuice( int amount ) { Juice += amount; };
+			inline int GetJuice() { return Juice; };
+
+			inline void AddConsumers( int amount ) { Consumers += amount; };
+			inline void SetConsumers( int amount ) { Consumers = amount; };
+			inline int GetConsumers() { return Consumers; };
+
+			inline void SetAffect( float affect ) { Affect = affect; };
+			inline float GetAffect() { return Affect; };
+
 		private:
 			RecipeStruct* Recipe;
 			IngredientStruct* Ingredient;
@@ -87,6 +97,10 @@ namespace ChilliJam
 
 			unsigned int Day;
 			float Dolla;
+			int Juice;
+			unsigned int Consumers;
+
+			unsigned int Affect;
 	};
 }
 
