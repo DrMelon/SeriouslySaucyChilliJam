@@ -60,7 +60,7 @@ namespace ChilliJam
 	void App::OnInit()
 	{
 		// Initialize day counter
-		Day = 1;
+		Day = 0;
 
 		// Initialize money
 		Dolla = 0.0f;
@@ -69,7 +69,7 @@ namespace ChilliJam
 		Juice = 0;
 
 		// Initialize number of customers
-		Consumers = 10;
+		Consumers = 1;
 
 		// Initialize Taste/Juice affect to default between the two
 		Affect = 50;

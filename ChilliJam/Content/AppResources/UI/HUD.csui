@@ -52,16 +52,14 @@
 				"Type": "Standard",
 				"TexturePath": "coin.png"
 			}
-
 		},
 		{
 			"Type": "Label",
 			"Name": "Dolla",
 			"Text": "$0,000,000.00",
-			"RelPosition": "2.1 0.0",
+			"RelPosition": "2.1 -0.05",
 			"TextColour": "0.9 0.9 0.9 1.0",
 			"TextScale": "0.5 1.0"
 		}
-	
 	]
 }
