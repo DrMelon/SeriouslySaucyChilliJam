@@ -83,8 +83,8 @@ namespace ChilliJam
 	//	scoreboard->GetWidget("PlayButton")->GetWidget("PlayButtonLabel")->GetComponent<CSUI::TextComponent>()->SetText(text);
 		//Test
 
-		UI_moneyValue = 0;
-		UI_juiceValue = 0;
+		UI_moneyValue = scoreController.getPrevTotalMoney();
+		UI_juiceValue = scoreController.getPrevTotalJuice();
 
 		ButtonConnection = scoreboard->GetWidget( "PlayButton" )->GetReleasedInsideEvent().OpenConnection(
 			[]( CSUI::Widget* in_widget, const CSInput::Pointer& in_pointer, CSInput::Pointer::InputType in_inputType )
@@ -98,8 +98,6 @@ namespace ChilliJam
 
 	void State_Score::OnUpdate(f32 in_deltaTime)
 	{
-		
-
 		int money_Difference = scoreController.getTotalMoney() - scoreController.getPrevTotalMoney();
 		if (UI_moneyValue != money_Difference)
 		{
@@ -107,7 +105,7 @@ namespace ChilliJam
 			std::string moneyText = std::to_string(UI_moneyValue);
 			scoreboard->GetWidget("MoneyScore")->GetComponent<CSUI::TextComponent>()->SetText(moneyText);
 		}
-	int juice_Difference = scoreController.getTotalJuice() - scoreController.getPrevTotalJuice();
+		int juice_Difference = scoreController.getTotalJuice() - scoreController.getPrevTotalJuice();
 		if (UI_juiceValue != juice_Difference)
 		{
 			UI_juiceValue += 1;
@@ -118,8 +116,8 @@ namespace ChilliJam
 		std::string moneyGained = std::to_string(money_Difference);
 		std::string juiceGained = std::to_string(juice_Difference);
 
-		//scoreboard->GetWidget("MoneyUpdate")->GetComponent<CSUI::TextComponent>()->SetText("+" + moneyGained);
-	//	scoreboard->GetWidget("AlienUpdate")->GetComponent<CSUI::TextComponent>()->SetText("+" + juiceGained);
+		scoreboard->GetWidget("MoneyUpdate")->GetComponent<CSUI::TextComponent>()->SetText(moneyGained);
+		scoreboard->GetWidget("AlienUpdate")->GetComponent<CSUI::TextComponent>()->SetText(juiceGained);
 		
 	}
 

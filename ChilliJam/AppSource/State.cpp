@@ -363,12 +363,15 @@ namespace ChilliJam
 			{
 				App* application = (App*) CSCore::Application::Get();
 				{
-					application->SetConsumers( Effect.size() );
+					application->SetConsumers( Effect.size() * 6 );
 				}
 				State_Score* state = new State_Score();
 				{
+					// Start the UI at the previous values
 					state->scoreController.setPrevTotalMoney( application->GetPreviousDolla() );
 					state->scoreController.setPrevTotalJuice( application->GetPreviousJuice() );
+
+					// End the UI at the new value
 					state->scoreController.addMoneyToTotal( application->GetDolla() );
 					state->scoreController.addJuiceToTotal( application->GetJuice() );
 
