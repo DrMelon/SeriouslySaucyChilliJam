@@ -235,8 +235,8 @@ namespace ChilliJam
 	// OUT: N/A
 	void State_SpecialBegin::UpdateBars()
 	{
-		UI->GetWidget( "Panel" )->GetWidget( "Progress_Taste" )->GetComponent<CSUI::ProgressBarComponent>()->SetProgress( (float) Affect / 100 );
-		UI->GetWidget( "Panel" )->GetWidget( "Progress_Juice" )->GetComponent<CSUI::ProgressBarComponent>()->SetProgress( (float) Affect / 100 );
+		//UI->GetWidget( "Panel" )->GetWidget( "Progress_Taste" )->GetComponent<CSUI::ProgressBarComponent>()->SetProgress( (float) Affect / 100 );
+		//UI->GetWidget( "Panel" )->GetWidget( "Progress_Juice" )->GetComponent<CSUI::ProgressBarComponent>()->SetProgress( (float) Affect / 100 );
 
 		// Convert $$$$ number to string and display on HUD
 		App* application = (App*) CSCore::Application::Get();

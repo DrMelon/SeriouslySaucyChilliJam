@@ -48,6 +48,7 @@ namespace ChilliJam
 		void OnInit() override;
 		void OnUpdate(f32 in_deltaTime) override;
 		void OnDestroy() override;
+		void Continue();
 
 		CSUI::WidgetSPtr CreateScoreScreen();
 		CSUI::WidgetSPtr scoreboard;
@@ -55,6 +56,7 @@ namespace ChilliJam
 		int UI_moneyValue;
 		int UI_juiceValue;
 
+		CSCore::EventConnectionUPtr ButtonConnection;
 	};
 }
 

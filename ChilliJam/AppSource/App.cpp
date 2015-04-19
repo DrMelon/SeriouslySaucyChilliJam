@@ -74,6 +74,9 @@ namespace ChilliJam
 		// Initialize Taste/Juice affect to default between the two
 		Affect = 50;
 
+		PreviousDolla = 0;
+		PreviousJuice = 0;
+
 		// Create the chilli ingredients
 		Ingredient = new IngredientStruct[INGREDIENTS];
 		{
