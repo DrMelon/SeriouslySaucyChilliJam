@@ -49,8 +49,8 @@ namespace ChilliJam
 	typedef struct
 	{
 		CSCore::EntitySPtr Sprite;
-		long long int Affected_Time;
-		long long int Sound_Time;
+		float Affected_Time;
+		float Sound_Time;
 		CSCore::Vector2 Direction;
 		char Face[2];
 	} PersonStruct;
