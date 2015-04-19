@@ -154,6 +154,13 @@ namespace ChilliJam
 		}
 		string day( buffer );
 		UI_HUD->GetWidget( "Day" )->GetComponent<CSUI::TextComponent>()->SetText( day );
+
+		// Convert $$$$ number to string and display on HUD
+		float amt = application->GetDolla();
+		char dollabuffer[50];
+		std::sprintf(dollabuffer, "%.2f", amt);
+		string dolla(dollabuffer);
+		UI_HUD->GetWidget("Dolla")->GetComponent<CSUI::TextComponent>()->SetText(dolla);
 	}
 
 	// Populate the GUI with recipes loaded from the main application

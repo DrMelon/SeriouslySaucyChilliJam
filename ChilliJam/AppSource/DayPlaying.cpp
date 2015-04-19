@@ -27,8 +27,13 @@ namespace ChilliJam
 	void DayPlayingState::OnInit()
 	{
 
+		// Load the HUD ui widget (THIS APPEARS IN EVERY STATE BECAUSE I'M A BAD PERSON -M)
+		App* application = (App*)CSCore::Application::Get();
+
 		// Set number of customers etc
-		customersToday = 10;
+		customersToday = 5 + (application->GetDay() * 5);
+
+
 
 
 		// Create the camera component
@@ -164,12 +169,9 @@ namespace ChilliJam
 		vendorEntity->AddComponent(vendorSprite);
 		vendorEntity->GetTransform().SetPosition(-23, 2.5, -14.0);
 		vendorEntity->GetTransform().ScaleBy(15);
-
-
-		
 		
 		// Create camera tween
-		cameraTween = CSCore::MakeEaseOutBackTween<f32>(-4.0, 5.0, 1.8, 1.0, 0.0);
+		cameraTween = CSCore::MakeEaseInOutQuadTween<CSCore::Vector3>(CSCore::Vector3(-23, 6, -19), CSCore::Vector3(0, 8, -54), 1.8, 1.0, 0.0);
 		cameraTween.Play(CSCore::TweenPlayMode::k_once);
 
 
@@ -226,8 +228,7 @@ namespace ChilliJam
 			customersList.push_back(newCustomer);
 		}
 
-		// Load the HUD ui widget (THIS APPEARS IN EVERY STATE BECAUSE I'M A BAD PERSON -M)
-		App* application = (App*) CSCore::Application::Get();
+
 
 		// Get a reference to the resource pool for this application
 		auto resourcepool = CSCore::Application::Get()->GetResourcePool();
@@ -245,21 +246,42 @@ namespace ChilliJam
 		}
 		string day( buffer );
 		UI_HUD->GetWidget( "Day" )->GetComponent<CSUI::TextComponent>()->SetText( day );
+
+		// Convert $$$$ number to string and display on HUD
+		float amt = application->GetDolla();
+		char dollabuffer[50];
+		std::sprintf(dollabuffer, "%.2f", amt);
+		string dolla(dollabuffer);
+
+		UI_HUD->GetWidget( "Dolla" )->GetComponent<CSUI::TextComponent>()->SetText( dolla );
 	}
 
 	void DayPlayingState::OnUpdate(f32 in_deltaTime)
 	{
 		// Update stuff here.
 		// Tween the camera Y value
-		cameraYValue = cameraTween.Update(in_deltaTime);
+		CSCore::Vector3 camPos = cameraTween.Update(in_deltaTime);
 		
 		
-		cameraEntity->GetTransform().SetLookAt(CSCore::Vector3(0.0f, cameraYValue, -50.0f - cameraYValue), CSCore::Vector3::k_zero, CSCore::Vector3::k_unitPositiveY);
+		cameraEntity->GetTransform().SetLookAt(camPos, camPos + CSCore::Vector3(0, -0.2, 1), CSCore::Vector3::k_unitPositiveY);
 
-		for (int i = 0; i < customersList.size(); i++)
+		// When initial camera tween is done, start adding customers
+		if (cameraTween.IsFinished())
 		{
-			customersList.at(i)->Update(in_deltaTime);
+			for (int i = 0; i < customersList.size(); i++)
+			{
+				customersList.at(i)->Update(in_deltaTime);
+			}
 		}
+
+		// Update HUD
+		App* application = (App*)CSCore::Application::Get();
+		// Convert $$$$ number to string and display on HUD
+		float amt = application->GetDolla();
+		char dollabuffer[50];
+		std::sprintf(dollabuffer, "%.2f", amt);
+		string dolla(dollabuffer);
+		UI_HUD->GetWidget("Dolla")->GetComponent<CSUI::TextComponent>()->SetText(dolla);
 
 	}
 
@@ -290,7 +312,7 @@ namespace ChilliJam
 		alienType = rand()%5;
 		queueing = true;
 		hasChilli = false;
-		shopPosition = CSCore::Vector3(25 + rand()%5, 0.5, -54); //Want them to come in from the right front
+		shopPosition = CSCore::Vector3(25 + rand()%5, 0.5, -64); //Want them to come in from the right front
 		targetPosition = shopPosition;
 		posInQueue = 0;
 		// ChilliSource Stuff (Note: for different aliens change p1_**** to be p2_ etc)
@@ -354,7 +376,7 @@ namespace ChilliJam
 			targetPosition = CSCore::Vector3(-20, 0, -16);
 
 			// Are we close to it?
-			if (shopPosition.x < -19.5f && shopPosition.x > -20.5f && shopPosition.z < -15.5f && shopPosition.z > -16.5f)
+			if ((targetPosition - shopPosition).Length() < 4.0f)
 			{
 				// get some chilli
 				queueing = false;
@@ -388,14 +410,18 @@ namespace ChilliJam
 
 	void ShopCustomer::AddFood(FoodStruct food)
 	{
+		// Get application so we can add money
+		App* application = (App*)CSCore::Application::Get();
+
 		//Create a sprite for a food item
 		CSRendering::SpriteComponentSPtr foodSprite = renderComponentFactory->CreateSpriteComponent(CSCore::Vector2::k_one, food.foodAtlas, food.foodType, food.foodMaterial, CSRendering::SpriteComponent::SizePolicy::k_fitMaintainingAspect);
 		myEntity->AddComponent(foodSprite);
-
+		application->AddDolla(internalCustomerStuff->getCustomerMoney());
 		// If they got their wanted food, add a smiley face above them or something & pay double moneys
 		if (gotwantedfood)
 		{
 			//chaching!!
+			application->AddDolla(internalCustomerStuff->getCustomerMoney());
 		}
 	}
 

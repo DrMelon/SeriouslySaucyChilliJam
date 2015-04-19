@@ -76,6 +76,9 @@ namespace ChilliJam
 			inline void AddDay() { Day++; };
 			inline unsigned int GetDay() { return Day; };
 
+			inline void AddDolla(float amt) { Dolla += amt; };
+			inline float GetDolla() { return Dolla; };
+
 		private:
 			RecipeStruct* Recipe;
 			IngredientStruct* Ingredient;
@@ -83,6 +86,7 @@ namespace ChilliJam
 			unsigned int DayRecipe[2];
 
 			unsigned int Day;
+			float Dolla;
 	};
 }
 

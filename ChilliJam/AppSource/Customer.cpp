@@ -30,11 +30,11 @@ void Customer::setCustomerValues()
 	Customer Gift is used for enums (1 -10)
 	*/
 
-	hunger = ((double)rand() / (10)) + 0.1f;
-	heatTolerance = ((double)rand() / (10)) + 0.1f;
-	customerSpeed = ((float)rand() / (10)) + 0.1f;
-	customerMoney = ((double)rand() / (10)) + 0.1f;
-	customerGift = ((int)rand() / (10)) + 1;
+	hunger = (double)(rand() % (10)) + 0.1f;
+	heatTolerance = (double)(rand() % (10)) + 0.1f;
+	customerSpeed = (float)(rand() % (10)) + 0.1f;
+	customerMoney = (float)(rand() % (10)) + 0.1f;
+	customerGift = (int)(rand() % (10)) + 1;
 	customerRadius = 5;
 	infected = false;
 }

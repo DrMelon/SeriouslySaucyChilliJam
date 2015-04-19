@@ -61,6 +61,9 @@ namespace ChilliJam
 		// Initialize day counter
 		Day = 1;
 
+		// Initialize money
+		Dolla = 0.0f;
+
 		// Create the chilli ingredients
 		Ingredient = new IngredientStruct[INGREDIENTS];
 		{

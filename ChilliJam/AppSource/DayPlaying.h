@@ -92,7 +92,7 @@ namespace ChilliJam
 		// Public Members
 		CSCore::EntitySPtr cameraEntity;
 		float cameraYValue;
-		CSCore::EaseOutBackTween<f32> cameraTween;
+		CSCore::EaseInOutQuadTween<CSCore::Vector3> cameraTween;
 
 		// Resources
 
