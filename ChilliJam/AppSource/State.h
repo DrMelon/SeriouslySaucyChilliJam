@@ -44,6 +44,8 @@ using std::vector;
 #define LIGHT_MIN 0.4f
 #define LIGHT_CHANGE 0.1f
 
+#define AFFECT_SIZE 10
+
 namespace ChilliJam
 {
 	typedef struct
@@ -82,6 +84,10 @@ namespace ChilliJam
 			float CurrentTime;
 			unsigned int Affected_Current;
 			unsigned int Affected_Target;
+
+			// The effects of having a tastey or juicey recipe
+			unsigned int Affect_Taste;
+			unsigned int Affect_Juice;
 
 			// Audio
 			CSAudio::CkAudioPlayer* AudioPlayer;
