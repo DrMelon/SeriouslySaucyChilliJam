@@ -56,6 +56,9 @@ namespace ChilliJam
 		int UI_moneyValue;
 		int UI_juiceValue;
 
+		// Audio
+		CSAudio::CkAudioPlayer* AudioPlayer;
+
 		CSCore::EventConnectionUPtr ButtonConnection;
 	};
 }

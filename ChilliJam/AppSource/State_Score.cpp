@@ -51,6 +51,7 @@ namespace ChilliJam
 	void State_Score::CreateSystems()
 	{
 		//Add systems here.
+		AudioPlayer = CreateSystem<CSAudio::CkAudioPlayer>();
 	}
 
 	void State_Score::OnInit()
@@ -68,6 +69,8 @@ namespace ChilliJam
 
 		string text = "score";
 
+		// Begin playing music.
+		AudioPlayer->PlayMusic(CSCore::StorageLocation::k_package, "Audio/ChilliTime.ogg");
 
 		// Get a reference to the resource pool for this application
 		auto resourcepool = CSCore::Application::Get()->GetResourcePool();
