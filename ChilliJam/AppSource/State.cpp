@@ -141,7 +141,7 @@ namespace ChilliJam
 		}
 
 		// Add people to the screen
-		for ( unsigned int person = 0; person < ( 1 + ( application->GetDay() * 10 ) ); person++ )
+		for ( unsigned int person = 0; person < application->GetConsumers(); person++ )
 		{
 			char randomface[2];
 			{
@@ -163,7 +163,7 @@ namespace ChilliJam
 			PersonStruct personinfo;
 			{
 				personinfo.Sprite = spriteentity;
-				personinfo.Affected_Time = 5 + ( rand() % 10 );
+				personinfo.Affected_Time = 5 + ( (float) ( rand() % 100 ) / 10 );
 				personinfo.Sound_Time = 0;
 				personinfo.Direction = CSCore::Vector2( ( rand() % 3 ) - 1, ( rand() % 3 ) - 1 );
 				{
@@ -223,7 +223,10 @@ namespace ChilliJam
 
 		// Convert $$$$ number to string and display on HUD
 		float amt = application->GetDolla();
-		string dolla = std::to_string( amt );
+		char dollabuffer[50];
+		std::sprintf( dollabuffer, "$%.2f", amt );
+		string dolla( dollabuffer );
+
 		UI_HUD->GetWidget( "Dolla" )->GetComponent<CSUI::TextComponent>()->SetText( dolla );
 	}
 
@@ -244,6 +247,10 @@ namespace ChilliJam
 				Affected_Current++;
 				personsprite->RemoveFromParent(); // Remove from scene
 				Person[person].Affected_Time = 0; // Flag to not affect again
+
+				// Add juice to count
+				App* application = (App*) CSCore::Application::Get();
+				application->AddJuice( 10 );
 
 				// Play sound
 				AudioPlayer->PlayEffect( AudioBank, "Person_Pop" );
@@ -350,7 +357,11 @@ namespace ChilliJam
 			}
 			if ( finished )
 			{
-				CSCore::Application::Get()->GetStateManager()->Change( (CSCore::StateSPtr) new State_DayBegin );
+				App* application = (App*) CSCore::Application::Get();
+				{
+					application->SetConsumers( Effect.size() );
+				}
+				application->GetStateManager()->Change( (CSCore::StateSPtr) new State_DayBegin );
 			}
 		}
 	}

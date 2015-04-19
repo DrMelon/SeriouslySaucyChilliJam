@@ -62,14 +62,19 @@ namespace ChilliJam
 
 		Affect = 50;
 
-		Resource_Juice = 1000;
-		Resource_Money = 1000;
+		App* application = (App*) CSCore::Application::Get();
+
+		Resource_Juice = application->GetJuice();
+		Resource_Money = application->GetDolla();
+
+		Addition_Juice = 0;
+		Addition_Money = 0;
 
 		Initialize_Camera();
 		Initialize_GUI();
 		Initialize_Button();
 
-		auto resourcepool = CSCore::Application::Get()->GetResourcePool();
+		auto resourcepool = application->GetResourcePool();
 		AudioBank = resourcepool->LoadResource<CSAudio::CkBank>( CSCore::StorageLocation::k_package, "Audio/bank.ckb" );
 
 		AudioPlayer->PlayEffect( AudioBank, "UI_Click" );
@@ -139,9 +144,9 @@ namespace ChilliJam
 		// Convert $$$$ number to string and display on HUD
 		float amt = application->GetDolla();
 		char dollabuffer[50];
-		std::sprintf(dollabuffer, "$%.2f", amt);
-		string dolla(dollabuffer);
-		UI_HUD->GetWidget("Dolla")->GetComponent<CSUI::TextComponent>()->SetText(dolla);
+		std::sprintf( dollabuffer, "$%.2f", amt );
+		string dolla( dollabuffer );
+		UI_HUD->GetWidget( "Dolla" )->GetComponent<CSUI::TextComponent>()->SetText( dolla );
 	}
 
 	// Initialize the GUI buttons & add events to them
@@ -152,44 +157,52 @@ namespace ChilliJam
 		unsigned int button = 0;
 		ButtonConnection = new CSCore::EventConnectionUPtr[BUTTONS];
 
-		ButtonConnection[button++] = UI->GetWidget( "Panel" )->GetWidget( "Panel_Adjust_Money" )->GetWidget( "Button_Plus" )->GetReleasedInsideEvent().OpenConnection(
+		//ButtonConnection[button++] = UI->GetWidget( "Panel" )->GetWidget( "Panel_Adjust_Money" )->GetWidget( "Button_Plus" )->GetReleasedInsideEvent().OpenConnection(
+		//	[]( CSUI::Widget* in_widget, const CSInput::Pointer& in_pointer, CSInput::Pointer::InputType in_inputType )
+		//	{
+		//		State_SpecialBegin* state = (State_SpecialBegin*) CSCore::Application::Get()->GetStateManager()->GetActiveState().get();
+		//		state->PlaySound( "UI_Click" );
+		//		state->AddMoney( 5 );
+		//	}
+		//);
+		//ButtonConnection[button++] = UI->GetWidget( "Panel" )->GetWidget( "Panel_Adjust_Money" )->GetWidget( "Button_Minus" )->GetReleasedInsideEvent().OpenConnection(
+		//	[]( CSUI::Widget* in_widget, const CSInput::Pointer& in_pointer, CSInput::Pointer::InputType in_inputType )
+		//	{
+		//		State_SpecialBegin* state = (State_SpecialBegin*) CSCore::Application::Get()->GetStateManager()->GetActiveState().get();
+		//		state->PlaySound( "UI_Click" );
+		//		state->AddMoney( -5 );
+		//	}
+		//);
+		//ButtonConnection[button++] = UI->GetWidget( "Panel" )->GetWidget( "Panel_Adjust_Juice" )->GetWidget( "Button_Plus" )->GetReleasedInsideEvent().OpenConnection(
+		//	[]( CSUI::Widget* in_widget, const CSInput::Pointer& in_pointer, CSInput::Pointer::InputType in_inputType )
+		//	{
+		//		State_SpecialBegin* state = (State_SpecialBegin*) CSCore::Application::Get()->GetStateManager()->GetActiveState().get();
+		//		state->PlaySound( "UI_Click" );
+		//		state->AddJuice( 5 );
+		//	}
+		//);
+		//ButtonConnection[button++] = UI->GetWidget( "Panel" )->GetWidget( "Panel_Adjust_Juice" )->GetWidget( "Button_Minus" )->GetReleasedInsideEvent().OpenConnection(
+		//	[]( CSUI::Widget* in_widget, const CSInput::Pointer& in_pointer, CSInput::Pointer::InputType in_inputType )
+		//	{
+		//		State_SpecialBegin* state = (State_SpecialBegin*) CSCore::Application::Get()->GetStateManager()->GetActiveState().get();
+		//		state->PlaySound( "UI_Click" );
+		//		state->AddJuice( -5 );
+		//	}
+		//);
+		ButtonConnection[button++] = UI->GetWidget( "Panel" )->GetWidget( "Button_Taste" )->GetReleasedInsideEvent().OpenConnection(
 			[]( CSUI::Widget* in_widget, const CSInput::Pointer& in_pointer, CSInput::Pointer::InputType in_inputType )
 			{
 				State_SpecialBegin* state = (State_SpecialBegin*) CSCore::Application::Get()->GetStateManager()->GetActiveState().get();
-				state->PlaySound( "UI_Click" );
-				state->AddMoney( 5 );
+				state->AddMoney( 100 );
+				state->Continue();
 			}
 		);
-		ButtonConnection[button++] = UI->GetWidget( "Panel" )->GetWidget( "Panel_Adjust_Money" )->GetWidget( "Button_Minus" )->GetReleasedInsideEvent().OpenConnection(
+		ButtonConnection[button++] = UI->GetWidget( "Panel" )->GetWidget( "Button_Juice" )->GetReleasedInsideEvent().OpenConnection(
 			[]( CSUI::Widget* in_widget, const CSInput::Pointer& in_pointer, CSInput::Pointer::InputType in_inputType )
 			{
 				State_SpecialBegin* state = (State_SpecialBegin*) CSCore::Application::Get()->GetStateManager()->GetActiveState().get();
-				state->PlaySound( "UI_Click" );
-				state->AddMoney( -5 );
-			}
-		);
-		ButtonConnection[button++] = UI->GetWidget( "Panel" )->GetWidget( "Panel_Adjust_Juice" )->GetWidget( "Button_Plus" )->GetReleasedInsideEvent().OpenConnection(
-			[]( CSUI::Widget* in_widget, const CSInput::Pointer& in_pointer, CSInput::Pointer::InputType in_inputType )
-			{
-				State_SpecialBegin* state = (State_SpecialBegin*) CSCore::Application::Get()->GetStateManager()->GetActiveState().get();
-				state->PlaySound( "UI_Click" );
-				state->AddJuice( 5 );
-			}
-		);
-		ButtonConnection[button++] = UI->GetWidget( "Panel" )->GetWidget( "Panel_Adjust_Juice" )->GetWidget( "Button_Minus" )->GetReleasedInsideEvent().OpenConnection(
-			[]( CSUI::Widget* in_widget, const CSInput::Pointer& in_pointer, CSInput::Pointer::InputType in_inputType )
-			{
-				State_SpecialBegin* state = (State_SpecialBegin*) CSCore::Application::Get()->GetStateManager()->GetActiveState().get();
-				state->PlaySound( "UI_Click" );
-				state->AddJuice( -5 );
-			}
-		);
-		ButtonConnection[button++] = UI->GetWidget( "Panel" )->GetWidget( "Button_Continue" )->GetReleasedInsideEvent().OpenConnection(
-			[]( CSUI::Widget* in_widget, const CSInput::Pointer& in_pointer, CSInput::Pointer::InputType in_inputType )
-			{
-				// Temp return to daybegin
-				//CSCore::Application::Get()->GetStateManager()->Change( ( CSCore::StateSPtr ) new State_DayBegin );
-				CSCore::Application::Get()->GetStateManager()->Change( (CSCore::StateSPtr) new DayPlayingState );
+				state->AddJuice( 100 );
+				state->Continue();
 			}
 		);
 	}
@@ -199,38 +212,9 @@ namespace ChilliJam
 	// OUT: N/A
 	void State_SpecialBegin::AddMoney( int amount )
 	{
-		bool tasteaffect = (
-			( ( Affect + ( amount * AFFECT_MONEY_TASTE ) ) >= 0 ) &&
-			( ( Affect + ( amount * AFFECT_MONEY_TASTE ) ) <= 100 )
-			);
-		bool juiceaffect = (
-			( ( Affect - ( amount * AFFECT_MONEY_JUICE ) ) >= 0 ) &&
-			( ( Affect - ( amount * AFFECT_MONEY_JUICE ) ) <= 100 )
-		);
-		if (
-			( ( Resource_Money - amount ) >= 0 ) && // Has money
-			(
-				// Is either in range of taste or of juice, otherwise if there will be no affect,
-				// don't change
-				tasteaffect
-				||
-				juiceaffect
-			)
-		)
-		{
-			// Affect flavour & range
-			Resource_Money -= amount;
-			if ( tasteaffect )
-			{
-				Affect += amount * AFFECT_MONEY_TASTE;
-			}
-			if ( juiceaffect )
-			{
-				Affect -= amount * AFFECT_MONEY_JUICE;
-			}
+		Affect = 0;
 
-			UpdateBars();
-		}
+		UpdateBars();
 	}
 
 	// Add or remove juice to/from the mix
@@ -238,38 +222,9 @@ namespace ChilliJam
 	// OUT: N/A
 	void State_SpecialBegin::AddJuice( int amount )
 	{
-		bool tasteaffect = (
-			( ( Affect + ( amount * AFFECT_JUICE_TASTE ) ) >= 0 ) &&
-			( ( Affect + ( amount * AFFECT_JUICE_TASTE ) ) <= 100 )
-		);
-		bool juiceaffect = (
-			( ( Affect - ( amount * AFFECT_JUICE_JUICE ) ) >= 0 ) &&
-			( ( Affect - ( amount * AFFECT_JUICE_JUICE ) ) <= 100 )
-		);
-		if (
-			( ( Resource_Juice - amount ) >= 0 ) && // Has juice
-			(
-				// Is either in range of taste or of juice, otherwise if there will be no affect,
-				// don't change
-				tasteaffect
-				||
-				juiceaffect
-			)
-		)
-		{
-			// Affect flavour & range
-			Resource_Juice -= amount;
-			if ( tasteaffect )
-			{
-				Affect += amount * AFFECT_JUICE_TASTE;
-			}
-			if ( juiceaffect )
-			{
-				Affect -= amount * AFFECT_JUICE_JUICE;
-			}
+		Affect = 100;
 
-			UpdateBars();
-		}
+		UpdateBars();
 	}
 
 	// Update the TASTE & JUICE progress bars
@@ -279,6 +234,14 @@ namespace ChilliJam
 	{
 		UI->GetWidget( "Panel" )->GetWidget( "Progress_Taste" )->GetComponent<CSUI::ProgressBarComponent>()->SetProgress( (float) Affect / 100 );
 		UI->GetWidget( "Panel" )->GetWidget( "Progress_Juice" )->GetComponent<CSUI::ProgressBarComponent>()->SetProgress( (float) Affect / 100 );
+
+		// Convert $$$$ number to string and display on HUD
+		App* application = (App*) CSCore::Application::Get();
+		float amt = Resource_Money;
+		char dollabuffer[50];
+		std::sprintf( dollabuffer, "$%.2f", amt );
+		string dolla( dollabuffer );
+		UI_HUD->GetWidget( "Dolla" )->GetComponent<CSUI::TextComponent>()->SetText( dolla );
 	}
 
 	// Move on to the next state in the game, if the requirements of this one have been met
@@ -287,7 +250,9 @@ namespace ChilliJam
 	// OUT: N/A
 	void State_SpecialBegin::Continue()
 	{
-		
+		App* application = (App*) CSCore::Application::Get();
+		application->SetAffect( Affect );
+		application->GetStateManager()->Change( ( CSCore::StateSPtr ) new DayPlayingState );
 	}
 
 	// Play a sound effect using the audioplayer of this state
