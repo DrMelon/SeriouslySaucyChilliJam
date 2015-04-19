@@ -34,7 +34,8 @@ namespace ChilliJam
 		// Set number of customers etc
 		customersToday = 5 + (application->GetDay() * 5);
 
-
+		// Begin playing music.
+		AudioPlayer->PlayMusic(CSCore::StorageLocation::k_package, "Audio/ChilliToAliens.ogg");
 
 
 		// Create the camera component

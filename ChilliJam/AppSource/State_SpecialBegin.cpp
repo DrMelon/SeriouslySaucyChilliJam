@@ -73,6 +73,9 @@ namespace ChilliJam
 		AudioBank = resourcepool->LoadResource<CSAudio::CkBank>( CSCore::StorageLocation::k_package, "Audio/bank.ckb" );
 
 		AudioPlayer->PlayEffect( AudioBank, "UI_Click" );
+
+		// Begin playing music.
+		AudioPlayer->PlayMusic(CSCore::StorageLocation::k_package, "Audio/ChilliTime.ogg");
 	}
 
 	void State_SpecialBegin::OnUpdate( f32 in_deltaTime )

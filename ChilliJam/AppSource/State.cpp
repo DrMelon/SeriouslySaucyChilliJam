@@ -78,6 +78,9 @@ namespace ChilliJam
 		// Get a reference to the material creation factory
 		CSRendering::MaterialFactory* materialfactory = CSCore::Application::Get()->GetSystem<CSRendering::MaterialFactory>();
 
+		// Begin playing music.
+		AudioPlayer->PlayMusic(CSCore::StorageLocation::k_package, "Audio/Nightlife.ogg");
+
 		// Get a reference to the resource pool for this application
 		auto resourcepool = CSCore::Application::Get()->GetResourcePool();
 

@@ -242,6 +242,7 @@ namespace ChilliJam
 
 	void App::PushInitialState()
 	{
+
 		GetStateManager()->Push( CSCore::StateSPtr( new State_DayBegin() ) );
 	}
 

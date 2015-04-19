@@ -77,6 +77,8 @@ namespace ChilliJam
 
 		auto resourcePool = CSCore::Application::Get()->GetResourcePool();
 		AudioBank = resourcePool->LoadResource<CSAudio::CkBank>( CSCore::StorageLocation::k_package, "Audio/bank.ckb" );
+		// Begin playing music.
+		AudioPlayer->PlayMusic(CSCore::StorageLocation::k_package, "Audio/ChilliTime.ogg");
 	}
 
 	void State_DayBegin::OnUpdate( f32 in_deltaTime )
