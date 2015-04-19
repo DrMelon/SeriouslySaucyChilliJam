@@ -12,6 +12,7 @@
 #include <ChilliSource/UI/Base.h>
 #include <ChilliSource/UI/Text.h>
 #include "State_DayBegin.h"
+#include "State.h"
 
 #include <App.h>
 
@@ -236,10 +237,12 @@ namespace ChilliJam
 			customersList.push_back(newCustomer);
 		}
 
-
-
 		// Get a reference to the resource pool for this application
 		auto resourcepool = CSCore::Application::Get()->GetResourcePool();
+		AudioBank = resourcepool->LoadResource<CSAudio::CkBank>( CSCore::StorageLocation::k_package, "Audio/bank.ckb" );
+
+		AudioPlayer->PlayEffect( AudioBank, "Person_Cheer" );
+
 		auto widgetfactory = CSCore::Application::Get()->GetWidgetFactory();
 
 		auto templatehudwidget = resourcepool->LoadResource<CSUI::WidgetTemplate>( CSCore::StorageLocation::k_package, "UI/HUD.csui" );
@@ -409,7 +412,7 @@ namespace ChilliJam
 				// set up external state application stuff (like moneys, how many people today etc)
 
 				// go next state
-				CSCore::Application::Get()->GetStateManager()->Change((CSCore::StateSPtr) new State_DayBegin());
+				CSCore::Application::Get()->GetStateManager()->Change((CSCore::StateSPtr) new State());
 
 			}
 		}

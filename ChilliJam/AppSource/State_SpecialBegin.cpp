@@ -69,8 +69,8 @@ namespace ChilliJam
 		Initialize_GUI();
 		Initialize_Button();
 
-		auto resourcePool = CSCore::Application::Get()->GetResourcePool();
-		AudioBank = resourcePool->LoadResource<CSAudio::CkBank>( CSCore::StorageLocation::k_package, "Audio/bank.ckb" );
+		auto resourcepool = CSCore::Application::Get()->GetResourcePool();
+		AudioBank = resourcepool->LoadResource<CSAudio::CkBank>( CSCore::StorageLocation::k_package, "Audio/bank.ckb" );
 
 		AudioPlayer->PlayEffect( AudioBank, "UI_Click" );
 	}

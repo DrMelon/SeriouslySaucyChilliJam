@@ -59,7 +59,7 @@ namespace ChilliJam
 	void App::OnInit()
 	{
 		// Initialize day counter
-		Day = 1;
+		Day = 0;
 
 		// Initialize money
 		Dolla = 0.0f;

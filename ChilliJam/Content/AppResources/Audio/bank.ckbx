@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <bank name="Bank">
     <sound name="UI_Click" source="click.wav" />
-    <sound name="Test" source="magicgoing.wav" />
+    <sound name="Person_Pop" source="pop.wav" />
+    <sound name="Person_Cheer" source="cheer.wav" />
+    <sound name="Person_Yay" source="yay.wav" />
 	<sound name="Cash_Register" source="cashregister_freesound.wav" />
 	<sound name="Favourite_Food" source="orch.wav" />
 </bank>

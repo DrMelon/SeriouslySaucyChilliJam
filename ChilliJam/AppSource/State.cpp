@@ -26,8 +26,10 @@
 //  THE SOFTWARE.
 //
 
+// Associated Header
 #include <State.h>
 
+// Required Engine Header
 #include <ChilliSource/Core/Base.h>
 #include <ChilliSource/Core/Entity.h>
 #include <ChilliSource/Core/Math.h>
@@ -42,7 +44,9 @@
 #include <ChilliSource/UI/Base.h>
 #include <ChilliSource/UI/Text.h>
 
+// Required Application Header
 #include <App.h>
+#include <State_DayBegin.h>
 
 using std::string;
 
@@ -50,11 +54,15 @@ namespace ChilliJam
 {
 	void State::CreateSystems()
 	{
-		//Add systems here.
+		AudioPlayer = CreateSystem<CSAudio::CkAudioPlayer>();
 	}
 
 	void State::OnInit()
 	{
+		CurrentTime = 0;
+
+		App* application = (App*) CSCore::Application::Get();
+
 		// Create the camera entity and add the camera component
 		CSRendering::RenderComponentFactory* rendercomponentfactory = CSCore::Application::Get()->GetSystem<CSRendering::RenderComponentFactory>();
 		CSCore::EntitySPtr Camera = CSCore::Entity::Create();
@@ -132,25 +140,71 @@ namespace ChilliJam
 			GetScene()->Add( spriteentity2 );
 		}
 
+		// Add people to the screen
+		for ( unsigned int person = 0; person < ( 1 + ( application->GetDay() * 10 ) ); person++ )
 		{
-			// City base
+			char randomface[2];
+			{
+				int random = ( (int) rand() % 3 ) + 1;
+				sprintf( randomface, "%i", random );
+			}
 			CSRendering::SpriteComponentSPtr spritecomponent = rendercomponentfactory->CreateSpriteComponent(
 				CSCore::Vector2( 32, 32 ),
 				textureatlas_face,
-				"1",
+				randomface,
 				material_face,
 				CSRendering::SpriteComponent::SizePolicy::k_fitMaintainingAspect
-			);
+				);
 			CSCore::EntitySPtr spriteentity = CSCore::Entity::Create();
 			spriteentity->AddComponent( spritecomponent );
-			spriteentity->GetTransform().SetPosition( CSCore::Vector3( 64, -118, 0 ) );
+			spriteentity->GetTransform().SetPosition( CSCore::Vector3( ( rand() % 64 ) + 32, ( rand() % 64 ) - 96, 0 ) );
 
 			GetScene()->Add( spriteentity );
+			PersonStruct personinfo;
+			{
+				personinfo.Sprite = spriteentity;
+				personinfo.Affected_Time = 5 + ( rand() % 10 );
+				personinfo.Sound_Time = 0;
+				personinfo.Direction = CSCore::Vector2( ( rand() % 3 ) - 1, ( rand() % 3 ) - 1 );
+				{
+					// Ensure they move in a direction
+					if ( ( personinfo.Direction.x == 0 ) && ( personinfo.Direction.y == 0 ) )
+					{
+						personinfo.Direction.x = 1;
+					}
+					// Add some more random movement
+					float randomadd = (float) ( ( ( rand() % 2 ) == 0 ) ? 1 : -1 ) * 0.5f / ( ( rand() % 10 ) + 1 );
+					if ( personinfo.Direction.x == 0 )
+					{
+						personinfo.Direction.x = randomadd;
+					}
+					if ( personinfo.Direction.y == 0 )
+					{
+						personinfo.Direction.y = randomadd;
+					}
+					// Random speed decrease
+					personinfo.Direction.x /= ( rand() % 3 ) + 1;
+					personinfo.Direction.y /= ( rand() % 3 ) + 1;
+				}
+				personinfo.Face[0] = randomface[0];
+				personinfo.Face[1] = '\0'; // Terminate string
+			}
+			Person.push_back( personinfo );
 		}
 
-		// Load the HUD ui widget (THIS APPEARS IN EVERY STATE BECAUSE I'M A BAD PERSON -M)
-		App* application = (App*) CSCore::Application::Get();
+		// Initialize affected logic
+		Affected_Current = 0;
+		Affected_Target = Person.size() / ( ( rand() % 3 ) + 1 );
+		{
+			if ( application->GetDay() == 1 )
+			{
+				Affected_Target = 1;
+			}
+		}
 
+		AudioBank = resourcepool->LoadResource<CSAudio::CkBank>( CSCore::StorageLocation::k_package, "Audio/bank.ckb" );
+
+		// Load the HUD ui widget (THIS APPEARS IN EVERY STATE BECAUSE I'M A BAD PERSON -M)
 		// Get a reference to the resource pool for this application
 		auto widgetfactory = CSCore::Application::Get()->GetWidgetFactory();
 
@@ -169,17 +223,140 @@ namespace ChilliJam
 
 		// Convert $$$$ number to string and display on HUD
 		float amt = application->GetDolla();
-		string dolla = std::to_string(amt);
-		UI_HUD->GetWidget("Dolla")->GetComponent<CSUI::TextComponent>()->SetText(dolla);
+		string dolla = std::to_string( amt );
+		UI_HUD->GetWidget( "Dolla" )->GetComponent<CSUI::TextComponent>()->SetText( dolla );
 	}
 
 	void State::OnUpdate( f32 in_deltaTime )
 	{
-		//Update stuff here.
+		CurrentTime += in_deltaTime;
+
+		// Update the people
+		for ( unsigned int person = 0; person < Person.size(); person++ )
+		{
+			// Move the people
+			CSCore::EntitySPtr personsprite = Person[person].Sprite;
+			personsprite->GetTransform().MoveBy( CSCore::Vector3( ( (float) ( rand() % 5 ) - 2.5 ) * Person[person].Direction.x, ( (float) ( rand() % 5 ) - 2.5 ) * Person[person].Direction.y, 0 ) );
+
+			// Randomly affect the people that haven't been flagged affected, when there are still people in the target
+			if ( ( CurrentTime > Person[person].Affected_Time ) && ( Person[person].Affected_Time != 0 ) && ( Affected_Current < Affected_Target ) )
+			{
+				Affected_Current++;
+				personsprite->RemoveFromParent(); // Remove from scene
+				Person[person].Affected_Time = 0; // Flag to not affect again
+
+				// Play sound
+				AudioPlayer->PlayEffect( AudioBank, "Person_Pop" );
+				Person[person].Sound_Time = CurrentTime + 1;
+
+				// Create effect
+				EffectStruct effect;
+				{
+					for ( unsigned int piece = 0; piece < ( rand() % 3 ) + 6; piece++ )
+					{
+						CSCore::EntitySPtr sprite = CSCore::Entity::Create();
+						{
+							// Get resources
+							auto resourcepool = CSCore::Application::Get()->GetResourcePool();
+							CSRendering::RenderComponentFactory* rendercomponentfactory = CSCore::Application::Get()->GetSystem<CSRendering::RenderComponentFactory>();
+							CSRendering::TextureAtlasCSPtr textureatlas_face = resourcepool->LoadResource<CSRendering::TextureAtlas>( CSCore::StorageLocation::k_package, "TextureAtlases/alienfaces/alienfaces.csatlas" );
+							CSRendering::MaterialCSPtr material_face = resourcepool->GetResource<CSRendering::Material>( "SpriteMaterial_Faces" );
+
+							// Create component
+							CSRendering::SpriteComponentSPtr spritecomponent = rendercomponentfactory->CreateSpriteComponent(
+								CSCore::Vector2( 16, 16 ),
+								textureatlas_face,
+								string( Person[person].Face ),
+								material_face,
+								CSRendering::SpriteComponent::SizePolicy::k_fitMaintainingAspect
+							);
+							sprite->AddComponent( spritecomponent );
+							sprite->GetTransform().SetPosition( personsprite->GetTransform().GetWorldPosition() ); // Position at parent
+
+							// Colour correctly for lerped darkness
+							CSRendering::SpriteComponentSPtr parentsprite = Person[person].Sprite->GetComponent<CSRendering::SpriteComponent>();
+							spritecomponent->SetColour( parentsprite->GetColour() );
+
+							// Add to scene
+							GetScene()->Add( sprite );
+						}
+						effect.Sprite.push_back( sprite );
+					}
+					effect.Affected_Time = CurrentTime + 4;
+					effect.Direction = Person[person].Direction;
+				}
+				Effect.push_back( effect );
+			}
+
+			// Play cheering after a delay
+			if ( ( Person[person].Sound_Time != 0 ) && ( Person[person].Sound_Time <= CurrentTime ) )
+			{
+				AudioPlayer->PlayEffect( AudioBank, "Person_Yay" );
+				Person[person].Sound_Time = 0;
+			}
+		}
+
+		// Update the effects
+		for ( unsigned int effect = 0; effect < Effect.size(); effect++ )
+		{
+			// Move the people
+			for ( unsigned int sprite = 0; sprite < Effect[effect].Sprite.size(); sprite++ )
+			{
+				CSCore::EntitySPtr personsprite = Effect[effect].Sprite[sprite];
+				personsprite->GetTransform().MoveBy( CSCore::Vector3( ( (float) ( rand() % 5 ) - 2.5 ) * Effect[effect].Direction.x, ( (float) ( rand() % 5 ) - 2.5 ) * Effect[effect].Direction.y, 0 ) );
+			}
+		}
+
+		// Update the darkness of the screen
+		CSCore::SharedEntityList entities = GetScene()->GetEntities();
+		for ( unsigned int entity = 0; entity < entities.size(); entity++ )
+		{
+			// Is renderable as a sprite
+			CSRendering::SpriteComponentSPtr sprite = entities[entity]->GetComponent<CSRendering::SpriteComponent>();
+			if ( sprite )
+			{
+				CSCore::Colour oldcolour = sprite->GetColour();
+				{
+					oldcolour.r -= in_deltaTime * LIGHT_CHANGE;
+					oldcolour.g -= in_deltaTime * LIGHT_CHANGE;
+					oldcolour.b -= in_deltaTime * LIGHT_CHANGE;
+					// Clamp
+					if ( oldcolour.r < LIGHT_MIN )
+					{
+						oldcolour.r = LIGHT_MIN;
+						oldcolour.g = LIGHT_MIN;
+						oldcolour.b = LIGHT_MIN;
+					}
+				}
+				sprite->SetColour( oldcolour );
+			}
+		}
+
+		// Move to score when all people have been affected
+		if ( Affected_Current >= Affected_Target )
+		{
+			// Also check that effects are finished
+			bool finished = true;
+			{
+				for ( unsigned int effect = 0; effect < Effect.size(); effect++ )
+				{
+					// Hasn't timed out the effect yet
+					if ( Effect[effect].Affected_Time > CurrentTime )
+					{
+						finished = false;
+						break;
+					}
+				}
+			}
+			if ( finished )
+			{
+				CSCore::Application::Get()->GetStateManager()->Change( (CSCore::StateSPtr) new State_DayBegin );
+			}
+		}
 	}
 
 	void State::OnDestroy()
 	{
-		//Destruction stuff here.
+		Person.clear();
 	}
 }

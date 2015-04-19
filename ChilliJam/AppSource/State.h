@@ -29,22 +29,63 @@
 #ifndef _CSEMPTYTEMPLATE_STATE_H_
 #define _CSEMPTYTEMPLATE_STATE_H_
 
+// Required Engine Header
 #include <ChilliSource/ChilliSource.h>
 #include <ChilliSource/Core/State.h>
+#include <ChilliSource/Core/Math.h>
+
+// Required C++ Header
+#include <vector>
+
+// Namespaces
+using std::vector;
+
+// Defines
+#define LIGHT_MIN 0.4f
+#define LIGHT_CHANGE 0.1f
 
 namespace ChilliJam
 {
+	typedef struct
+	{
+		CSCore::EntitySPtr Sprite;
+		long long int Affected_Time;
+		long long int Sound_Time;
+		CSCore::Vector2 Direction;
+		char Face[2];
+	} PersonStruct;
+
+	typedef struct
+	{
+		vector<CSCore::EntitySPtr> Sprite;
+		long long int Affected_Time;
+		CSCore::Vector2 Direction;
+	} EffectStruct;
+
 	class State : public CSCore::State
 	{
 		public:
-		void CreateSystems() override;
-		void OnInit() override;
-		void OnUpdate( f32 in_deltaTime ) override;
-		void OnDestroy() override;
+			void CreateSystems() override;
+			void OnInit() override;
+			void OnUpdate( f32 in_deltaTime ) override;
+			void OnDestroy() override;
 
 		private:
-		// The menu UI widget
-		CSUI::WidgetSPtr UI_HUD;
+			// The menu UI widget
+			CSUI::WidgetSPtr UI_HUD;
+
+			// Array of people moving around
+			vector<PersonStruct> Person;
+			vector<EffectStruct> Effect;
+
+			// The number of people currently affected, and those that must be affected for the state to end
+			float CurrentTime;
+			unsigned int Affected_Current;
+			unsigned int Affected_Target;
+
+			// Audio
+			CSAudio::CkAudioPlayer* AudioPlayer;
+			CSAudio::CkBankCSPtr AudioBank;
 	};
 }
 
