@@ -47,6 +47,7 @@
 // Required Application Header
 #include <App.h>
 #include <State_DayBegin.h>
+#include <State_Score.h>
 
 using std::string;
 
@@ -364,7 +365,18 @@ namespace ChilliJam
 				{
 					application->SetConsumers( Effect.size() );
 				}
-				application->GetStateManager()->Change( (CSCore::StateSPtr) new State_DayBegin );
+				State_Score* state = new State_Score();
+				{
+					state->scoreController.setPrevTotalMoney( application->GetPreviousDolla() );
+					state->scoreController.setPrevTotalJuice( application->GetPreviousJuice() );
+					state->scoreController.addMoneyToTotal( application->GetDolla() );
+					state->scoreController.addJuiceToTotal( application->GetJuice() );
+
+					// Afterwards set the new value to previous, in preporation for the next day
+					application->SetPreviousDolla( application->GetDolla() );
+					application->SetPreviousJuice( application->GetJuice() );
+				}
+				application->GetStateManager()->Change( (CSCore::StateSPtr) state );
 			}
 		}
 	}

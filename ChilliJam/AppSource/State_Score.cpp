@@ -42,6 +42,9 @@
 #include <ChilliSource/UI/Button.h>
 #include <ChilliSource/UI/ProgressBar.h>
 
+#include <App.h>
+#include <State_DayBegin.h>
+
 namespace ChilliJam
 {
 	
@@ -83,6 +86,14 @@ namespace ChilliJam
 		UI_moneyValue = 0;
 		UI_juiceValue = 0;
 
+		ButtonConnection = scoreboard->GetWidget( "PlayButton" )->GetReleasedInsideEvent().OpenConnection(
+			[]( CSUI::Widget* in_widget, const CSInput::Pointer& in_pointer, CSInput::Pointer::InputType in_inputType )
+			{
+				App* application = (App*) CSCore::Application::Get();
+				State_Score* state = (State_Score*) application->GetStateManager()->GetActiveState().get();
+				state->Continue();
+			}
+		);
 	}
 
 	void State_Score::OnUpdate(f32 in_deltaTime)
@@ -117,6 +128,12 @@ namespace ChilliJam
 		//Destruction stuff here.
 	}
 
+	void State_Score::Continue()
+	{
+		App* application = (App*) CSCore::Application::Get();
+		application->GetStateManager()->Change( (CSCore::StateSPtr) new State_DayBegin );
+	}
+
 	CSUI::WidgetSPtr CreateScoreScreen()
 	{
 		auto widgetFactory = CSCore::Application::Get()->GetWidgetFactory();
@@ -128,6 +145,4 @@ namespace ChilliJam
 
 		return widget;
 	}
-
 }
-

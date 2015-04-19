@@ -89,6 +89,12 @@ namespace ChilliJam
 			inline void SetAffect( float affect ) { Affect = affect; };
 			inline float GetAffect() { return Affect; };
 
+			inline void SetPreviousDolla( int amount ) { PreviousDolla = amount; };
+			inline int GetPreviousDolla() { return PreviousDolla; };
+
+			inline void SetPreviousJuice( int amount ) { PreviousJuice = amount; };
+			inline int GetPreviousJuice() { return PreviousJuice; };
+
 		private:
 			RecipeStruct* Recipe;
 			IngredientStruct* Ingredient;
@@ -99,6 +105,9 @@ namespace ChilliJam
 			float Dolla;
 			int Juice;
 			unsigned int Consumers;
+
+			int PreviousDolla;
+			int PreviousJuice;
 
 			unsigned int Affect;
 	};
